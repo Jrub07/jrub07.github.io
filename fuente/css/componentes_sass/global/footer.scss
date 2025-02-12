@@ -6,7 +6,7 @@ footer {
   box-sizing: border-box;
   background-color: map.get($colores, "principal");
   overflow: hidden;
-  min-height: 25%; 
+  min-height: 25%; // Usamos min-height en lugar de height para permitir expansión
 
   #contacto {
     display: flex;
@@ -23,6 +23,7 @@ footer {
         font-family: averia-serif;
         text-align: center;
         @include flexible(flex, row, nowrap, center, center);
+        // Eliminamos altura fija y usamos font-size relativo
         min-height: auto;
         font-size: 1rem;
       }
@@ -51,7 +52,50 @@ footer {
     height: auto;
   }
 
-  // Ajustes para tabletas
+  // Móviles
+  @include movil {
+    flex-direction: column;
+    min-height: 37%;
+    margin: 0;
+
+    @include altura("896") {
+      min-height: 32%;
+    }
+
+    iframe {
+      margin-top: 1%;
+      width: 100%;
+      order: 1;
+      max-height: 300px; // Altura máxima para evitar que se sobrepase
+    }
+
+    #contacto {
+      justify-content: space-between;
+      order: 2;
+      width: 100%;
+
+      #redes_sociales, #como_llegar {
+        padding-left: 1%;
+        padding-right: 1%;
+        width: 40%;
+
+        h3 {
+          font-size: 80%;
+          min-height: auto;
+        }
+
+        p {
+          margin-bottom: 10px;
+
+          img {
+            max-width: 15%;
+          }
+        }
+      }
+    }
+  }
+
+  // Tabletas
   @include tableta {
     flex-direction: column;
     align-items: center;
@@ -61,10 +105,9 @@ footer {
     iframe {
       align-items: center;
       margin-top: 2%;
-      width: 100%;
-      max-width: 400px;
+      width: 400px;
       order: 1;
-      max-height: 250px;
+      max-height: 200px;
     }
 
     #contacto {
@@ -74,29 +117,30 @@ footer {
       width: 90%;
 
       #redes_sociales, #como_llegar {
-        padding: 0 1%;
-        width: 45%;
+        padding-left: 1%;
+        padding-right: 1%;
+        width: 37%;
 
         h3 {
-          font-size: 1.1rem;
+          font-size: 18px;
           min-height: auto;
         }
 
         p {
-          margin-bottom: 0.5rem;
+          margin-bottom: 10px;
 
           img {
-            max-width: 20%;
+            max-width: 15%;
           }
         }
       }
     }
   }
 
-  // Ajustes para pantallas pequeñas
+  // Pantallas pequeñas
   @include pantalla_pequeña {
     justify-content: space-between;
-    min-height: 22%;
+    min-height: 20%;
 
     #contacto {
       justify-content: space-evenly;
@@ -107,13 +151,13 @@ footer {
 
         h3 {
           margin-top: 10%;
-          font-size: 1.4rem;
+          font-size: 28px;
           min-height: auto;
         }
 
         p {
-          font-size: 1.3rem;
-          margin-bottom: 1.5rem;
+          font-size: 25px;
+          margin-bottom: 30px;
 
           img {
             max-width: 40px;
@@ -123,13 +167,12 @@ footer {
     }
 
     iframe {
-      width: 90%;
-      max-width: 350px;
+      width: 350px;
       max-height: 100%;
     }
   }
 
-  // Ajustes para pantallas estándar
+  // Pantallas estándar
   @include pantalla_estandar {
     justify-content: space-between;
     min-height: 25%;
@@ -139,23 +182,23 @@ footer {
       width: 100%;
 
       #redes_sociales, #como_llegar {
-        width: 30%;
+        width: 28%;
         margin-left: 20px;
 
         h3 {
-          font-size: 1.8rem;
+          font-size: 26px;
           min-height: auto;
           @include altura("1080") {
-            font-size: 2.2rem;
+            font-size: 35px;
           }
         }
 
         p {
-          font-size: 1.8rem;
-          margin-bottom: 0.8rem;
+          font-size: 26px;
+          margin-bottom: 10px;
           @include altura("1080") {
-            font-size: 2.2rem;
-            margin-bottom: 1.5rem;
+            font-size: 35px;
+            margin-bottom: 25px;
           }
 
           img {
@@ -166,13 +209,12 @@ footer {
     }
 
     iframe {
-      width: 90%;
-      max-width: 350px;
+      width: 350px;
       max-height: 100%;
     }
   }
 
-  // Ajustes para pantallas grandes
+  // Pantallas grandes
   @include pantalla_grande {
     justify-content: space-between;
     min-height: 25%;
@@ -185,13 +227,13 @@ footer {
         width: 25%;
 
         h3 {
-          font-size: 2.5rem;
+          font-size: 47px;
           min-height: auto;
         }
 
         p {
-          font-size: 2.5rem;
-          margin-bottom: 1.5rem;
+          font-size: 47px;
+          margin-bottom: 25px;
 
           img {
             max-width: 10%;
@@ -201,8 +243,7 @@ footer {
     }
 
     iframe {
-      width: 100%;
-      max-width: 650px;
+      width: 650px;
       max-height: 100%;
     }
   }
