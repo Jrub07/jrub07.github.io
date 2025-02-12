@@ -709,11 +709,12 @@ en función de las necesidades del dispostivo*/
 }
 @media (min-width: 360px) and (max-width: 480px) {
   #especialidades h3 {
+    font-size: 2, 5vh;
     margin-top: 10%;
   }
   #especialidades article p {
     width: 90%;
-    font-size: 3vh;
+    font-size: 2.5vh;
   }
 }
 @media (min-width: 481px) and (max-width: 768px) {

@@ -47,12 +47,13 @@ en función de las necesidades del dispostivo*/
     // Resoluciones de móvil
     @include movil() {
         h3 {
+            font-size: 2,5vh;
             margin-top: 10%;
         }
 
         article p{
             width: 90%;            
-            font-size: 3vh;
+            font-size: 2.5vh;
         }
     }
 
