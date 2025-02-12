@@ -38,8 +38,8 @@ se puede aplicar contenido general
 y si la tiene no hace mas cambios, aquí se coloca un operador logico ==*/
 /*la funcion como tal no se puede aplicar sola, se necesita de un mixin de apoyo, por lo que se añade el paso final
 para aplicar el contenido css en font-family*/
-/*Creacion del html y el body en conjunto para que se comparta en todos los archivos, se quitan los margenes
-para que se incluya todo el contenido*/
+/* Creación del html y el body en conjunto para que se comparta en todos los archivos, se quitan los márgenes
+para que se incluya todo el contenido */
 html, body {
   box-sizing: border-box;
   height: 100%;
@@ -59,6 +59,7 @@ header {
   justify-content: space-around;
   align-items: center;
 }
+
 header button {
   border-radius: 10%;
   background-color: white;
@@ -68,7 +69,6 @@ header button {
   font-weight: bold;
   margin: 0 10px;
   width: 40%;
-  height: 5vh;
   font-size: 2vh;
 }
 @media (min-width: 360px) and (max-width: 480px) {
@@ -78,7 +78,8 @@ header button {
 }
 @media (min-width: 481px) and (max-width: 768px) {
   header button {
-    font-size: 1.8vh;
+    font-size: 1.2vh;
+    height: 1.8vh;
   }
 }
 @media (min-width: 769px) and (max-width: 1200px) {
@@ -111,8 +112,7 @@ header img {
 }
 @media (min-width: 481px) and (max-width: 768px) {
   header img {
-    max-height: 90%;
-    max-width: 20%;
+    max-width: 10%;
   }
 }
 @media (min-width: 769px) and (max-width: 1200px) {
@@ -709,7 +709,7 @@ en función de las necesidades del dispostivo*/
 }
 @media (min-width: 360px) and (max-width: 480px) {
   #especialidades h3 {
-    font-size: 2, 5vh;
+    font-size: 2.5vh;
     margin-top: 10%;
   }
   #especialidades article p {

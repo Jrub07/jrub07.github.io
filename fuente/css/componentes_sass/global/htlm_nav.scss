@@ -1,28 +1,26 @@
 @use 'mixins_funciones_mapa' as *;
 @use 'sass:map';
 
-/*Creacion del html y el body en conjunto para que se comparta en todos los archivos, se quitan los margenes
-para que se incluya todo el contenido*/
-html, body{
+/* Creación del html y el body en conjunto para que se comparta en todos los archivos, se quitan los márgenes
+para que se incluya todo el contenido */
+html, body {
     box-sizing: border-box;
     height: 100%;
     width: 100%;
     margin: 0;
     padding: 0;
-    //Overflow-x para que no haya errores con el movil
+    // Overflow-x para que no haya errores con el móvil
     overflow-x: hidden;    
 }
 
-//Creacion del header
+// Creación del header
 header {
     width: 100%;
     min-height: 10%;
     overflow: hidden;
     background-color: map.get($colores, "principal"); 
     @include flexible(flex, row, nowrap, space-around, center);
-    //Un ejemplo de uso de la funcion, aunque no es necesario ya que se aplica un estandar general
-    @include responsivo_todos();    
-        
+    
 }
 
 header button {   
@@ -33,37 +31,38 @@ header button {
     text-transform: uppercase;
     font-weight: bold;
     margin: 0 10px;
-    width: 40%;
-    height: 5vh; // Altura fija para todos los dispositivos en unidades vh
-    font-size: 2vh; // Tamaño de fuente relativo a la altura del viewport
+    width: 40%;    
+    font-size: 2vh; 
 
     @include movil() {
-        font-size: 1.5vh; // Ajuste del tamaño de fuente para móviles
+        font-size: 1.5vh; 
     }
 
     @include tableta() {
-        font-size: 1.8vh; // Ajuste del tamaño de fuente para tabletas
+        font-size: 1.4vh;
+        height: 30%;
+        width: 13%;
     }
 
     @include pantalla_pequeña() {
-        font-size: 2vh; // Ajuste del tamaño de fuente para pantallas pequeñas
+        font-size: 2vh; 
     }
 
     @include pantalla_estandar() {
-        font-size: 2.2vh; // Ajuste del tamaño de fuente para pantallas estándar
+        font-size: 2.2vh; 
     }
 
     @include pantalla_grande() {
-        font-size: 2.5vh; // Ajuste del tamaño de fuente para pantallas grandes
+        font-size: 2.5vh; 
     }
 }
 
-//Boton para el CTA con la función correspondiente
+// Botón para el CTA con la función correspondiente
 #pedir_cita {
     @include aplicar_fuente('button', 'MilkAndHoney');
 }
 
-//Colocación del logo con diferentes alturas para cada dispositivo
+// Colocación del logo con diferentes alturas para cada dispositivo
 header img {    
     object-fit: cover;
 
@@ -71,9 +70,8 @@ header img {
         max-width: 20%;
     }
 
-    @include tableta() {
-        max-height: 90%;
-        max-width: 20%;
+    @include tableta() {        
+        max-width: 10%;
     }
 
     @include pantalla_pequeña() {
@@ -82,12 +80,12 @@ header img {
     }
 
     @include pantalla_estandar() {
-      max-width:90%;
-      max-height: 90%;
+        max-width: 90%;
+        max-height: 90%;
     }
 
     @include pantalla_grande() {
-      max-width: 90%;
-      max-height: 90%;
+        max-width: 90%;
+        max-height: 90%;
     }
 }
