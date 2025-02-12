@@ -1,0 +1,1044 @@
+@charset "UTF-8";
+/*Archivo sass para crear funcionalidad mediante mixins, fuentes de letra importada, mapas y una funcion*/
+@font-face {
+  font-family: "MilkAndHoney";
+  src: url("/fuente/fuente_letra/MilkAndHoney.woff") format("woff");
+}
+@font-face {
+  font-family: "Classica-Bold";
+  src: url("/fuente/fuente_letra/Classica-Bold.woff") format("woff");
+}
+@font-face {
+  font-family: "Classica-Book";
+  src: url("/fuente/fuente_letra/Classica-Book.woff") format("woff");
+}
+@font-face {
+  font-family: "Fashion";
+  src: url("/fuente/fuente_letra/Fashion.woff") format("woff");
+}
+@font-face {
+  font-family: "LTMuseum-Bold";
+  src: url("/fuente/fuente_letra/LTMuseum-Bold.woff") format("woff");
+}
+@font-face {
+  font-family: "LTMuseum-light";
+  src: url("/fuente/fuente_letra/LTMuseum-Light.woff") format("woff");
+}
+/*Este mixin recoge la altura del dispositivo con una interpolacion para ser aplicado en un futuro
+mixin de punto de ruputra*/
+/*Mixin que ahorra todas la lineas de codigo de flexbox, en general es mas util cuando se aplica a 
+lugares en los que se deben escribir de 4 a 5 lineas, para aquellos elementos que solo necesiten 2 lineas
+no es tan útil ya que puede alterar el diseño*/
+/*Mixins para diferentes puntos de ruptura, que se aplican desde el ancho de corrección hasta el máximo siguiente
++1 pixel para cambiar el estandar de un dispositivo a otro*/
+/*Un mixin que engloba todos, aunque no es del todo últi porque con los propios selectores 
+se puede aplicar contenido general
+*/
+/*Funcion que comprueba si un elemento/selector tiene una fuente desesada, si no la tiene se la cambia
+y si la tiene no hace mas cambios, aquí se coloca un operador logico ==*/
+/*la funcion como tal no se puede aplicar sola, se necesita de un mixin de apoyo, por lo que se añade el paso final
+para aplicar el contenido css en font-family*/
+/*Creacion del html y el body en conjunto para que se comparta en todos los archivos, se quitan los margenes
+para que se incluya todo el contenido*/
+html, body {
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+header {
+  width: 100%;
+  overflow: hidden;
+  background-color: #372715;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+@media (min-height: 896px) {
+  header {
+    height: 10%;
+  }
+}
+@media (min-height: 760px) {
+  header {
+    height: 17%;
+  }
+}
+
+header button {
+  border-radius: 10%;
+  background-color: white;
+  color: black;
+  font-family: averia-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin: 0 10px;
+}
+@media (min-width: 360px) and (max-width: 480px) {
+  header button {
+    width: 40%;
+  }
+}
+@media (min-width: 360px) and (max-width: 480px) and (min-height: 896px) {
+  header button {
+    height: 50%;
+    font-size: 16px;
+  }
+}
+@media (min-width: 360px) and (max-width: 480px) and (min-height: 760px) {
+  header button {
+    height: 40%;
+  }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  header button {
+    height: 50%;
+  }
+}
+@media (min-width: 481px) and (max-width: 768px) and (min-height: 1024px) {
+  header button {
+    height: 40%;
+    font-size: 18px;
+  }
+}
+@media (min-width: 769px) and (max-width: 1200px) {
+  header button {
+    height: 50px;
+  }
+}
+@media (min-width: 769px) and (max-width: 1200px) and (min-height: 1366px) {
+  header button {
+    height: 40%;
+    font-size: 22px;
+  }
+}
+@media (min-width: 1201px) and (max-width: 1920px) and (min-height: 800px) {
+  header button {
+    height: 50%;
+    font-size: 20px;
+  }
+}
+@media (min-width: 1201px) and (max-width: 1920px) and (min-height: 864px) {
+  header button {
+    height: 50%;
+    font-size: 22px;
+  }
+}
+@media (min-width: 1201px) and (max-width: 1920px) and (min-height: 1080px) {
+  header button {
+    height: 50%;
+    font-size: 25px;
+  }
+}
+@media (min-width: 1921px) and (max-width: 2560px) and (min-height: 1440px) {
+  header button {
+    height: 50%;
+    font-size: 35px;
+  }
+}
+
+#pedir_cita {
+  font-family: "MilkAndHoney";
+}
+
+header img {
+  object-fit: cover;
+}
+@media (min-width: 360px) and (max-width: 480px) {
+  header img {
+    max-width: 20%;
+  }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  header img {
+    max-height: 90%;
+    max-width: 20%;
+  }
+}
+@media (min-width: 769px) and (max-width: 1200px) {
+  header img {
+    max-width: 90%;
+    max-height: 90%;
+  }
+}
+@media (min-width: 1201px) and (max-width: 1920px) {
+  header img {
+    max-width: 90%;
+    max-height: 90%;
+  }
+}
+@media (min-width: 1921px) and (max-width: 2560px) {
+  header img {
+    max-width: 90%;
+    max-height: 90%;
+  }
+}
+
+/*Archivo para mostrar los valores de la empresa*/
+/*Contenedor en el que se aplica la imagen, en este caso jpeg para
+que sea soportada por todos los navegadores, al que se le quita luminosidad para que destaque
+la letra, y que es compartida por todos los dispositivos*/
+#presentacion {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../imagenes/hero_img_3792x2524.jpeg");
+  background-size: cover;
+  background-position: center;
+  padding-top: 5%;
+  color: white;
+}
+@media (min-width: 360px) and (max-width: 480px) {
+  #presentacion {
+    height: 80%;
+  }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  #presentacion {
+    height: 50%;
+  }
+}
+@media (min-width: 769px) and (max-width: 1200px) {
+  #presentacion {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-end;
+    height: 50%;
+    padding-right: 8%;
+  }
+}
+@media (min-width: 1201px) and (max-width: 1920px) {
+  #presentacion {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-end;
+    height: 80%;
+    padding-right: 8%;
+  }
+}
+@media (min-width: 1921px) and (max-width: 2560px) {
+  #presentacion {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-end;
+    height: 80%;
+    padding-right: 8%;
+  }
+}
+
+#presentacion h3:first-of-type {
+  text-align: center;
+  background-color: #684825;
+  color: white;
+  font-family: "Fashion";
+}
+@media (min-width: 360px) and (max-width: 480px) {
+  #presentacion h3:first-of-type {
+    height: 7%;
+    font-size: 1em;
+    width: 90%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  #presentacion h3:first-of-type {
+    width: 90%;
+  }
+}
+@media (min-width: 769px) and (max-width: 1200px) {
+  #presentacion h3:first-of-type {
+    width: 80%;
+    height: 7%;
+    display: flex;
+    font-size: 25px;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media (min-width: 1201px) and (max-width: 1920px) {
+  #presentacion h3:first-of-type {
+    width: 50%;
+    height: 10%;
+    display: flex;
+    font-size: 25px;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media (min-width: 1921px) and (max-width: 2560px) {
+  #presentacion h3:first-of-type {
+    width: 50%;
+    height: 12%;
+    display: flex;
+    font-size: 35px;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media (min-width: 1921px) and (max-width: 2560px) and (min-height: 1440px) {
+  #presentacion h3:first-of-type {
+    font-size: 50px;
+  }
+}
+
+/*Se repite el flexible para comprobar que se puede ajustar
+aun repitiendo, aunque se puede poner simplemente el valor 
+como se ha hecho en otros*/
+.valores {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+@media (min-width: 360px) and (max-width: 480px) {
+  .valores {
+    height: 90%;
+    width: 90%;
+  }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  .valores {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+    width: 90%;
+  }
+}
+@media (min-width: 769px) and (max-width: 1200px) {
+  .valores {
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 5%;
+    height: 60%;
+    width: 70%;
+    margin-top: 0.5%;
+    margin-right: 3%;
+  }
+}
+@media (min-width: 1201px) and (max-width: 1920px) {
+  .valores {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center;
+    height: 70%;
+    width: 40%;
+    margin-top: 0.5%;
+  }
+}
+@media (min-width: 1201px) and (max-width: 1920px) and (min-height: 864px) {
+  .valores {
+    margin-right: 3%;
+  }
+}
+@media (min-width: 1921px) and (max-width: 2560px) {
+  .valores {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 5%;
+    margin-right: 5%;
+    height: 70%;
+    width: 40%;
+    margin-top: 0.5%;
+  }
+}
+.valores article {
+  box-sizing: border-box;
+  text-align: center;
+  overflow: hidden;
+  background-color: #684825;
+  color: white;
+  font-family: "Classica-Bold";
+}
+@media (min-width: 360px) and (max-width: 480px) {
+  .valores article {
+    margin-top: 2%;
+    padding-top: 2%;
+    height: 40%;
+    width: 100%;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  .valores article h4 {
+    margin: 0;
+    font-family: "Classica-Bold";
+    margin: 2% auto;
+    font-size: 19px;
+  }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  .valores article {
+    margin-right: 2%;
+    margin-top: 2%;
+    padding-top: 2%;
+    font-size: 20px;
+    height: 30%;
+    width: 45%;
+  }
+  .valores article h4 {
+    font-family: "Classica-Bold";
+    margin: 2% auto;
+    font-size: 19px;
+  }
+}
+@media (min-width: 769px) and (max-width: 1200px) {
+  .valores article {
+    height: 47%;
+    width: 45%;
+    margin-right: 2%;
+  }
+  .valores article h4 {
+    font-family: "Classica-Bold";
+    margin: 2% auto;
+    font-size: 30px;
+  }
+}
+@media (min-width: 1201px) and (max-width: 1920px) {
+  .valores article {
+    height: 30%;
+    width: 40%;
+    margin-right: 2%;
+  }
+}
+@media (min-width: 1201px) and (max-width: 1920px) and (min-height: 864px) {
+  .valores article {
+    height: 35%;
+    width: 47%;
+  }
+}
+@media (min-width: 1201px) and (max-width: 1920px) {
+  .valores article h4 {
+    font-family: "Classica-Bold";
+    margin: 2% auto;
+    font-size: 19px;
+  }
+}
+@media (min-width: 1201px) and (max-width: 1920px) and (min-height: 864px) {
+  .valores article h4 {
+    font-size: 25px;
+    margin-bottom: 0;
+  }
+}
+@media (min-width: 1201px) and (max-width: 1920px) and (min-height: 1080px) {
+  .valores article h4 {
+    font-size: 30px;
+  }
+}
+@media (min-width: 1921px) and (max-width: 2560px) {
+  .valores article {
+    height: 30%;
+    width: 40%;
+    margin-right: 2%;
+  }
+}
+@media (min-width: 1921px) and (max-width: 2560px) and (min-height: 1440px) {
+  .valores article {
+    height: 35%;
+    width: 47%;
+  }
+}
+@media (min-width: 1921px) and (max-width: 2560px) {
+  .valores article h4 {
+    font-family: "Classica-Bold";
+    margin: 2% auto;
+    font-size: 19px;
+  }
+}
+@media (min-width: 1921px) and (max-width: 2560px) and (min-height: 1440px) {
+  .valores article h4 {
+    font-size: 45px;
+  }
+}
+
+.valores article p {
+  font-family: "LTMuseum-Light";
+}
+@media (min-width: 360px) and (max-width: 480px) {
+  .valores article p {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  .valores article p {
+    margin: 0;
+  }
+}
+@media (min-width: 769px) and (max-width: 1200px) {
+  .valores article p {
+    margin: 0;
+    font-size: 25px;
+  }
+}
+@media (min-width: 1201px) and (max-width: 1920px) {
+  .valores article p {
+    margin: 0;
+    padding-top: 2%;
+    font-size: 16px;
+  }
+}
+@media (min-width: 1201px) and (max-width: 1920px) and (min-height: 864px) {
+  .valores article p {
+    font-size: 22px;
+  }
+}
+@media (min-width: 1201px) and (max-width: 1920px) and (min-height: 1080px) {
+  .valores article p {
+    font-size: 25px;
+  }
+}
+@media (min-width: 1921px) and (max-width: 2560px) {
+  .valores article p {
+    margin: 0;
+    padding-top: 5%;
+    font-size: 33px;
+  }
+}
+
+#modalidades {
+  overflow: hidden;
+  background-color: #9D774C;
+}
+@media (min-width: 360px) and (max-width: 480px) {
+  #modalidades {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    height: 60%;
+  }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  #modalidades {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding-top: 1%;
+    text-align: center;
+    height: 25%;
+  }
+}
+@media (min-width: 769px) and (max-width: 1200px) {
+  #modalidades {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    height: 30%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media (min-width: 1201px) and (max-width: 1920px) {
+  #modalidades {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding-top: 1%;
+    text-align: center;
+    height: 40%;
+  }
+}
+@media (min-width: 1201px) and (max-width: 1920px) and (min-height: 864px) {
+  #modalidades {
+    height: 50%;
+  }
+}
+@media (min-width: 1921px) and (max-width: 2560px) {
+  #modalidades {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding-top: 1%;
+    text-align: center;
+    height: 40%;
+  }
+}
+
+#presencial, #online {
+  margin-top: 2%;
+  margin-bottom: 2%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+@media (min-width: 360px) and (max-width: 480px) {
+  #presencial, #online {
+    width: 90%;
+    height: 80%;
+  }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  #presencial, #online {
+    width: 40%;
+    height: 80%;
+  }
+}
+@media (min-width: 769px) and (max-width: 1200px) {
+  #presencial, #online {
+    width: 60%;
+    height: 90%;
+    justify-content: center;
+  }
+}
+@media (min-width: 1201px) and (max-width: 1920px) {
+  #presencial, #online {
+    width: 40%;
+    height: 80%;
+  }
+}
+@media (min-width: 1921px) and (max-width: 2560px) {
+  #presencial, #online {
+    width: 40%;
+    height: 80%;
+  }
+}
+#presencial p, #online p {
+  background-color: white;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Classica-Bold";
+}
+@media (min-width: 360px) and (max-width: 480px) {
+  #presencial p, #online p {
+    height: 10%;
+    width: 100%;
+    text-transform: uppercase;
+  }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  #presencial p, #online p {
+    height: 15%;
+    width: 80%;
+  }
+}
+@media (min-width: 769px) and (max-width: 1200px) {
+  #presencial p, #online p {
+    height: 10%;
+    width: 60%;
+    font-size: 25px;
+  }
+}
+@media (min-width: 1201px) and (max-width: 1920px) {
+  #presencial p, #online p {
+    height: 10%;
+    width: 60%;
+    font-size: 20px;
+  }
+}
+@media (min-width: 1201px) and (max-width: 1920px) and (min-height: 864px) {
+  #presencial p, #online p {
+    font-size: 25px;
+  }
+}
+@media (min-width: 1921px) and (max-width: 2560px) {
+  #presencial p, #online p {
+    height: 10%;
+    width: 65%;
+    font-size: 35px;
+    font-family: "Classica-Bold";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+#presencial img, #online img {
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+}
+@media (min-width: 360px) and (max-width: 480px) {
+  #presencial img, #online img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  #presencial img, #online img {
+    max-width: 90%;
+    max-height: 90%;
+  }
+}
+@media (min-width: 769px) and (max-width: 1200px) {
+  #presencial img, #online img {
+    max-width: 90%;
+    max-height: 90%;
+  }
+}
+@media (min-width: 1201px) and (max-width: 1920px) {
+  #presencial img, #online img {
+    max-width: 80%;
+    max-height: 80%;
+  }
+}
+@media (min-width: 1921px) and (max-width: 2560px) {
+  #presencial img, #online img {
+    max-width: 80%;
+    max-height: 80%;
+  }
+}
+
+/*Archivo que sirve para mostrar la cartera de trastornos y población que se trata, lo que destaca es el uso
+de flex-wrap con margen para controlar el espacio para cada resolucion*/
+/*Estilos compartido en su mayoria, solo es necesario editar futuramente los margenes para seprar más o menos
+en función de las necesidades del dispostivo*/
+#especialidades {
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: #684825;
+  overflow: hidden;
+}
+#especialidades h3 {
+  padding-top: 0;
+  background-color: white;
+  align-self: center;
+  text-align: center;
+  font-family: "Classica-Bold";
+}
+#especialidades article {
+  margin-left: 0.8%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex-wrap: wrap;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  align-content: center;
+}
+#especialidades article p {
+  text-align: center;
+  text-transform: uppercase;
+  background-color: white;
+  height: 10%;
+  width: 45%;
+  margin: 2%;
+  padding: 0;
+  display: flex;
+  flex-flow: center center;
+  justify-content: center;
+  align-items: center;
+}
+@media (min-width: 360px) and (max-width: 480px) {
+  #especialidades h3 {
+    margin-top: 10%;
+  }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  #especialidades h3 {
+    font-size: 20px;
+    width: 90%;
+    margin-top: 2%;
+  }
+  #especialidades article p {
+    font-size: 20px;
+    margin: 1%;
+  }
+}
+@media (min-width: 769px) and (max-width: 1200px) {
+  #especialidades h3 {
+    font-size: 30px;
+    width: 90%;
+    margin-top: 2%;
+  }
+  #especialidades article p {
+    font-size: 30px;
+    margin: 1%;
+  }
+}
+@media (min-width: 1201px) and (max-width: 1920px) {
+  #especialidades h3 {
+    font-size: 28px;
+    width: 70%;
+    margin-top: 1%;
+  }
+  #especialidades article {
+    height: 80%;
+    width: 90%;
+  }
+  #especialidades article p {
+    width: 20%;
+    margin: 3.5%;
+    font-size: 25px;
+  }
+}
+@media (min-width: 1921px) and (max-width: 2560px) {
+  #especialidades h3 {
+    font-size: 40px;
+  }
+  #especialidades article {
+    height: 80%;
+    width: 80%;
+  }
+  #especialidades article p {
+    width: 25%;
+    margin: 3%;
+    font-size: 40px;
+  }
+}
+
+/*Clase general para aplicar los contenidos al pie de página, está en el directorio global
+ya que es posible que para la página entera se haga algun cambio
+
+En esta clase se usan los elementos como anidación, en otras clase se hará al revés, para ver que se puede 
+hacer de un lado a otro*/
+footer {
+  display: flex;
+  box-sizing: border-box;
+  background-color: #372715;
+  overflow: hidden;
+}
+footer #contacto {
+  display: flex;
+  overflow: hidden;
+}
+footer #contacto #redes_sociales, footer #contacto #como_llegar {
+  /*Apliación del mixin de flexible, tiene 4 argumentos y se aplica nowrap por defecto*/
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+footer #contacto #redes_sociales h3, footer #contacto #como_llegar h3 {
+  background-color: white;
+  width: 100%;
+  margin-top: 0;
+  padding-top: 0;
+  font-family: averia-serif;
+  text-align: center;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+footer #contacto #redes_sociales p, footer #contacto #como_llegar p {
+  display: flex;
+  align-items: center;
+  color: white;
+  margin: 0;
+  white-space: nowrap;
+  font-family: "LTMuseum-Light";
+}
+footer #contacto #redes_sociales p img, footer #contacto #como_llegar p img {
+  margin-right: 10px;
+  height: auto;
+}
+footer iframe {
+  display: flex;
+}
+@media (min-width: 360px) and (max-width: 480px) {
+  footer {
+    flex-direction: column;
+    height: 37%;
+    margin: 0;
+  }
+}
+@media (min-width: 360px) and (max-width: 480px) and (min-height: 896px) {
+  footer {
+    height: 32%;
+  }
+}
+@media (min-width: 360px) and (max-width: 480px) {
+  footer iframe {
+    margin-top: 1%;
+    height: 90%;
+    width: 100%;
+    order: 1;
+  }
+  footer #contacto {
+    justify-content: space-between;
+    order: 2;
+    width: 100%;
+  }
+  footer #contacto #redes_sociales, footer #contacto #como_llegar {
+    padding-left: 1%;
+    padding-right: 1%;
+    width: 40%;
+  }
+  footer #contacto #redes_sociales h3, footer #contacto #como_llegar h3 {
+    height: 30%;
+    font-size: 80%;
+  }
+  footer #contacto #redes_sociales p, footer #contacto #como_llegar p {
+    margin-bottom: 10px;
+  }
+  footer #contacto #redes_sociales p img, footer #contacto #como_llegar p img {
+    max-width: 15%;
+  }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  footer {
+    flex-direction: column;
+    align-items: center;
+    height: 40%;
+    margin: 0;
+  }
+  footer iframe {
+    align-items: center;
+    margin-top: 2%;
+    height: 200px;
+    width: 400px;
+    order: 1;
+  }
+  footer #contacto {
+    margin-top: 1%;
+    justify-content: space-between;
+    order: 2;
+    width: 90%;
+  }
+  footer #contacto #redes_sociales, footer #contacto #como_llegar {
+    padding-left: 1%;
+    padding-right: 1%;
+    width: 37%;
+  }
+  footer #contacto #redes_sociales h3, footer #contacto #como_llegar h3 {
+    height: 18%;
+    font-size: 18px;
+  }
+  footer #contacto #redes_sociales p, footer #contacto #como_llegar p {
+    margin-bottom: 10px;
+  }
+  footer #contacto #redes_sociales p img, footer #contacto #como_llegar p img {
+    max-width: 15%;
+  }
+}
+@media (min-width: 769px) and (max-width: 1200px) {
+  footer {
+    justify-content: space-between;
+    height: 20%;
+  }
+  footer #contacto {
+    justify-content: space-evenly;
+    width: 100%;
+  }
+  footer #contacto #redes_sociales, footer #contacto #como_llegar {
+    width: 45%;
+  }
+  footer #contacto #redes_sociales h3, footer #contacto #como_llegar h3 {
+    height: 21%;
+    margin-top: 10%;
+    font-size: 28px;
+  }
+  footer #contacto #redes_sociales p, footer #contacto #como_llegar p {
+    font-size: 25px;
+    margin-bottom: 30px;
+  }
+  footer #contacto #redes_sociales p img, footer #contacto #como_llegar p img {
+    max-width: 40px;
+  }
+  footer iframe {
+    width: 350px;
+    height: 100%;
+  }
+}
+@media (min-width: 1201px) and (max-width: 1920px) {
+  footer {
+    justify-content: space-between;
+    height: 25%;
+  }
+  footer #contacto {
+    justify-content: space-around;
+    width: 100%;
+  }
+  footer #contacto #redes_sociales, footer #contacto #como_llegar {
+    width: 28%;
+    margin-left: 20px;
+  }
+  footer #contacto #redes_sociales h3, footer #contacto #como_llegar h3 {
+    height: 18%;
+    font-size: 26px;
+  }
+}
+@media (min-width: 1201px) and (max-width: 1920px) and (min-height: 1080px) {
+  footer #contacto #redes_sociales h3, footer #contacto #como_llegar h3 {
+    font-size: 35px;
+  }
+}
+@media (min-width: 1201px) and (max-width: 1920px) {
+  footer #contacto #redes_sociales p, footer #contacto #como_llegar p {
+    font-size: 26px;
+    margin-bottom: 10px;
+  }
+}
+@media (min-width: 1201px) and (max-width: 1920px) and (min-height: 1080px) {
+  footer #contacto #redes_sociales p, footer #contacto #como_llegar p {
+    font-size: 35px;
+    margin-bottom: 25px;
+  }
+}
+@media (min-width: 1201px) and (max-width: 1920px) {
+  footer #contacto #redes_sociales p img, footer #contacto #como_llegar p img {
+    max-width: 40px;
+  }
+  footer iframe {
+    width: 350px;
+    height: 100%;
+  }
+}
+@media (min-width: 1921px) and (max-width: 2560px) {
+  footer {
+    justify-content: space-between;
+    height: 25%;
+  }
+  footer #contacto {
+    justify-content: space-around;
+    width: 100%;
+  }
+  footer #contacto #redes_sociales, footer #contacto #como_llegar {
+    width: 25%;
+  }
+  footer #contacto #redes_sociales h3, footer #contacto #como_llegar h3 {
+    height: 18%;
+    font-size: 47px;
+  }
+  footer #contacto #redes_sociales p, footer #contacto #como_llegar p {
+    font-size: 47px;
+    margin-bottom: 25px;
+  }
+  footer #contacto #redes_sociales p img, footer #contacto #como_llegar p img {
+    max-width: 10%;
+  }
+  footer iframe {
+    width: 650px;
+    height: 100%;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */

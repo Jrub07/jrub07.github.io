@@ -1,0 +1,158 @@
+/*Archivo sass para crear funcionalidad mediante mixins, fuentes de letra importada, mapas y una funcion*/
+
+@use 'sass:map';
+
+//Al haber descargado las fuentes de letra de Dafont el servicio no te deja usarlas modo html, por lo que se deben importar de manera local
+@font-face {
+    font-family: 'MilkAndHoney';
+    src: url('/fuente/fuente_letra/MilkAndHoney.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Classica-Bold';
+    src: url('/fuente/fuente_letra/Classica-Bold.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Classica-Book';
+    src: url('/fuente/fuente_letra/Classica-Book.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Fashion';
+    src: url('/fuente/fuente_letra/Fashion.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'LTMuseum-Bold';
+    src: url('/fuente/fuente_letra/LTMuseum-Bold.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'LTMuseum-light';
+    src: url('/fuente/fuente_letra/LTMuseum-Light.woff') format('woff');
+}
+
+
+
+
+//Creacion de un mapa para los colores principal y secundarios
+$colores: (
+    "principal"  : #372715,
+    "secundario_uno" : #684825,
+    "secundario_dos" : #9D774C,
+);
+//Creacion de un mapa para importar con facilidad las letras
+$fuentes: (
+    "MilkAndHoney" : "MilkAndHoney",
+    "Classica-Bold" : "Classica-Bold",
+    "Classica-Book" : "Classica-Book",
+    "Fashion" : "Fashion",
+    "LTMuseum-Bold" : "LTMuseum-Bold",
+    "LTMuseum-Light" : "LTMuseum-Light")
+;
+
+//mapa con las diferentes alturas de los dispositivos a evaluar para usar en mixin posterior
+$alturas: (
+  "1440" : 1440,
+  "1080" : 1080,
+  "864"  : 864,
+  "800"  : 800,
+  "1366" : 1366,
+  "1024" : 1024,
+  "896"  : 896,
+  "760"  : 760
+);
+
+
+/*Este mixin recoge la altura del dispositivo con una interpolacion para ser aplicado en un futuro
+mixin de punto de ruputra*/
+@mixin altura($altura) {
+    @media (min-height: #{map.get($alturas, $altura)}px) {
+        @content;
+    }
+}
+
+
+
+/*Mixin que ahorra todas la lineas de codigo de flexbox, en general es mas util cuando se aplica a 
+lugares en los que se deben escribir de 4 a 5 lineas, para aquellos elementos que solo necesiten 2 lineas
+no es tan útil ya que puede alterar el diseño*/
+
+@mixin flexible( $dis , $direction , $corte , $just , $align ){ 
+    display         : $dis;
+    flex-flow       : $direction $corte;
+    justify-content : $just;
+    align-items     : $align;
+}
+
+/*Mixins para diferentes puntos de ruptura, que se aplican desde el ancho de corrección hasta el máximo siguiente
++1 pixel para cambiar el estandar de un dispositivo a otro*/
+
+
+@mixin movil(){
+    @media (min-width: 360px) and (max-width: 480px)  {
+        @content;    
+    }
+}
+
+@mixin tableta(){
+    @media (min-width: 481px) and (max-width: 768px) {
+        @content;    
+    }
+}
+
+@mixin pantalla_pequeña(){
+    @media (min-width: 769px) and (max-width: 1200px) {
+        @content;    
+    }
+}
+
+@mixin pantalla_estandar(){
+    @media (min-width: 1201px) and (max-width: 1920px) {
+        @content;    
+    }
+}
+
+@mixin pantalla_grande(){
+    @media (min-width: 1921px) and (max-width: 2560px) {
+        @content;    
+    }
+}
+
+/*Un mixin que engloba todos, aunque no es del todo últi porque con los propios selectores 
+se puede aplicar contenido general
+*/
+@mixin responsivo_todos(){
+    @include movil{
+        @content;
+    }
+    @include tableta{
+        @content;
+    }
+    @include pantalla_pequeña{
+        @content;
+    }
+    @include pantalla_estandar{
+        @content;
+    }
+    @include pantalla_grande{
+        @content;
+    }
+}
+
+/*Funcion que comprueba si un elemento/selector tiene una fuente desesada, si no la tiene se la cambia
+y si la tiene no hace mas cambios, aquí se coloca un operador logico ==*/
+@function comprobar_y_cambiar_fuente($selector, $fuente_deseada) {
+    @if map.get($fuentes, $fuente_deseada) == $selector {
+        @return $selector;
+    } @else {
+        @return map.get($fuentes, $fuente_deseada);
+    }
+}
+
+/*la funcion como tal no se puede aplicar sola, se necesita de un mixin de apoyo, por lo que se añade el paso final
+para aplicar el contenido css en font-family*/
+@mixin aplicar_fuente($selector, $fuente_deseada) {
+    font-family: comprobar_y_cambiar_fuente($selector, $fuente_deseada);
+}

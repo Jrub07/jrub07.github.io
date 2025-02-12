@@ -1,0 +1,129 @@
+@use 'mixins_funciones_mapa' as *;
+@use 'sass:map';
+
+/*Creacion del html y el body en conjunto para que se comparta en todos los archivos, se quitan los margenes
+para que se incluya todo el contenido*/
+html, body{
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    //Overflow-x para que no haya errores con el movil
+    overflow-x: hidden;    
+}
+
+//Creacion del header
+header {
+    width: 100%;
+    overflow: hidden;
+    background-color: map.get($colores, "principal"); 
+    @include flexible(flex, row, nowrap, space-around, center);
+    //Un ejemplo de uso de la funcion, aunque no es necesario ya que se aplica un estandar general
+    @include responsivo_todos();
+    
+    @include altura("896"){
+        height: 10%;
+    }
+    @include altura("760"){
+      height: 17%;
+    }    
+}
+
+header button {   
+    border-radius: 10%;
+    background-color: white;
+    color: black;
+    font-family: averia-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 0 10px;
+
+    //Para movil se necesitan 2 alturas distintas, por lo que se añaden 2 alturas con sus cambios respectivos
+    @include movil() {
+        width: 40%;
+        @include altura("896") {
+            height: 50%;
+            font-size: 16px;
+        }
+        @include altura("760") {
+            height: 40%;
+        }
+    }
+
+    @include tableta() {
+        height: 50%;
+        @include altura("1024") {
+            height: 40%;
+            font-size: 18px;
+        }
+    }
+
+    @include pantalla_pequeña() {
+        height: 50px;
+        @include altura("1366") {
+            height: 40%;
+            font-size: 22px;
+        }
+    }
+
+    //Lo mismo para pantallas estandar, se requieren 3 alturas que son necesarias de cambiar
+    @include pantalla_estandar() {
+
+        @include altura("800") {
+            height: 50%;
+            font-size: 20px;
+        }
+        @include altura("864") {
+            height: 50%;
+            font-size: 22px;
+        }
+        @include altura("1080") {
+            height: 50%;
+            font-size: 25px;
+        }
+    }
+
+    @include pantalla_grande() {
+        
+        @include altura("1440") {
+            height: 50%;
+            font-size: 35px;
+        }
+    }
+}
+
+//Boton para el CTA con la función correspondiente
+#pedir_cita {
+    @include aplicar_fuente('button', 'MilkAndHoney');
+}
+
+//Colocación del logo con diferentes alturas para cada dispositivo
+header img {    
+    object-fit: cover;
+    
+
+    @include movil() {
+        max-width: 20%;
+    }
+
+    @include tableta() {
+        max-height: 90%;
+        max-width: 20%;
+    }
+
+    @include pantalla_pequeña() {
+        max-width: 90%;
+        max-height: 90%;
+    }
+
+    @include pantalla_estandar() {
+      max-width:90%;
+      max-height: 90%;
+    }
+
+    @include pantalla_grande() {
+      max-width: 90%;
+      max-height: 90%;
+    }
+}

@@ -1,0 +1,268 @@
+/*Archivo para mostrar los valores de la empresa*/
+@use '../global/mixins_funciones_mapa.scss' as *;
+@use 'sass:map';
+
+/*Contenedor en el que se aplica la imagen, en este caso jpeg para
+que sea soportada por todos los navegadores, al que se le quita luminosidad para que destaque
+la letra, y que es compartida por todos los dispositivos*/
+#presentacion {
+  @include flexible(flex, column, nowrap, flex-start, center);
+  background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url("../imagenes/hero_img_3792x2524.jpeg");
+  background-size: cover;
+  background-position: center;
+  padding-top: 5%;
+  color: white;
+
+  @include movil() {
+    height: 80%;
+  }
+
+  @include tableta() {
+    height: 50%;
+  }
+  //De aquí en adelante se deja flex porque sino no se aplica
+  @include pantalla_pequeña() {
+    @include flexible(flex, column, nowrap, flex-start, flex-end);
+    height: 50%;
+    padding-right: 8%;
+  }
+
+  @include pantalla_estandar() {
+    @include flexible(flex, column, nowrap, flex-start, flex-end);
+    height: 80%;
+    padding-right: 8%;
+  }
+
+  @include pantalla_grande() {
+    @include flexible(flex, column, nowrap, flex-start, flex-end);
+    height: 80%;
+    padding-right: 8%;
+  }
+}
+
+#presentacion h3:first-of-type {
+  text-align: center;
+  background-color: map.get($colores, "secundario_uno");
+  color: white;
+  @include aplicar_fuente('h3', 'Fashion');
+
+  @include movil() {
+    height: 7%;
+    font-size: 1em;
+    width: 90%;
+    @include flexible(flex, row, nowrap, center, center);
+  }
+
+  @include tableta() {
+    width: 90%;
+  }
+
+  @include pantalla_pequeña() {
+    width: 80%;
+    height: 7%;
+    display: flex;
+    font-size: 25px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @include pantalla_estandar() {
+    width: 50%;
+    height: 10%;
+    display: flex;
+    font-size: 25px;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @include pantalla_grande() {
+    width: 50%;
+    height: 12%;
+    display: flex;
+    font-size: 35px;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    @include altura("1440") {
+      font-size: 50px;
+    }
+  }
+}
+
+/*Se repite el flexible para comprobar que se puede ajustar
+aun repitiendo, aunque se puede poner simplemente el valor 
+como se ha hecho en otros*/
+.valores {
+  @include flexible(flex, column, nowrap, center, center);
+
+  @include movil() {
+    height: 90%;
+    width: 90%;
+  }
+
+  @include tableta() {
+    @include flexible(flex, row, wrap, center, center);
+    height: 90%;
+    width: 90%;
+  }
+
+  @include pantalla_pequeña() {
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 5%;
+    height: 60%;
+    width: 70%;
+    margin-top: 0.5%;
+    margin-right: 3%;
+  }
+
+  @include pantalla_estandar() {
+    @include flexible(flex, row, wrap, flex-start, center);
+    height: 70%;
+    width: 40%;
+    margin-top: 0.5%;
+    @include altura("864") {
+      margin-right: 3%;
+    }
+  }
+
+  @include pantalla_grande() {
+    @include flexible(flex, row, wrap, center, flex-start);
+    padding-top: 5%;
+    margin-right: 5%;
+    height: 70%;
+    width: 40%;
+    margin-top: 0.5%;
+    @include altura("1440") {}
+  }
+}
+
+.valores article {
+  box-sizing: border-box;
+  text-align: center;
+  overflow: hidden;
+  background-color: map.get($colores, "secundario_uno");
+  color: white;
+  @include aplicar_fuente('article', 'Classica-Bold');
+
+  @include movil() {
+    margin-top: 2%;
+    padding-top: 2%;
+    height: 40%;
+    width: 100%;
+    font-size: 20px;
+    margin-bottom: 10px;
+    h4 {
+      margin: 0;
+      @include aplicar_fuente('h4', 'Classica-Bold');
+      margin: 2% auto;
+      font-size: 19px;
+    }
+  }
+
+  @include tableta() {
+    margin-right: 2%;
+    margin-top: 2%;
+    padding-top: 2%;
+    font-size: 20px;
+    height: 30%;
+    width: 45%;
+    h4 {
+      @include aplicar_fuente('h4', 'Classica-Bold');
+      margin: 2% auto;
+      font-size: 19px;
+    }
+  }
+
+  @include pantalla_pequeña() {
+    height: 47%;
+    width: 45%;
+    margin-right: 2%;
+    h4 {
+      @include aplicar_fuente('h4', 'Classica-Bold');
+      margin: 2% auto;
+      font-size: 30px;
+    }
+  }
+
+  @include pantalla_estandar() {
+    height: 30%;
+    width: 40%;
+    margin-right: 2%;
+    @include altura("864") {
+      height: 35%;
+      width: 47%;
+    }
+    h4 {
+      @include aplicar_fuente('h4', 'Classica-Bold');
+      margin: 2% auto;
+      font-size: 19px;
+      @include altura("864") {
+        font-size: 25px;
+        margin-bottom: 0;
+      }
+      @include altura("1080") {
+        font-size: 30px;
+      }
+    }
+  }
+
+  @include pantalla_grande() {
+    height: 30%;
+    width: 40%;
+    margin-right: 2%;
+    @include altura("1440") {
+      height: 35%;
+      width: 47%;
+    }
+    h4 {
+      @include aplicar_fuente('h4', 'Classica-Bold');
+      margin: 2% auto;
+      font-size: 19px;
+      @include altura("1440") {
+        font-size: 45px;
+      }
+    }
+  }
+}
+
+.valores article p {
+  @include aplicar_fuente('p', 'LTMuseum-Light');
+
+  @include movil() {
+    @include flexible(flex, row, nowrap, center, center);
+    margin-top: 1%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @include tableta() {
+    margin: 0;
+  }
+
+  @include pantalla_pequeña() {
+    margin: 0;
+    font-size: 25px;
+  }
+
+  @include pantalla_estandar() {
+    margin: 0;
+    padding-top: 2%;
+    font-size: 16px;
+    @include altura("864") {
+      font-size: 22px;
+    }
+    @include altura("1080") {
+      font-size: 25px;
+    }
+  }
+
+  @include pantalla_grande() {
+    margin: 0;
+    padding-top: 5%;
+    font-size: 33px;
+  }
+}

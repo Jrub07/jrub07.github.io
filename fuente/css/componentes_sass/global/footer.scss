@@ -1,0 +1,263 @@
+/*Clase general para aplicar los contenidos al pie de página, está en el directorio global
+ya que es posible que para la página entera se haga algun cambio
+
+En esta clase se usan los elementos como anidación, en otras clase se hará al revés, para ver que se puede 
+hacer de un lado a otro*/
+
+//Importancion de los mixins y funciones necesarios y la funcionalidad del mapa
+@use 'mixins_funciones_mapa' as *;
+@use 'sass:map';
+
+//Creacion del footer en el que se recoge el uso del mapa
+footer {
+  display: flex;
+  //Para que los elementos no se salgan del contenedor ya que tiene en cuenta el margen y el padding
+  box-sizing: border-box;
+  background-color: map.get($colores, "principal");
+  overflow: hidden;
+
+  #contacto {
+    display: flex;
+    overflow: hidden;
+
+    #redes_sociales, #como_llegar {
+      /*Apliación del mixin de flexible, tiene 4 argumentos y se aplica nowrap por defecto*/
+      @include flexible(flex, column, nowrap, flex-start, flex-start);
+
+      h3 {
+        background-color: white;
+        width: 100%;
+        margin-top: 0;
+        padding-top: 0;
+        font-family: averia-serif;
+        text-align: center;
+        @include flexible(flex, row, nowrap, center, center);        
+        
+       
+      }
+
+      p {
+        //En este caso, aunque sea flex no es necesario aplicar el mixin porque solo se requiere de 2 lineas
+        display: flex;
+        align-items: center;
+        color: white;
+        margin: 0;
+        white-space: nowrap;
+        //Ejemplo de aplicacion del mixin de la fuente
+        @include aplicar_fuente('p', 'LTMuseum-Light');
+
+        img {
+          margin-right: 10px;
+          height: auto;
+        }
+      }
+    }
+  }
+  //Se requiere de un flex para que el iframe recoga la altura total del contenedor
+  iframe {
+    display: flex;
+  }
+
+  //Código personalizado para moviles
+  @include movil {
+    flex-direction: column;
+    height: 37%;
+    margin: 0;
+
+    //Aplicacion del mixin especifico de altura, ya que la altura puede "comerse" el contenido
+    @include altura("896") {
+      height: 32%;
+    }
+
+    //Al pasar de una linea a una columna, se requiere de un margen para que no se quede pegado
+    //Se usa order para decidir quien va arriba y quien abajo
+    iframe {
+      margin-top: 1%;
+      height: 90%;
+      width: 100%;
+      order: 1;
+    }
+
+    //Contenedor de los elementos de contacto y direccion del cómo llegar al local
+    #contacto {
+      justify-content: space-between;
+      order: 2;
+      width: 100%;
+
+      //Se usa para dar el mismo valor a ambas cajas y que una no sea mas grande que la otra,facilitando su colocacion
+      #redes_sociales, #como_llegar {
+        padding-left: 1%;
+        padding-right: 1%;
+        width: 40%;
+
+        h3 {
+          height: 30%;
+          font-size: 80%;
+        }
+
+        p {
+          margin-bottom: 10px;
+
+          img {
+            max-width: 15%;
+          }
+        }
+      }
+    }
+  }
+
+  //Edicion para tabletas, sigue una lógica parecida a la anterior, pero con mas espacio en el contenedor
+  @include tableta {
+    flex-direction: column;
+    align-items: center;
+    height: 40%;
+    margin: 0;
+
+    iframe {
+      align-items: center;
+      margin-top: 2%;
+      height: 200px;
+      width: 400px;
+      order: 1;
+    }
+
+    #contacto {
+      margin-top: 1%;
+      justify-content: space-between;
+      order: 2;
+      width: 90%;
+
+      #redes_sociales, #como_llegar {
+        padding-left: 1%;
+        padding-right: 1%;
+        width: 37%;
+
+        h3 {
+          height: 18%;
+          font-size: 18px;
+        }
+
+        p {
+          margin-bottom: 10px;
+
+          img {
+            max-width: 15%;
+          }
+        }
+      }
+    }
+  }
+
+  //Para pantallas pequeñas
+  @include pantalla_pequeña {
+    justify-content: space-between;
+    height: 20%;
+
+    #contacto {
+      justify-content: space-evenly;
+      width: 100%;
+
+      #redes_sociales, #como_llegar {
+        width: 45%;
+
+        h3 {
+          height: 21%;
+          margin-top: 10%;
+          font-size: 28px;
+        }
+
+        p {
+          font-size: 25px;
+          margin-bottom: 30px;
+
+          img {
+            max-width: 40px;
+          }
+        }
+      }
+    }
+
+    iframe {
+      width: 350px;
+      height: 100%;
+    }
+  }
+
+  //Para pantallas estándar, y grandes, la lógica es identica pero cambiando un poco los valores, pricipalmente en el tamaño de la fuente
+  @include pantalla_estandar {
+    justify-content: space-between;
+    height: 25%;
+
+    #contacto {
+      justify-content: space-around;
+      width: 100%;
+
+      #redes_sociales, #como_llegar {
+        width: 28%;
+        margin-left: 20px;
+
+        h3 {
+          height: 18%;
+          font-size: 26px;
+
+          @include altura("1080") {
+            font-size: 35px;
+          }
+        }
+
+        p {
+          font-size: 26px;
+          margin-bottom: 10px;
+
+          @include altura("1080") {
+            font-size: 35px;
+            margin-bottom: 25px;
+          }
+
+          img {
+            max-width: 40px;
+          }
+        }
+      }
+    }
+
+    iframe {
+      width: 350px;
+      height: 100%;
+    }
+  }
+
+  //Para pantallas grandes
+  @include pantalla_grande {
+    justify-content: space-between;
+    height: 25%;
+
+    #contacto {
+      justify-content: space-around;
+      width: 100%;
+
+      #redes_sociales, #como_llegar {
+        width: 25%;
+
+        h3 {
+          height: 18%;
+          font-size: 47px;
+        }
+
+        p {
+          font-size: 47px;
+          margin-bottom: 25px;
+
+          img {
+            max-width: 10%;
+          }
+        }
+      }
+    }
+
+    iframe {
+      width: 650px;
+      height: 100%;
+    }
+  }
+}

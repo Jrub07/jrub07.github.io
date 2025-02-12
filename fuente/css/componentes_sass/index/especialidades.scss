@@ -1,0 +1,120 @@
+/*Archivo que sirve para mostrar la cartera de trastornos y población que se trata, lo que destaca es el uso
+de flex-wrap con margen para controlar el espacio para cada resolucion*/
+@use '../global/mixins_funciones_mapa.scss' as *;
+@use 'sass:map';
+
+/*Estilos compartido en su mayoria, solo es necesario editar futuramente los margenes para seprar más o menos
+en función de las necesidades del dispostivo*/
+#especialidades {
+    box-sizing: border-box;
+    @include flexible(flex, column, nowrap, center, center);
+    height: 100%;
+    background-color: map.get($colores, "secundario_uno");
+    overflow: hidden;
+
+    h3 {
+        padding-top: 0;
+        background-color: white;
+        align-self: center;
+        text-align: center;
+        @include aplicar_fuente('h3', 'Classica-Bold');
+    }
+
+    article {
+        margin-left: 0.8%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        flex-wrap: wrap;
+        height: 100%;
+        width: 100%;
+        padding: 0;
+        align-content: center;
+
+        p {
+            text-align: center;
+            text-transform: uppercase;
+            background-color: white;
+            height: 10%;
+            width: 45%;
+            margin: 2%;
+            padding: 0;
+            @include flexible(flex, center, center, center, center);
+            @include aplicar_fuente('p', 'Classica-Light');
+        }
+    }
+
+    // Resoluciones de móvil
+    @include movil() {
+        h3 {
+            margin-top: 10%;
+        }
+    }
+
+    // Resoluciones de tableta
+    @include tableta() {
+        h3 {
+            font-size: 20px;
+            width: 90%;
+            margin-top: 2%;
+        }
+
+        article p {
+            font-size: 20px;
+            margin: 1%;
+        }
+    }
+
+    // Resoluciones de pantalla pequeña
+    @include pantalla_pequeña() {
+        h3 {
+            font-size: 30px;
+            width: 90%;
+            margin-top: 2%;
+        }
+
+        article p {
+            font-size: 30px;
+            margin: 1%;
+        }
+    }
+
+    // Resoluciones de pantalla estándar (1280x800)
+    @include pantalla_estandar() {
+        h3 {
+            font-size: 28px;
+            width: 70%;
+            margin-top: 1%;
+        }
+
+        article {
+            height: 80%;
+            width: 90%;
+        }
+
+        article p {
+            width: 20%;
+            margin: 3.5%;
+            font-size: 25px;
+        }
+    }
+
+    // Resoluciones de pantalla grande
+    @include pantalla_grande() {
+        h3 {
+            font-size: 40px;
+        }
+
+        article {
+            height: 80%;
+            width: 80%;
+        }
+
+        article p {
+            width: 25%;
+            margin: 3%;
+            font-size: 40px;
+        }
+    }
+}

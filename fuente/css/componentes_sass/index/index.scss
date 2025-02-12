@@ -1,0 +1,7 @@
+//Archivo indice en el que se hacen los import generales de los estilos de la página
+@use '../global/mixins_funciones_mapa.scss';
+@use '../global/htlm_nav.scss';
+@use './hero';
+@use './modalidades';
+@use './especialidades';
+@use '../global/footer.scss';
