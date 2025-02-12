@@ -32,6 +32,8 @@ footer {
         font-family: averia-serif;
         text-align: center;
         @include flexible(flex, row, nowrap, center, center);        
+        
+       
       }
 
       p {
@@ -59,39 +61,45 @@ footer {
   //Código personalizado para moviles
   @include movil {
     flex-direction: column;
-    min-height: 37vh; // Asegura que el footer tenga una altura mínima proporcional a la altura de la pantalla
+    height: 37%;
     margin: 0;
-    padding: 10px;
 
+    //Aplicacion del mixin especifico de altura, ya que la altura puede "comerse" el contenido
+    @include altura("896") {
+      height: 32%;
+    }
+
+    //Al pasar de una linea a una columna, se requiere de un margen para que no se quede pegado
+    //Se usa order para decidir quien va arriba y quien abajo
     iframe {
       margin-top: 1%;
+      height: 90%;
       width: 100%;
-      height: auto;  // Mantiene la proporción sin forzar la altura
       order: 1;
     }
 
+    //Contenedor de los elementos de contacto y direccion del cómo llegar al local
     #contacto {
       justify-content: space-between;
       order: 2;
       width: 100%;
-      display: flex;
-      flex-direction: column; // Los elementos se apilan de forma vertical
 
+      //Se usa para dar el mismo valor a ambas cajas y que una no sea mas grande que la otra,facilitando su colocacion
       #redes_sociales, #como_llegar {
-        padding-left: 5%;
-        padding-right: 5%;
-        width: 100%;  // Asegura que ambos ocupen todo el ancho disponible
+        padding-left: 1%;
+        padding-right: 1%;
+        width: 40%;
 
         h3 {
-          font-size: clamp(14px, 3vw, 20px); // Ajusta el tamaño del texto de forma dinámica
+          height: 30%;
+          font-size: 80%;
         }
 
         p {
-          font-size: clamp(12px, 2.5vw, 18px);
           margin-bottom: 10px;
 
           img {
-            margin-right: 8px;
+            max-width: 15%;
           }
         }
       }
