@@ -21,7 +21,7 @@ footer {
     overflow: hidden;
 
     #redes_sociales, #como_llegar {
-      /*Apliación del mixin de flexible, tiene 4 argumentos y se aplica nowrap por defecto*/
+      /*Aplicación del mixin de flexible, tiene 4 argumentos y se aplica nowrap por defecto*/
       @include flexible(flex, column, nowrap, flex-start, flex-start);
 
       h3 {
@@ -35,13 +35,13 @@ footer {
       }
 
       p {
-        //En este caso, aunque sea flex no es necesario aplicar el mixin porque solo se requiere de 2 lineas
+        //En este caso, aunque sea flex no es necesario aplicar el mixin porque solo se requiere de 2 líneas
         display: flex;
         align-items: center;
         color: white;
         margin: 0;
         white-space: nowrap;
-        //Ejemplo de aplicacion del mixin de la fuente
+        //Ejemplo de aplicación del mixin de la fuente
         @include aplicar_fuente('p', 'LTMuseum-Light');
 
         img {
@@ -51,24 +51,24 @@ footer {
       }
     }
   }
-  //Se requiere de un flex para que el iframe recoga la altura total del contenedor
+  //Se requiere de un flex para que el iframe recoja la altura total del contenedor
   iframe {
     display: flex;
   }
 
-  //Código personalizado para moviles
+  //Código personalizado para móviles
   @include movil {
     flex-direction: column;
-    height: 37%;
+    min-height: 37%; // Se usa min-height en lugar de height
     margin: 0;
 
-    //Aplicacion del mixin especifico de altura, ya que la altura puede "comerse" el contenido
+    //Aplicación del mixin específico de altura, ya que la altura puede "comerse" el contenido
     @include altura("896") {
-      height: 32%;
+      min-height: 32%;
     }
 
-    //Al pasar de una linea a una columna, se requiere de un margen para que no se quede pegado
-    //Se usa order para decidir quien va arriba y quien abajo
+    //Al pasar de una línea a una columna, se requiere de un margen para que no se quede pegado.
+    //Se usa order para decidir quién va arriba y quién abajo.
     iframe {
       margin-top: 1%;
       height: 90%;
@@ -76,13 +76,13 @@ footer {
       order: 1;
     }
 
-    //Contenedor de los elementos de contacto y direccion del cómo llegar al local
+    //Contenedor de los elementos de contacto y dirección del cómo llegar al local
     #contacto {
       justify-content: space-between;
       order: 2;
       width: 100%;
 
-      //Se usa para dar el mismo valor a ambas cajas y que una no sea mas grande que la otra,facilitando su colocacion
+      //Se usa para dar el mismo valor a ambas cajas y que una no sea más grande que la otra, facilitando su colocación
       #redes_sociales, #como_llegar {
         padding-left: 1%;
         padding-right: 1%;
@@ -104,7 +104,7 @@ footer {
     }
   }
 
-  //Edicion para tabletas, sigue una lógica parecida a la anterior, pero con mas espacio en el contenedor
+  //Edición para tabletas, sigue una lógica parecida a la anterior, pero con más espacio en el contenedor
   @include tableta {
     flex-direction: column;
     align-items: center;
@@ -181,7 +181,7 @@ footer {
     }
   }
 
-  //Para pantallas estándar, y grandes, la lógica es identica pero cambiando un poco los valores, pricipalmente en el tamaño de la fuente
+  //Para pantallas estándar, y grandes, la lógica es idéntica pero cambiando un poco los valores, principalmente en el tamaño de la fuente
   @include pantalla_estandar {
     justify-content: space-between;
     height: 25%;

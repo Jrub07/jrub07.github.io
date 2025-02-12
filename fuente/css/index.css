@@ -816,18 +816,23 @@ en función de las necesidades del dispostivo*/
   }
 }
 
+/*Clase general para aplicar los contenidos al pie de página, está en el directorio global
+ya que es posible que para la página entera se haga algun cambio
+
+En esta clase se usan los elementos como anidación, en otras clase se hará al revés, para ver que se puede 
+hacer de un lado a otro*/
 footer {
   display: flex;
   box-sizing: border-box;
   background-color: #372715;
   overflow: hidden;
-  min-height: 25%;
 }
 footer #contacto {
   display: flex;
   overflow: hidden;
 }
 footer #contacto #redes_sociales, footer #contacto #como_llegar {
+  /*Aplicación del mixin de flexible, tiene 4 argumentos y se aplica nowrap por defecto*/
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-start;
@@ -844,8 +849,6 @@ footer #contacto #redes_sociales h3, footer #contacto #como_llegar h3 {
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
-  min-height: auto;
-  font-size: 1rem;
 }
 footer #contacto #redes_sociales p, footer #contacto #como_llegar p {
   display: flex;
@@ -858,28 +861,63 @@ footer #contacto #redes_sociales p, footer #contacto #como_llegar p {
 footer #contacto #redes_sociales p img, footer #contacto #como_llegar p img {
   margin-right: 10px;
   height: auto;
-  max-width: 100%;
 }
 footer iframe {
   display: flex;
-  width: 100%;
-  max-width: 650px;
-  height: auto;
+}
+@media (min-width: 360px) and (max-width: 480px) {
+  footer {
+    flex-direction: column;
+    min-height: 37%;
+    margin: 0;
+  }
+}
+@media (min-width: 360px) and (max-width: 480px) and (min-height: 896px) {
+  footer {
+    min-height: 32%;
+  }
+}
+@media (min-width: 360px) and (max-width: 480px) {
+  footer iframe {
+    margin-top: 1%;
+    height: 90%;
+    width: 100%;
+    order: 1;
+  }
+  footer #contacto {
+    justify-content: space-between;
+    order: 2;
+    width: 100%;
+  }
+  footer #contacto #redes_sociales, footer #contacto #como_llegar {
+    padding-left: 1%;
+    padding-right: 1%;
+    width: 40%;
+  }
+  footer #contacto #redes_sociales h3, footer #contacto #como_llegar h3 {
+    height: 30%;
+    font-size: 80%;
+  }
+  footer #contacto #redes_sociales p, footer #contacto #como_llegar p {
+    margin-bottom: 10px;
+  }
+  footer #contacto #redes_sociales p img, footer #contacto #como_llegar p img {
+    max-width: 15%;
+  }
 }
 @media (min-width: 481px) and (max-width: 768px) {
   footer {
     flex-direction: column;
     align-items: center;
-    min-height: 40%;
+    height: 40%;
     margin: 0;
   }
   footer iframe {
     align-items: center;
     margin-top: 2%;
-    width: 100%;
-    max-width: 400px;
+    height: 200px;
+    width: 400px;
     order: 1;
-    max-height: 250px;
   }
   footer #contacto {
     margin-top: 1%;
@@ -888,24 +926,25 @@ footer iframe {
     width: 90%;
   }
   footer #contacto #redes_sociales, footer #contacto #como_llegar {
-    padding: 0 1%;
-    width: 45%;
+    padding-left: 1%;
+    padding-right: 1%;
+    width: 37%;
   }
   footer #contacto #redes_sociales h3, footer #contacto #como_llegar h3 {
-    font-size: 1.1rem;
-    min-height: auto;
+    height: 18%;
+    font-size: 18px;
   }
   footer #contacto #redes_sociales p, footer #contacto #como_llegar p {
-    margin-bottom: 0.5rem;
+    margin-bottom: 10px;
   }
   footer #contacto #redes_sociales p img, footer #contacto #como_llegar p img {
-    max-width: 20%;
+    max-width: 15%;
   }
 }
 @media (min-width: 769px) and (max-width: 1200px) {
   footer {
     justify-content: space-between;
-    min-height: 22%;
+    height: 20%;
   }
   footer #contacto {
     justify-content: space-evenly;
@@ -915,56 +954,55 @@ footer iframe {
     width: 45%;
   }
   footer #contacto #redes_sociales h3, footer #contacto #como_llegar h3 {
+    height: 21%;
     margin-top: 10%;
-    font-size: 1.4rem;
-    min-height: auto;
+    font-size: 28px;
   }
   footer #contacto #redes_sociales p, footer #contacto #como_llegar p {
-    font-size: 1.3rem;
-    margin-bottom: 1.5rem;
+    font-size: 25px;
+    margin-bottom: 30px;
   }
   footer #contacto #redes_sociales p img, footer #contacto #como_llegar p img {
     max-width: 40px;
   }
   footer iframe {
-    width: 90%;
-    max-width: 350px;
-    max-height: 100%;
+    width: 350px;
+    height: 100%;
   }
 }
 @media (min-width: 1201px) and (max-width: 1920px) {
   footer {
     justify-content: space-between;
-    min-height: 25%;
+    height: 25%;
   }
   footer #contacto {
     justify-content: space-around;
     width: 100%;
   }
   footer #contacto #redes_sociales, footer #contacto #como_llegar {
-    width: 30%;
+    width: 28%;
     margin-left: 20px;
   }
   footer #contacto #redes_sociales h3, footer #contacto #como_llegar h3 {
-    font-size: 1.8rem;
-    min-height: auto;
+    height: 18%;
+    font-size: 26px;
   }
 }
 @media (min-width: 1201px) and (max-width: 1920px) and (min-height: 1080px) {
   footer #contacto #redes_sociales h3, footer #contacto #como_llegar h3 {
-    font-size: 2.2rem;
+    font-size: 35px;
   }
 }
 @media (min-width: 1201px) and (max-width: 1920px) {
   footer #contacto #redes_sociales p, footer #contacto #como_llegar p {
-    font-size: 1.8rem;
-    margin-bottom: 0.8rem;
+    font-size: 26px;
+    margin-bottom: 10px;
   }
 }
 @media (min-width: 1201px) and (max-width: 1920px) and (min-height: 1080px) {
   footer #contacto #redes_sociales p, footer #contacto #como_llegar p {
-    font-size: 2.2rem;
-    margin-bottom: 1.5rem;
+    font-size: 35px;
+    margin-bottom: 25px;
   }
 }
 @media (min-width: 1201px) and (max-width: 1920px) {
@@ -972,15 +1010,14 @@ footer iframe {
     max-width: 40px;
   }
   footer iframe {
-    width: 90%;
-    max-width: 350px;
-    max-height: 100%;
+    width: 350px;
+    height: 100%;
   }
 }
 @media (min-width: 1921px) and (max-width: 2560px) {
   footer {
     justify-content: space-between;
-    min-height: 25%;
+    height: 25%;
   }
   footer #contacto {
     justify-content: space-around;
@@ -990,20 +1027,19 @@ footer iframe {
     width: 25%;
   }
   footer #contacto #redes_sociales h3, footer #contacto #como_llegar h3 {
-    font-size: 2.5rem;
-    min-height: auto;
+    height: 18%;
+    font-size: 47px;
   }
   footer #contacto #redes_sociales p, footer #contacto #como_llegar p {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
+    font-size: 47px;
+    margin-bottom: 25px;
   }
   footer #contacto #redes_sociales p img, footer #contacto #como_llegar p img {
     max-width: 10%;
   }
   footer iframe {
-    width: 100%;
-    max-width: 650px;
-    max-height: 100%;
+    width: 650px;
+    height: 100%;
   }
 }
 
