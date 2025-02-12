@@ -1,18 +1,27 @@
+/*Clase general para aplicar los contenidos al pie de página, está en el directorio global
+ya que es posible que para la página entera se haga algun cambio
+
+En esta clase se usan los elementos como anidación, en otras clase se hará al revés, para ver que se puede 
+hacer de un lado a otro*/
+
+//Importancion de los mixins y funciones necesarios y la funcionalidad del mapa
 @use 'mixins_funciones_mapa' as *;
 @use 'sass:map';
 
+//Creacion del footer en el que se recoge el uso del mapa
 footer {
   display: flex;
+  //Para que los elementos no se salgan del contenedor ya que tiene en cuenta el margen y el padding
   box-sizing: border-box;
   background-color: map.get($colores, "principal");
   overflow: hidden;
-  min-height: 25%; // Usamos min-height en lugar de height para permitir expansión
 
   #contacto {
     display: flex;
     overflow: hidden;
 
     #redes_sociales, #como_llegar {
+      /*Aplicación del mixin de flexible, tiene 4 argumentos y se aplica nowrap por defecto*/
       @include flexible(flex, column, nowrap, flex-start, flex-start);
 
       h3 {
@@ -22,66 +31,66 @@ footer {
         padding-top: 0;
         font-family: averia-serif;
         text-align: center;
-        @include flexible(flex, row, nowrap, center, center);
-        // Eliminamos altura fija y usamos font-size relativo
-        min-height: auto;
-        font-size: 1rem;
+        @include flexible(flex, row, nowrap, center, center);        
       }
 
       p {
+        //En este caso, aunque sea flex no es necesario aplicar el mixin porque solo se requiere de 2 líneas
         display: flex;
         align-items: center;
         color: white;
         margin: 0;
         white-space: nowrap;
+        //Ejemplo de aplicación del mixin de la fuente
         @include aplicar_fuente('p', 'LTMuseum-Light');
 
         img {
           margin-right: 10px;
           height: auto;
-          max-width: 100%;
         }
       }
     }
   }
-
+  //Se requiere de un flex para que el iframe recoja la altura total del contenedor
   iframe {
     display: flex;
-    width: 100%;
-    max-width: 650px;
-    height: auto;
   }
 
-  // Móviles
+  //Código personalizado para móviles
   @include movil {
     flex-direction: column;
-    min-height: 37%;
+    min-height: 37%; // Se usa min-height en lugar de height
     margin: 0;
 
+    //Aplicación del mixin específico de altura, ya que la altura puede "comerse" el contenido
     @include altura("896") {
       min-height: 32%;
     }
 
+    //Al pasar de una línea a una columna, se requiere de un margen para que no se quede pegado.
+    //Se usa order para decidir quién va arriba y quién abajo.
     iframe {
       margin-top: 1%;
+      height: 90%;
       width: 100%;
       order: 1;
-      max-height: 300px; // Altura máxima para evitar que se sobrepase
     }
 
+    //Contenedor de los elementos de contacto y dirección del cómo llegar al local
     #contacto {
       justify-content: space-between;
       order: 2;
       width: 100%;
 
+      //Se usa para dar el mismo valor a ambas cajas y que una no sea más grande que la otra, facilitando su colocación
       #redes_sociales, #como_llegar {
         padding-left: 1%;
         padding-right: 1%;
         width: 40%;
 
         h3 {
+          height: 30%;
           font-size: 80%;
-          min-height: auto;
         }
 
         p {
@@ -95,19 +104,19 @@ footer {
     }
   }
 
-  // Tabletas
+  //Edición para tabletas, sigue una lógica parecida a la anterior, pero con más espacio en el contenedor
   @include tableta {
     flex-direction: column;
     align-items: center;
-    min-height: 40%;
+    height: 40%;
     margin: 0;
 
     iframe {
       align-items: center;
       margin-top: 2%;
+      height: 200px;
       width: 400px;
       order: 1;
-      max-height: 200px;
     }
 
     #contacto {
@@ -122,8 +131,8 @@ footer {
         width: 37%;
 
         h3 {
+          height: 18%;
           font-size: 18px;
-          min-height: auto;
         }
 
         p {
@@ -137,10 +146,10 @@ footer {
     }
   }
 
-  // Pantallas pequeñas
+  //Para pantallas pequeñas
   @include pantalla_pequeña {
     justify-content: space-between;
-    min-height: 20%;
+    height: 20%;
 
     #contacto {
       justify-content: space-evenly;
@@ -150,9 +159,9 @@ footer {
         width: 45%;
 
         h3 {
+          height: 21%;
           margin-top: 10%;
           font-size: 28px;
-          min-height: auto;
         }
 
         p {
@@ -168,14 +177,14 @@ footer {
 
     iframe {
       width: 350px;
-      max-height: 100%;
+      height: 100%;
     }
   }
 
-  // Pantallas estándar
+  //Para pantallas estándar, y grandes, la lógica es idéntica pero cambiando un poco los valores, principalmente en el tamaño de la fuente
   @include pantalla_estandar {
     justify-content: space-between;
-    min-height: 25%;
+    height: 25%;
 
     #contacto {
       justify-content: space-around;
@@ -186,8 +195,9 @@ footer {
         margin-left: 20px;
 
         h3 {
+          height: 18%;
           font-size: 26px;
-          min-height: auto;
+
           @include altura("1080") {
             font-size: 35px;
           }
@@ -196,6 +206,7 @@ footer {
         p {
           font-size: 26px;
           margin-bottom: 10px;
+
           @include altura("1080") {
             font-size: 35px;
             margin-bottom: 25px;
@@ -210,14 +221,14 @@ footer {
 
     iframe {
       width: 350px;
-      max-height: 100%;
+      height: 100%;
     }
   }
 
-  // Pantallas grandes
+  //Para pantallas grandes
   @include pantalla_grande {
     justify-content: space-between;
-    min-height: 25%;
+    height: 25%;
 
     #contacto {
       justify-content: space-around;
@@ -227,8 +238,8 @@ footer {
         width: 25%;
 
         h3 {
+          height: 18%;
           font-size: 47px;
-          min-height: auto;
         }
 
         p {
@@ -244,7 +255,7 @@ footer {
 
     iframe {
       width: 650px;
-      max-height: 100%;
+      height: 100%;
     }
   }
 }
