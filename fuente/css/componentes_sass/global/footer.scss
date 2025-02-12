@@ -11,6 +11,7 @@ hacer de un lado a otro*/
 //Creacion del footer en el que se recoge el uso del mapa
 footer {
   display: flex;
+  min-height: 25%;
   //Para que los elementos no se salgan del contenedor ya que tiene en cuenta el margen y el padding
   box-sizing: border-box;
   background-color: map.get($colores, "principal");
@@ -60,8 +61,7 @@ footer {
 
   //Código personalizado para moviles
   @include movil {
-    flex-direction: column;
-    min-height: 25%;
+    flex-direction: column;    
     margin: 0;
    
 

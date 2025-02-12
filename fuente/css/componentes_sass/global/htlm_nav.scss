@@ -16,22 +16,18 @@ html, body{
 //Creacion del header
 header {
     width: 100%;
+    min-height: 10%;
     overflow: hidden;
     background-color: map.get($colores, "principal"); 
     @include flexible(flex, row, nowrap, space-around, center);
     //Un ejemplo de uso de la funcion, aunque no es necesario ya que se aplica un estandar general
-    @include responsivo_todos();
-    
-    @include altura("896"){
-        height: 10%;
-    }
-    @include altura("760"){
-      height: 17%;
-    }    
+    @include responsivo_todos();    
+        
 }
 
 header button {   
     border-radius: 10%;
+    min-height: 15%;
     background-color: white;
     color: black;
     font-family: averia-serif;
@@ -42,13 +38,7 @@ header button {
     //Para movil se necesitan 2 alturas distintas, por lo que se añaden 2 alturas con sus cambios respectivos
     @include movil() {
         width: 40%;
-        @include altura("896") {
-            height: 50%;
-            font-size: 16px;
-        }
-        @include altura("760") {
-            height: 40%;
-        }
+       
     }
 
     @include tableta() {

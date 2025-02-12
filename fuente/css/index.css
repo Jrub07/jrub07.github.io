@@ -51,6 +51,7 @@ html, body {
 
 header {
   width: 100%;
+  min-height: 10%;
   overflow: hidden;
   background-color: #372715;
   display: flex;
@@ -58,19 +59,9 @@ header {
   justify-content: space-around;
   align-items: center;
 }
-@media (min-height: 896px) {
-  header {
-    height: 10%;
-  }
-}
-@media (min-height: 760px) {
-  header {
-    height: 17%;
-  }
-}
-
 header button {
   border-radius: 10%;
+  min-height: 15%;
   background-color: white;
   color: black;
   font-family: averia-serif;
@@ -81,17 +72,6 @@ header button {
 @media (min-width: 360px) and (max-width: 480px) {
   header button {
     width: 40%;
-  }
-}
-@media (min-width: 360px) and (max-width: 480px) and (min-height: 896px) {
-  header button {
-    height: 50%;
-    font-size: 16px;
-  }
-}
-@media (min-width: 360px) and (max-width: 480px) and (min-height: 760px) {
-  header button {
-    height: 40%;
   }
 }
 @media (min-width: 481px) and (max-width: 768px) {
@@ -722,7 +702,7 @@ en función de las necesidades del dispostivo*/
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  min-height: 45%;
   background-color: #684825;
   overflow: hidden;
 }
@@ -823,6 +803,7 @@ En esta clase se usan los elementos como anidación, en otras clase se hará al 
 hacer de un lado a otro*/
 footer {
   display: flex;
+  min-height: 25%;
   box-sizing: border-box;
   background-color: #372715;
   overflow: hidden;
@@ -868,18 +849,11 @@ footer iframe {
 @media (min-width: 360px) and (max-width: 480px) {
   footer {
     flex-direction: column;
-    height: 37%;
     margin: 0;
   }
-}
-@media (min-width: 360px) and (max-width: 480px) and (min-height: 896px) {
-  footer {
-    height: 32%;
-  }
-}
-@media (min-width: 360px) and (max-width: 480px) {
   footer iframe {
     margin-top: 1%;
+    margin-bottom: 1%;
     height: 90%;
     width: 100%;
     order: 1;
