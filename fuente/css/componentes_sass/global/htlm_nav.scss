@@ -27,59 +27,34 @@ header {
 
 header button {   
     border-radius: 10%;
-    min-height: 15%;
     background-color: white;
     color: black;
     font-family: averia-serif;
     text-transform: uppercase;
     font-weight: bold;
     margin: 0 10px;
+    width: 40%;
+    height: 5vh; // Altura fija para todos los dispositivos en unidades vh
+    font-size: 2vh; // Tamaño de fuente relativo a la altura del viewport
 
-    //Para movil se necesitan 2 alturas distintas, por lo que se añaden 2 alturas con sus cambios respectivos
     @include movil() {
-        width: 40%;
-       
+        font-size: 1.5vh; // Ajuste del tamaño de fuente para móviles
     }
 
     @include tableta() {
-        height: 50%;
-        @include altura("1024") {
-            height: 40%;
-            font-size: 18px;
-        }
+        font-size: 1.8vh; // Ajuste del tamaño de fuente para tabletas
     }
 
     @include pantalla_pequeña() {
-        height: 50px;
-        @include altura("1366") {
-            height: 40%;
-            font-size: 22px;
-        }
+        font-size: 2vh; // Ajuste del tamaño de fuente para pantallas pequeñas
     }
 
-    //Lo mismo para pantallas estandar, se requieren 3 alturas que son necesarias de cambiar
     @include pantalla_estandar() {
-
-        @include altura("800") {
-            height: 50%;
-            font-size: 20px;
-        }
-        @include altura("864") {
-            height: 50%;
-            font-size: 22px;
-        }
-        @include altura("1080") {
-            height: 50%;
-            font-size: 25px;
-        }
+        font-size: 2.2vh; // Ajuste del tamaño de fuente para pantallas estándar
     }
 
     @include pantalla_grande() {
-        
-        @include altura("1440") {
-            height: 50%;
-            font-size: 35px;
-        }
+        font-size: 2.5vh; // Ajuste del tamaño de fuente para pantallas grandes
     }
 }
 
@@ -91,7 +66,6 @@ header button {
 //Colocación del logo con diferentes alturas para cada dispositivo
 header img {    
     object-fit: cover;
-    
 
     @include movil() {
         max-width: 20%;

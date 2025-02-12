@@ -11,10 +11,11 @@ la letra, y que es compartida por todos los dispositivos*/
   background-size: cover;
   background-position: center;
   padding-top: 5%;
+  min-height: 45%;
   color: white;
 
   @include movil() {
-    height: 80%;
+    
   }
 
   @include tableta() {
