@@ -61,18 +61,15 @@ footer {
   //Código personalizado para moviles
   @include movil {
     flex-direction: column;
-    height: 37%;
+    min-height: 25%;
     margin: 0;
-
-    //Aplicacion del mixin especifico de altura, ya que la altura puede "comerse" el contenido
-    @include altura("896") {
-      height: 32%;
-    }
+   
 
     //Al pasar de una linea a una columna, se requiere de un margen para que no se quede pegado
     //Se usa order para decidir quien va arriba y quien abajo
     iframe {
       margin-top: 1%;
+      margin-bottom: 1%;
       height: 90%;
       width: 100%;
       order: 1;
