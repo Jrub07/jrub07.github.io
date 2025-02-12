@@ -40,7 +40,7 @@ en función de las necesidades del dispostivo*/
             width: 45%;
             margin: 2%;
             padding: 0;            
-            @include aplicar_fuente('p', 'Classica-Light');
+            @include aplicar_fuente('p', 'LTMuseum-Light');
         }
     }
 
@@ -52,7 +52,7 @@ en función de las necesidades del dispostivo*/
 
         article p{
             width: 90%;            
-            font-size: 3.7vh;
+            font-size: 3vh;
         }
     }
 
