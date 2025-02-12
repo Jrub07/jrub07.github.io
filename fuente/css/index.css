@@ -476,6 +476,7 @@ como se ha hecho en otros*/
 #modalidades {
   overflow: hidden;
   background-color: #9D774C;
+  min-height: 45%;
 }
 @media (min-width: 360px) and (max-width: 480px) {
   #modalidades {
@@ -483,7 +484,6 @@ como se ha hecho en otros*/
     flex-flow: column nowrap;
     justify-content: flex-start;
     align-items: center;
-    height: 60%;
   }
 }
 @media (min-width: 481px) and (max-width: 768px) {

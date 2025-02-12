@@ -6,10 +6,11 @@
 #modalidades {
   overflow: hidden;
   background-color: map.get($colores, "secundario_dos");
+  min-height: 45%;
 
   @include movil() {
     @include flexible(flex, column, nowrap, flex-start, center);
-    height: 60%;
+    
   }
 
   @include tableta() {
