@@ -11,6 +11,7 @@
   padding-top: 5%;
   min-height: 45%;
   color: white;
+  overflow: hidden;
 
   @include tableta() {    
     height: 55%;
@@ -125,19 +126,13 @@
     }
 
     @include tableta() {
-      margin-top: 2%;
-      margin-bottom: 2%;
-      font-size: 2.5vh;        
+      margin-top: 1%;
+      margin-bottom: 1%;        
     }
   }
 
   p {
     @include aplicar_fuente('p', 'LTMuseum-Light');
     margin-top: 5px;
-
-    @include tableta() {
-      font-size: 2vh;
-      margin-top: 1%;
-    }
   }
 }

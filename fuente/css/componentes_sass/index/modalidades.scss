@@ -17,7 +17,7 @@
     @include flexible(flex, row, nowrap, space-around, flex-start);
     padding-top: 1%;
     text-align: center;
-    height: 25%;
+    min-height: 25%;
   }
 
   @include pantalla_pequeña() {
@@ -61,7 +61,7 @@
   }
 
   @include tableta() {
-    width: 40%;
+    width: 50%;
     height: 80%;
   }
 

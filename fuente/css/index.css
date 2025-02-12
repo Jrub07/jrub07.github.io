@@ -148,6 +148,7 @@ header img {
   padding-top: 5%;
   min-height: 45%;
   color: white;
+  overflow: hidden;
 }
 @media (min-width: 481px) and (max-width: 768px) {
   #presentacion {
@@ -282,20 +283,13 @@ header img {
 }
 @media (min-width: 481px) and (max-width: 768px) {
   #nombre_cliente h4 {
-    margin-top: 2%;
-    margin-bottom: 2%;
-    font-size: 2.5vh;
+    margin-top: 1%;
+    margin-bottom: 1%;
   }
 }
 #nombre_cliente p {
   font-family: "LTMuseum-Light";
   margin-top: 5px;
-}
-@media (min-width: 481px) and (max-width: 768px) {
-  #nombre_cliente p {
-    font-size: 2vh;
-    margin-top: 1%;
-  }
 }
 
 /*Archivo para mostar las modalidades de terapia del cliente*/
@@ -321,7 +315,7 @@ header img {
     align-items: flex-start;
     padding-top: 1%;
     text-align: center;
-    height: 25%;
+    min-height: 25%;
   }
 }
 @media (min-width: 769px) and (max-width: 1200px) {
@@ -380,7 +374,7 @@ header img {
 }
 @media (min-width: 481px) and (max-width: 768px) {
   #presencial, #online {
-    width: 40%;
+    width: 50%;
     height: 80%;
   }
 }
