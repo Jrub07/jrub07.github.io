@@ -705,14 +705,14 @@ en función de las necesidades del dispostivo*/
   width: 45%;
   margin: 2%;
   padding: 0;
-  display: flex;
-  flex-flow: center center;
-  justify-content: center;
-  align-items: center;
 }
 @media (min-width: 360px) and (max-width: 480px) {
   #especialidades h3 {
     margin-top: 10%;
+  }
+  #especialidades article p {
+    width: 90%;
+    font-size: 3.7vh;
   }
 }
 @media (min-width: 481px) and (max-width: 768px) {
