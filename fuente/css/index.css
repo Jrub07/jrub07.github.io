@@ -868,41 +868,37 @@ footer iframe {
 @media (min-width: 360px) and (max-width: 480px) {
   footer {
     flex-direction: column;
-    height: 37%;
+    min-height: 37vh;
     margin: 0;
+    padding: 10px;
   }
-}
-@media (min-width: 360px) and (max-width: 480px) and (min-height: 896px) {
-  footer {
-    height: 32%;
-  }
-}
-@media (min-width: 360px) and (max-width: 480px) {
   footer iframe {
     margin-top: 1%;
-    height: 90%;
     width: 100%;
+    height: auto;
     order: 1;
   }
   footer #contacto {
     justify-content: space-between;
     order: 2;
     width: 100%;
+    display: flex;
+    flex-direction: column;
   }
   footer #contacto #redes_sociales, footer #contacto #como_llegar {
-    padding-left: 1%;
-    padding-right: 1%;
-    width: 40%;
+    padding-left: 5%;
+    padding-right: 5%;
+    width: 100%;
   }
   footer #contacto #redes_sociales h3, footer #contacto #como_llegar h3 {
-    height: 30%;
-    font-size: 80%;
+    font-size: clamp(14px, 3vw, 20px);
   }
   footer #contacto #redes_sociales p, footer #contacto #como_llegar p {
+    font-size: clamp(12px, 2.5vw, 18px);
     margin-bottom: 10px;
   }
   footer #contacto #redes_sociales p img, footer #contacto #como_llegar p img {
-    max-width: 15%;
+    margin-right: 8px;
   }
 }
 @media (min-width: 481px) and (max-width: 768px) {
