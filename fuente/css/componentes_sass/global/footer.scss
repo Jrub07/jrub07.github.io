@@ -44,58 +44,14 @@ footer {
     }
   }
 
-  
   iframe {
     display: flex;
     width: 100%;
     max-width: 650px;
-    height: 100%;
+    height: auto;
   }
 
-  // Móviles
-  @include movil {
-    flex-direction: column;
-    min-height: 37%;
-    margin: 0;
-
-    @include altura("896") {
-      min-height: 32%;
-    }
-
-    iframe {
-      margin-top: 1%;
-      width: 100%;
-      order: 1;
-      height: 100%; 
-    }
-
-    #contacto {
-      justify-content: space-between;
-      order: 2;
-      width: 100%;
-
-      #redes_sociales, #como_llegar {
-        padding-left: 1%;
-        padding-right: 1%;
-        width: 40%;
-
-        h3 {
-          font-size: 80%;
-          min-height: auto;
-        }
-
-        p {
-          margin-bottom: 10px;
-
-          img {
-            max-width: 15%;
-          }
-        }
-      }
-    }
-  }
-
-  // Tabletas
+  // Ajustes para tabletas
   @include tableta {
     flex-direction: column;
     align-items: center;
@@ -108,7 +64,7 @@ footer {
       width: 100%;
       max-width: 400px;
       order: 1;
-      height: 100%; 
+      max-height: 250px;
     }
 
     #contacto {
@@ -137,7 +93,7 @@ footer {
     }
   }
 
-  // Pantallas pequeñas
+  // Ajustes para pantallas pequeñas
   @include pantalla_pequeña {
     justify-content: space-between;
     min-height: 22%;
@@ -169,11 +125,11 @@ footer {
     iframe {
       width: 90%;
       max-width: 350px;
-      height: 100%; 
+      max-height: 100%;
     }
   }
 
-  // Pantallas estándar
+  // Ajustes para pantallas estándar
   @include pantalla_estandar {
     justify-content: space-between;
     min-height: 25%;
@@ -212,11 +168,11 @@ footer {
     iframe {
       width: 90%;
       max-width: 350px;
-      height: 100%; 
+      max-height: 100%;
     }
   }
 
-  // Pantallas grandes
+  // Ajustes para pantallas grandes
   @include pantalla_grande {
     justify-content: space-between;
     min-height: 25%;
@@ -247,7 +203,7 @@ footer {
     iframe {
       width: 100%;
       max-width: 650px;
-      height: 100%; 
+      max-height: 100%;
     }
   }
 }
