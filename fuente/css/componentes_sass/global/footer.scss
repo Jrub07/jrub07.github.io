@@ -17,13 +17,19 @@ footer {
   background-color: map.get($colores, "principal");
   overflow: hidden;
 
+  @include tableta {
+    min-height: 25%;
+  }
+
   #contacto {
     display: flex;
+    justify-content: space-around;
     overflow: hidden;
 
     #redes_sociales, #como_llegar {
       /*Apliación del mixin de flexible, tiene 4 argumentos y se aplica nowrap por defecto*/
       @include flexible(flex, column, nowrap, flex-start, flex-start);
+      justify-content: space-around;
 
       h3 {
         background-color: white;
@@ -32,14 +38,45 @@ footer {
         padding-top: 0;
         font-family: averia-serif;
         text-align: center;
-        @include flexible(flex, row, nowrap, center, center);        
-        
-       
+        box-sizing: border-box;
+
+        // Resoluciones de móvil
+        @include movil {
+          height: 30%;
+          font-size: 70%;
+        }
+
+        // Resoluciones de tableta
+        @include tableta {
+          height: 18%;
+          font-size: 16px;
+        }
+
+        // Resoluciones de pantalla pequeña
+        @include pantalla_pequeña {
+          height: 21%;
+          margin-top: 10%;
+          font-size: 24px;
+        }
+
+        // Resoluciones de pantalla estándar (1280x800)
+        @include pantalla_estandar {
+          height: 18%;
+          font-size: 24px;
+
+          @include altura("1080") {
+            font-size: 30px;
+          }
+        }
+
+        // Resoluciones de pantalla grande
+        @include pantalla_grande {
+          height: 18%;
+          font-size: 40px;
+        }
       }
 
       p {
-        //En este caso, aunque sea flex no es necesario aplicar el mixin porque solo se requiere de 2 lineas
-        display: flex;
         align-items: center;
         color: white;
         margin: 0;
@@ -50,120 +87,29 @@ footer {
         img {
           margin-right: 10px;
           height: auto;
-        }
-      }
-    }
-  }
-  //Se requiere de un flex para que el iframe recoga la altura total del contenedor
-  iframe {
-    display: flex;
-  }
-
-  //Código personalizado para moviles
-  @include movil {
-    flex-direction: column;    
-    margin: 0;
-   
-
-    //Al pasar de una linea a una columna, se requiere de un margen para que no se quede pegado
-    //Se usa order para decidir quien va arriba y quien abajo
-    iframe {
-      margin-top: 1%;
-      margin-bottom: 1%;
-      height: 90%;
-      width: 100%;
-      order: 1;
-    }
-
-    //Contenedor de los elementos de contacto y direccion del cómo llegar al local
-    #contacto {
-      justify-content: space-between;
-      order: 2;
-      width: 100%;
-
-      //Se usa para dar el mismo valor a ambas cajas y que una no sea mas grande que la otra,facilitando su colocacion
-      #redes_sociales, #como_llegar {
-        padding-left: 1%;
-        padding-right: 1%;
-        width: 40%;
-
-        h3 {
-          height: 30%;
-          font-size: 80%;
+          vertical-align: middle;
         }
 
-        p {
+        // Resoluciones de móvil
+        @include movil {
           margin-bottom: 10px;
 
           img {
             max-width: 15%;
           }
         }
-      }
-    }
-  }
 
-  //Edicion para tabletas, sigue una lógica parecida a la anterior, pero con mas espacio en el contenedor
-  @include tableta {
-    flex-direction: column;
-    align-items: center;
-    height: 40%;
-    margin: 0;
-
-    iframe {
-      align-items: center;
-      margin-top: 2%;
-      height: 200px;
-      width: 400px;
-      order: 1;
-    }
-
-    #contacto {
-      margin-top: 1%;
-      justify-content: space-between;
-      order: 2;
-      width: 90%;
-
-      #redes_sociales, #como_llegar {
-        padding-left: 1%;
-        padding-right: 1%;
-        width: 37%;
-
-        h3 {
-          height: 18%;
-          font-size: 18px;
-        }
-
-        p {
+        // Resoluciones de tableta
+        @include tableta {
           margin-bottom: 10px;
 
           img {
             max-width: 15%;
           }
         }
-      }
-    }
-  }
 
-  //Para pantallas pequeñas
-  @include pantalla_pequeña {
-    justify-content: space-between;
-    height: 20%;
-
-    #contacto {
-      justify-content: space-evenly;
-      width: 100%;
-
-      #redes_sociales, #como_llegar {
-        width: 45%;
-
-        h3 {
-          height: 21%;
-          margin-top: 10%;
-          font-size: 28px;
-        }
-
-        p {
+        // Resoluciones de pantalla pequeña
+        @include pantalla_pequeña {
           font-size: 25px;
           margin-bottom: 30px;
 
@@ -171,38 +117,9 @@ footer {
             max-width: 40px;
           }
         }
-      }
-    }
 
-    iframe {
-      width: 350px;
-      height: 100%;
-    }
-  }
-
-  //Para pantallas estándar, y grandes, la lógica es identica pero cambiando un poco los valores, pricipalmente en el tamaño de la fuente
-  @include pantalla_estandar {
-    justify-content: space-between;
-    height: 25%;
-
-    #contacto {
-      justify-content: space-around;
-      width: 100%;
-
-      #redes_sociales, #como_llegar {
-        width: 28%;
-        margin-left: 20px;
-
-        h3 {
-          height: 18%;
-          font-size: 26px;
-
-          @include altura("1080") {
-            font-size: 35px;
-          }
-        }
-
-        p {
+        // Resoluciones de pantalla estándar (1280x800)
+        @include pantalla_estandar {
           font-size: 26px;
           margin-bottom: 10px;
 
@@ -215,33 +132,9 @@ footer {
             max-width: 40px;
           }
         }
-      }
-    }
 
-    iframe {
-      width: 350px;
-      height: 100%;
-    }
-  }
-
-  //Para pantallas grandes
-  @include pantalla_grande {
-    justify-content: space-between;
-    height: 25%;
-
-    #contacto {
-      justify-content: space-around;
-      width: 100%;
-
-      #redes_sociales, #como_llegar {
-        width: 25%;
-
-        h3 {
-          height: 18%;
-          font-size: 47px;
-        }
-
-        p {
+        // Resoluciones de pantalla grande
+        @include pantalla_grande {
           font-size: 47px;
           margin-bottom: 25px;
 
@@ -250,11 +143,140 @@ footer {
           }
         }
       }
+
+      // Resoluciones de móvil
+      @include movil {
+        padding-left: 1%;
+        padding-right: 1%;
+        width: 40%;
+      }
+
+      // Resoluciones de tableta
+      @include tableta {
+        padding-left: 1%;
+        padding-right: 1%;
+        width: 37%;
+      }
+
+      // Resoluciones de pantalla pequeña
+      @include pantalla_pequeña {
+        width: 45%;
+      }
+
+      // Resoluciones de pantalla estándar (1280x800)
+      @include pantalla_estandar {
+        width: 28%;
+        margin-left: 20px;
+      }
+
+      // Resoluciones de pantalla grande
+      @include pantalla_grande {
+        width: 25%;
+      }
     }
 
-    iframe {
+    // Resoluciones de móvil
+    @include movil {
+      justify-content: space-between;
+      order: 2;
+      width: 100%;
+    }
+
+    // Resoluciones de tableta
+    @include tableta {
+      margin-top: 1%;
+      justify-content: space-between;
+      order: 2;
+      width: 90%;
+    }
+
+    // Resoluciones de pantalla pequeña
+    @include pantalla_pequeña {
+      justify-content: space-evenly;
+      width: 100%;
+    }
+
+    // Resoluciones de pantalla estándar (1280x800)
+    @include pantalla_estandar {
+      justify-content: space-around;
+      width: 100%;
+    }
+
+    // Resoluciones de pantalla grande
+    @include pantalla_grande {
+      justify-content: space-around;
+      width: 100%;
+    }
+  }
+
+  iframe {
+    display: flex;
+
+    // Resoluciones de móvil
+    @include movil {
+      margin-top: 1%;
+      margin-bottom: 1%;
+      height: 90%;
+      width: 100%;
+      order: 1;
+    }
+
+    // Resoluciones de tableta
+    @include tableta {
+      align-items: center;
+      margin-top: 2%;
+      height: 200px;
+      width: 400px;
+      order: 1;
+    }
+
+    // Resoluciones de pantalla pequeña
+    @include pantalla_pequeña {
+      width: 350px;
+      height: 100%;
+    }
+
+    // Resoluciones de pantalla estándar (1280x800)
+    @include pantalla_estandar {
+      width: 350px;
+      height: 100%;
+    }
+
+    // Resoluciones de pantalla grande
+    @include pantalla_grande {
       width: 650px;
       height: 100%;
     }
+  }
+
+  // Resoluciones de móvil
+  @include movil {
+    flex-direction: column;
+    margin: 0;
+  }
+
+  // Resoluciones de tableta
+  @include tableta {
+    flex-direction: column;
+    align-items: center;    
+    margin: 0;
+  }
+
+  // Resoluciones de pantalla pequeña
+  @include pantalla_pequeña {
+    justify-content: space-between;
+    height: 20%;
+  }
+
+  // Resoluciones de pantalla estándar (1280x800)
+  @include pantalla_estandar {
+    justify-content: space-between;
+    height: 25%;
+  }
+
+  // Resoluciones de pantalla grande
+  @include pantalla_grande {
+    justify-content: space-between;
+    height: 25%;
   }
 }
