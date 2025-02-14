@@ -108,6 +108,7 @@
     @include pantalla_pequeña() {
       height: 15%;
       width: 80%;
+      font-size: 2vh;
     }
 
     @include pantalla_estandar() {

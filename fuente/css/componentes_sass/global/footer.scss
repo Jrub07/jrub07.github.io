@@ -1,21 +1,24 @@
 /*Clase general para aplicar los contenidos al pie de página, está en el directorio global
-ya que es posible que para la página entera se haga algun cambio
+ya que es posible que para la página entera se haga algún cambio
 
 En esta clase se usan los elementos como anidación, en otras clase se hará al revés, para ver que se puede 
 hacer de un lado a otro*/
 
-//Importancion de los mixins y funciones necesarios y la funcionalidad del mapa
+// Importación de los mixins y funciones necesarios y la funcionalidad del mapa
 @use 'mixins_funciones_mapa' as *;
 @use 'sass:map';
 
-//Creacion del footer en el que se recoge el uso del mapa
 footer {
   display: flex;
   min-height: 25%;
-  //Para que los elementos no se salgan del contenedor ya que tiene en cuenta el margen y el padding
+  // Para que los elementos no se salgan del contenedor ya que tiene en cuenta el margen y el padding
   box-sizing: border-box;
   background-color: map.get($colores, "principal");
   overflow: hidden;
+
+  @include movil {
+    flex-direction: column;
+  }
 
   @include tableta {
     min-height: 25%;
@@ -25,12 +28,25 @@ footer {
     display: flex;
     justify-content: space-around;
     overflow: hidden;
+    @include movil {
+      display: flex; // Cambia a flex para mostrar como fila
+      flex-direction: row; // Asegura que los elementos estén en una fila
+      padding-left: 1%;
+      padding-right: 1%;
+      width: 100%;
+      order: 2;
+      margin-top: 1%;
+    }
 
     #redes_sociales, #como_llegar {
-      /*Apliación del mixin de flexible, tiene 4 argumentos y se aplica nowrap por defecto*/
+      /* Aplicación del mixin de flexible, tiene 4 argumentos y se aplica nowrap por defecto */
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      width: 50%;
+      @include movil {
+        margin-right: 3%;
+      }
 
       h3 {
         background-color: white;
@@ -55,7 +71,7 @@ footer {
 
         // Resoluciones de pantalla pequeña
         @include pantalla_pequeña {
-          height: 21%;
+          height: 14%;
           margin-top: 10%;
           font-size: 2vh;
           text-align: center;
@@ -83,7 +99,7 @@ footer {
         color: white;
         margin: 0;
         white-space: nowrap;
-        //Ejemplo de aplicacion del mixin de la fuente
+        // Ejemplo de aplicación del mixin de la fuente
         @include aplicar_fuente('p', 'LTMuseum-Light');
 
         img {
@@ -95,7 +111,6 @@ footer {
         // Resoluciones de móvil
         @include movil {
           margin-bottom: 10px;
-
           img {
             max-width: 15%;
           }
@@ -105,7 +120,6 @@ footer {
         @include tableta {
           font-size: 2vh;
           padding: 2%;
-
           img {
             max-width: 15%;
           }
@@ -114,60 +128,23 @@ footer {
         // Resoluciones de pantalla pequeña
         @include pantalla_pequeña {
           font-size: 2vh;
-          padding: 2%;          
+          padding: 2%;
         }
 
         // Resoluciones de pantalla estándar (1280x800)
         @include pantalla_estandar {
           font-size: 2vh;
           padding: 2%;
-          
         }
 
         // Resoluciones de pantalla grande
         @include pantalla_grande {
           font-size: 3vh; // Copiado de pantalla_estandar
-          padding: 2%; // Copiado de pantalla_estandar
-          
+          padding: 2%;   // Copiado de pantalla_estandar
         }
       }
-
-      // Resoluciones de móvil
-      @include movil {
-        padding-left: 1%;
-        padding-right: 1%;
-        width: 40%;
-      }
-
-      // Resoluciones de tableta
-      @include tableta {
-        padding-left: 1%;
-        padding-right: 1%;
-        width: 37%;
-      }
-
-      // Resoluciones de pantalla pequeña
-      @include pantalla_pequeña {
-        width: 40%;
-      }
-
-      // Resoluciones de pantalla estándar (1280x800)
-      @include pantalla_estandar {
-        width: 40%;
-      }
-
-      // Resoluciones de pantalla grande
-      @include pantalla_grande {
-        width: 40%;
-      }
     }
 
-    // Resoluciones de móvil
-    @include movil {
-      justify-content: space-between;
-      order: 2;
-      width: 100%;
-    }
 
     // Resoluciones de tableta
     @include tableta {
@@ -244,8 +221,8 @@ footer {
     // Resoluciones de pantalla grande
     @include pantalla_grande {
       justify-content: space-evenly; // Copiado de pantalla_estandar
-      width: 100%; // Copiado de pantalla_estandar
-      min-height: 20%; // Copiado de pantalla_estandar
+      width: 100%;                   // Copiado de pantalla_estandar
+      min-height: 20%;               // Copiado de pantalla_estandar
 
       iframe {
         width: 300px; // Copiado de pantalla_estandar
@@ -257,15 +234,15 @@ footer {
       }
 
       h3 {
-        height: 21%; // Copiado de pantalla_estandar
+        height: 21%;     // Copiado de pantalla_estandar
         margin-top: 10%; // Copiado de pantalla_estandar
-        font-size: 2vh; // Copiado de pantalla_estandar
+        font-size: 2vh;  // Copiado de pantalla_estandar
         text-align: center; // Copiado de pantalla_estandar
       }
 
       p {
         font-size: 2vh; // Copiado de pantalla_estandar
-        padding: 2%; // Copiado de pantalla_estandar
+        padding: 2%;    // Copiado de pantalla_estandar
 
         img {
           max-width: 40px; // Copiado de pantalla_estandar
@@ -283,7 +260,7 @@ footer {
       margin-bottom: 1%;
       height: 90%;
       width: 100%;
-      order: 1;
+      order: 1; // Se asegura que el iframe (mapa) esté primero
     }
 
     // Resoluciones de tableta
