@@ -51,7 +51,9 @@ header button {
     }
 
     @include pantalla_estandar() {
-        font-size: 2.2vh; 
+        font-size: 2vh; 
+        width: 10%;
+        height: 5vh; // Altura fija para pantallas estándar
     }
 
     @include pantalla_grande() {
@@ -77,13 +79,13 @@ header img {
     }
 
     @include pantalla_pequeña() {
-        max-width: 15%;
-        max-height: 15%;
+        max-width: 10%;
+        max-height: 10%;
     }
 
     @include pantalla_estandar() {
-        max-width: 90%;
-        max-height: 90%;
+        max-width: 10%;
+        max-height: 10%;
     }
 
     @include pantalla_grande() {

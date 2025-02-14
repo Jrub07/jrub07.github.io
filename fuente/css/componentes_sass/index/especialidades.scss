@@ -47,16 +47,18 @@ en función de las necesidades del dispostivo*/
             margin-top: 2%;
         }
 
-        // Resoluciones de pantalla estándar (1280x800)
+        
         @include pantalla_estandar() {
-            font-size: 28px;
-            width: 70%;
-            margin-top: 1%;
+            font-size: 1.6em; 
+            width: 90%; 
+            margin-top: 2%; 
         }
 
         // Resoluciones de pantalla grande
         @include pantalla_grande() {
-            font-size: 40px;
+            font-size: 1.6em; // Copiado de pantalla_pequeña
+            width: 90%; // Copiado de pantalla_pequeña
+            margin-top: 2%; // Copiado de pantalla_pequeña
         }
     }
 
@@ -76,12 +78,20 @@ en función de las necesidades del dispostivo*/
         @include pantalla_estandar() {
             height: 80%;
             width: 90%;
+            flex-direction: row; // Copiado de pantalla_pequeña
+            flex-wrap: wrap; // Copiado de pantalla_pequeña
+            align-items: center; // Copiado de pantalla_pequeña
+            justify-content: center; // Copiado de pantalla_pequeña
         }
 
         // Resoluciones de pantalla grande
         @include pantalla_grande() {
             height: 80%;
             width: 80%;
+            flex-direction: row; // Copiado de pantalla_pequeña
+            flex-wrap: wrap; // Copiado de pantalla_pequeña
+            align-items: center; // Copiado de pantalla_pequeña
+            justify-content: center; // Copiado de pantalla_pequeña
         }
 
         // Resoluciones de tableta
@@ -125,25 +135,35 @@ en función de las necesidades del dispostivo*/
 
             // Resoluciones de pantalla pequeña
             @include pantalla_pequeña() {
-                margin: 2.5%;
-                width: 20%;
-                align-self: center;
-                height: 10%; 
-                font-size: 1.8vh; 
+                width: 15%;
+                margin: 3.5%;                
+                height: 7vh;
+                font-size: 3vh;
+                text-align: center;
+                line-height: normal; 
             }
 
             // Resoluciones de pantalla estándar (1280x800)
             @include pantalla_estandar() {
-                width: 20%;
-                margin: 3.5%;
-                font-size: 25px;
+                width: 15%;
+                margin: 3.5%;                
+                height: 7vh;
+                font-size: 3vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
             }
 
             // Resoluciones de pantalla grande
             @include pantalla_grande() {
-                width: 25%;
-                margin: 3%;
-                font-size: 40px;
+                width: 20%;
+                margin: 2.5%; // Copiado de pantalla_pequeña
+                align-self: center; // Copiado de pantalla_pequeña
+                height: 10%; // Copiado de pantalla_pequeña
+                font-size: 1.8vh; // Copiado de pantalla_pequeña
+                display: flex;
+                justify-content: center;
+                align-items: center;
             }
         }
     }

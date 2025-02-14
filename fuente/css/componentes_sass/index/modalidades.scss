@@ -30,9 +30,10 @@
     @include flexible(flex, row, nowrap, space-around, flex-start);
     padding-top: 1%;
     text-align: center;
-    height: 40%;
-    @include altura("864") {
-      height: 50%;
+    min-height: 15%;
+    img {
+      max-width: 90%;
+      max-height: 90%;
     }
   }
 
@@ -40,7 +41,11 @@
     @include flexible(flex, row, nowrap, space-around, flex-start);
     padding-top: 1%;
     text-align: center;
-    height: 40%;
+    min-height: 25%;
+    img {
+      max-width: 90%;
+      max-height: 90%;
+    }
   }
 }
 
@@ -66,16 +71,19 @@
   @include pantalla_pequeña() {
     width: 50%;
     height: 80%;
+    min-height: 25%;
   }
 
   @include pantalla_estandar() {
-    width: 40%;
+    width: 50%;
     height: 80%;
+    min-height: 25%;
   }
 
   @include pantalla_grande() {
-    width: 40%;
+    width: 50%;
     height: 80%;
+    min-height: 25%;
   }
 
   p {
@@ -103,8 +111,8 @@
     }
 
     @include pantalla_estandar() {
-      height: 10%;
-      width: 60%;
+      height: 15%;
+      width: 80%;
       font-size: 20px;
       @include altura("864") {
         font-size: 25px;
@@ -112,8 +120,8 @@
     }
 
     @include pantalla_grande() {
-      height: 10%;
-      width: 65%;
+      height: 15%; // Aplicar diseño de pantalla_pequeña
+      width: 80%; // Aplicar diseño de pantalla_pequeña
       font-size: 35px;
       @include aplicar_fuente('p', 'Classica-Bold');
       display: flex;
@@ -145,13 +153,13 @@
     }
 
     @include pantalla_estandar() {
-      max-width: 80%;
-      max-height: 80%;
+      max-width: 90%; // Aplicar diseño de pantalla_pequeña
+      max-height: 90%; // Aplicar diseño de pantalla_pequeña
     }
 
     @include pantalla_grande() {
-      max-width: 80%;
-      max-height: 80%;
+      max-width: 90%; // Aplicar diseño de pantalla_pequeña
+      max-height: 90%; // Aplicar diseño de pantalla_pequeña
     }
   }
 }
