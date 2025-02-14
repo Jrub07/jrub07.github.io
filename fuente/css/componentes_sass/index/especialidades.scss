@@ -16,6 +16,10 @@ en función de las necesidades del dispostivo*/
         justify-content: flex-start;
     }
 
+    @include tableta() {        
+        justify-content: flex-start;
+    }
+
     h3 {
         padding-top: 0;
         background-color: white;
@@ -38,7 +42,7 @@ en función de las necesidades del dispostivo*/
 
         // Resoluciones de pantalla pequeña
         @include pantalla_pequeña() {
-            font-size: 30px;
+            font-size: 1.6em;
             width: 90%;
             margin-top: 2%;
         }
@@ -88,6 +92,14 @@ en función de las necesidades del dispostivo*/
             justify-content: center;
         }
 
+        // Resoluciones de pantalla pequeña
+        @include pantalla_pequeña() {
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+
         p {
             text-align: center;
             text-transform: uppercase;
@@ -100,21 +112,24 @@ en función de las necesidades del dispostivo*/
 
             // Resoluciones de móvil
             @include movil() {
-            width: 90%;            
-            font-size: 2.5vh;
+                width: 90%;            
+                font-size: 2.5vh;
             }
 
             // Resoluciones de tableta
             @include tableta() {
-            font-size: 1.1em;
-            margin: 2.5%;
-            width: 45%;  
+                font-size: 1.1em;
+                margin: 2.5%;
+                width: 45%;  
             }
 
             // Resoluciones de pantalla pequeña
             @include pantalla_pequeña() {
-                font-size: 30px;
-                margin: 1%;
+                margin: 2.5%;
+                width: 20%;
+                align-self: center;
+                height: 10%; 
+                font-size: 1.8vh; 
             }
 
             // Resoluciones de pantalla estándar (1280x800)

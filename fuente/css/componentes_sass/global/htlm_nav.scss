@@ -32,7 +32,8 @@ header button {
     font-weight: bold;
     margin: 0 10px;
     width: 40%;    
-    font-size: 2vh; 
+    font-size: 2vh;
+    height: 50px; 
 
     @include movil() {
         font-size: 1.5vh; 
@@ -45,7 +46,8 @@ header button {
     }
 
     @include pantalla_pequeña() {
-        font-size: 2vh; 
+        font-size: 1.8vh;
+        width: 15%; 
     }
 
     @include pantalla_estandar() {
@@ -75,8 +77,8 @@ header img {
     }
 
     @include pantalla_pequeña() {
-        max-width: 90%;
-        max-height: 90%;
+        max-width: 15%;
+        max-height: 15%;
     }
 
     @include pantalla_estandar() {

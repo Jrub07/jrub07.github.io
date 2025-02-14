@@ -28,8 +28,9 @@ footer {
 
     #redes_sociales, #como_llegar {
       /*Apliación del mixin de flexible, tiene 4 argumentos y se aplica nowrap por defecto*/
-      @include flexible(flex, column, nowrap, flex-start, flex-start);
-      justify-content: space-around;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
 
       h3 {
         background-color: white;
@@ -56,23 +57,24 @@ footer {
         @include pantalla_pequeña {
           height: 21%;
           margin-top: 10%;
-          font-size: 24px;
+          font-size: 2vh;
+          text-align: center;
         }
 
         // Resoluciones de pantalla estándar (1280x800)
         @include pantalla_estandar {
-          height: 18%;
-          font-size: 24px;
-
-          @include altura("1080") {
-            font-size: 30px;
-          }
+          height: 21%;
+          margin-top: 5%;
+          font-size: 2vh;
+          text-align: center;
         }
 
         // Resoluciones de pantalla grande
         @include pantalla_grande {
-          height: 18%;
-          font-size: 40px;
+          height: 21%;
+          margin-top: 5%;
+          font-size: 2vh;
+          text-align: center;
         }
       }
 
@@ -101,7 +103,8 @@ footer {
 
         // Resoluciones de tableta
         @include tableta {
-          margin-bottom: 10px;
+          font-size: 2vh;
+          padding: 2%;
 
           img {
             max-width: 15%;
@@ -110,8 +113,8 @@ footer {
 
         // Resoluciones de pantalla pequeña
         @include pantalla_pequeña {
-          font-size: 25px;
-          margin-bottom: 30px;
+          font-size: 2vh;
+          padding: 2%;
 
           img {
             max-width: 40px;
@@ -120,13 +123,8 @@ footer {
 
         // Resoluciones de pantalla estándar (1280x800)
         @include pantalla_estandar {
-          font-size: 26px;
-          margin-bottom: 10px;
-
-          @include altura("1080") {
-            font-size: 35px;
-            margin-bottom: 25px;
-          }
+          font-size: 2vh;
+          padding: 2%;
 
           img {
             max-width: 40px;
@@ -135,11 +133,11 @@ footer {
 
         // Resoluciones de pantalla grande
         @include pantalla_grande {
-          font-size: 47px;
-          margin-bottom: 25px;
+          font-size: 2vh;
+          padding: 2%;
 
           img {
-            max-width: 10%;
+            max-width: 40px;
           }
         }
       }
@@ -160,18 +158,17 @@ footer {
 
       // Resoluciones de pantalla pequeña
       @include pantalla_pequeña {
-        width: 45%;
+        width: 40%;
       }
 
       // Resoluciones de pantalla estándar (1280x800)
       @include pantalla_estandar {
-        width: 28%;
-        margin-left: 20px;
+        width: 40%;
       }
 
       // Resoluciones de pantalla grande
       @include pantalla_grande {
-        width: 25%;
+        width: 40%;
       }
     }
 
@@ -194,18 +191,96 @@ footer {
     @include pantalla_pequeña {
       justify-content: space-evenly;
       width: 100%;
+      min-height: 20%;
+
+      iframe {
+        width: 300px;
+        height: 150px;
+      }
+
+      #redes_sociales, #como_llegar {
+        width: 40%;
+      }
+
+      h3 {
+        height: 21%;
+        margin-top: 10%;
+        font-size: 2vh;
+        text-align: center;
+      }
+
+      p {
+        font-size: 2vh;
+        padding: 2%;
+
+        img {
+          max-width: 40px;
+        }
+      }
     }
 
     // Resoluciones de pantalla estándar (1280x800)
     @include pantalla_estandar {
-      justify-content: space-around;
+      justify-content: space-evenly;
       width: 100%;
+      min-height: 20%;
+
+      iframe {
+        width: 300px;
+        height: 100%;
+      }
+
+      #redes_sociales, #como_llegar {
+        width: 40%;
+      }
+
+      h3 {
+        height: 21%;
+        margin-top: 10%;
+        font-size: 2vh;
+        text-align: center;
+      }
+
+      p {
+        font-size: 2vh;
+        padding: 2%;
+
+        img {
+          max-width: 40px;
+        }
+      }
     }
 
     // Resoluciones de pantalla grande
     @include pantalla_grande {
-      justify-content: space-around;
+      justify-content: space-evenly;
       width: 100%;
+      min-height: 20%;
+
+      iframe {
+        width: 300px;
+        height: 100%;
+      }
+
+      #redes_sociales, #como_llegar {
+        width: 40%;
+      }
+
+      h3 {
+        height: 21%;
+        margin-top: 10%;
+        font-size: 2vh;
+        text-align: center;
+      }
+
+      p {
+        font-size: 2vh;
+        padding: 2%;
+
+        img {
+          max-width: 40px;
+        }
+      }
     }
   }
 
@@ -232,51 +307,20 @@ footer {
 
     // Resoluciones de pantalla pequeña
     @include pantalla_pequeña {
-      width: 350px;
+      width: 300px;
       height: 100%;
     }
 
     // Resoluciones de pantalla estándar (1280x800)
     @include pantalla_estandar {
-      width: 350px;
+      width: 300px;
       height: 100%;
     }
 
     // Resoluciones de pantalla grande
     @include pantalla_grande {
-      width: 650px;
+      width: 300px;
       height: 100%;
     }
-  }
-
-  // Resoluciones de móvil
-  @include movil {
-    flex-direction: column;
-    margin: 0;
-  }
-
-  // Resoluciones de tableta
-  @include tableta {
-    flex-direction: column;
-    align-items: center;    
-    margin: 0;
-  }
-
-  // Resoluciones de pantalla pequeña
-  @include pantalla_pequeña {
-    justify-content: space-between;
-    height: 20%;
-  }
-
-  // Resoluciones de pantalla estándar (1280x800)
-  @include pantalla_estandar {
-    justify-content: space-between;
-    height: 25%;
-  }
-
-  // Resoluciones de pantalla grande
-  @include pantalla_grande {
-    justify-content: space-between;
-    height: 25%;
   }
 }

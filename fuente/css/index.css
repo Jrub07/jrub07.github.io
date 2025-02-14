@@ -70,6 +70,7 @@ header button {
   margin: 0 10px;
   width: 40%;
   font-size: 2vh;
+  height: 50px;
 }
 @media (min-width: 360px) and (max-width: 480px) {
   header button {
@@ -85,7 +86,8 @@ header button {
 }
 @media (min-width: 769px) and (max-width: 1200px) {
   header button {
-    font-size: 2vh;
+    font-size: 1.8vh;
+    width: 15%;
   }
 }
 @media (min-width: 1201px) and (max-width: 1920px) {
@@ -118,8 +120,8 @@ header img {
 }
 @media (min-width: 769px) and (max-width: 1200px) {
   header img {
-    max-width: 90%;
-    max-height: 90%;
+    max-width: 15%;
+    max-height: 15%;
   }
 }
 @media (min-width: 1201px) and (max-width: 1920px) {
@@ -322,12 +324,11 @@ header img {
   #modalidades {
     display: flex;
     flex-flow: row nowrap;
-    justify-content: center;
-    align-items: center;
-    height: 30%;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding-top: 1%;
+    text-align: center;
+    min-height: 25%;
   }
 }
 @media (min-width: 1201px) and (max-width: 1920px) {
@@ -380,9 +381,8 @@ header img {
 }
 @media (min-width: 769px) and (max-width: 1200px) {
   #presencial, #online {
-    width: 60%;
-    height: 90%;
-    justify-content: center;
+    width: 50%;
+    height: 80%;
   }
 }
 @media (min-width: 1201px) and (max-width: 1920px) {
@@ -420,9 +420,8 @@ header img {
 }
 @media (min-width: 769px) and (max-width: 1200px) {
   #presencial p, #online p {
-    height: 10%;
-    width: 60%;
-    font-size: 25px;
+    height: 15%;
+    width: 80%;
   }
 }
 @media (min-width: 1201px) and (max-width: 1920px) {
@@ -505,6 +504,11 @@ en función de las necesidades del dispostivo*/
     justify-content: flex-start;
   }
 }
+@media (min-width: 481px) and (max-width: 768px) {
+  #especialidades {
+    justify-content: flex-start;
+  }
+}
 #especialidades h3 {
   padding-top: 0;
   background-color: white;
@@ -527,7 +531,7 @@ en función de las necesidades del dispostivo*/
 }
 @media (min-width: 769px) and (max-width: 1200px) {
   #especialidades h3 {
-    font-size: 30px;
+    font-size: 1.6em;
     width: 90%;
     margin-top: 2%;
   }
@@ -576,6 +580,14 @@ en función de las necesidades del dispostivo*/
     justify-content: center;
   }
 }
+@media (min-width: 769px) and (max-width: 1200px) {
+  #especialidades article {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+}
 #especialidades article p {
   text-align: center;
   text-transform: uppercase;
@@ -601,8 +613,11 @@ en función de las necesidades del dispostivo*/
 }
 @media (min-width: 769px) and (max-width: 1200px) {
   #especialidades article p {
-    font-size: 30px;
-    margin: 1%;
+    margin: 2.5%;
+    width: 20%;
+    align-self: center;
+    height: 10%;
+    font-size: 1.8vh;
   }
 }
 @media (min-width: 1201px) and (max-width: 1920px) {
@@ -645,10 +660,8 @@ footer #contacto {
 footer #contacto #redes_sociales, footer #contacto #como_llegar {
   /*Apliación del mixin de flexible, tiene 4 argumentos y se aplica nowrap por defecto*/
   display: flex;
-  flex-flow: column nowrap;
-  justify-content: flex-start;
-  align-items: flex-start;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: space-between;
 }
 footer #contacto #redes_sociales h3, footer #contacto #como_llegar h3 {
   background-color: white;
@@ -675,24 +688,24 @@ footer #contacto #redes_sociales h3, footer #contacto #como_llegar h3 {
   footer #contacto #redes_sociales h3, footer #contacto #como_llegar h3 {
     height: 21%;
     margin-top: 10%;
-    font-size: 24px;
+    font-size: 2vh;
+    text-align: center;
   }
 }
 @media (min-width: 1201px) and (max-width: 1920px) {
   footer #contacto #redes_sociales h3, footer #contacto #como_llegar h3 {
-    height: 18%;
-    font-size: 24px;
-  }
-}
-@media (min-width: 1201px) and (max-width: 1920px) and (min-height: 1080px) {
-  footer #contacto #redes_sociales h3, footer #contacto #como_llegar h3 {
-    font-size: 30px;
+    height: 21%;
+    margin-top: 5%;
+    font-size: 2vh;
+    text-align: center;
   }
 }
 @media (min-width: 1921px) and (max-width: 2560px) {
   footer #contacto #redes_sociales h3, footer #contacto #como_llegar h3 {
-    height: 18%;
-    font-size: 40px;
+    height: 21%;
+    margin-top: 5%;
+    font-size: 2vh;
+    text-align: center;
   }
 }
 footer #contacto #redes_sociales p, footer #contacto #como_llegar p {
@@ -717,7 +730,8 @@ footer #contacto #redes_sociales p img, footer #contacto #como_llegar p img {
 }
 @media (min-width: 481px) and (max-width: 768px) {
   footer #contacto #redes_sociales p, footer #contacto #como_llegar p {
-    margin-bottom: 10px;
+    font-size: 2vh;
+    padding: 2%;
   }
   footer #contacto #redes_sociales p img, footer #contacto #como_llegar p img {
     max-width: 15%;
@@ -725,8 +739,8 @@ footer #contacto #redes_sociales p img, footer #contacto #como_llegar p img {
 }
 @media (min-width: 769px) and (max-width: 1200px) {
   footer #contacto #redes_sociales p, footer #contacto #como_llegar p {
-    font-size: 25px;
-    margin-bottom: 30px;
+    font-size: 2vh;
+    padding: 2%;
   }
   footer #contacto #redes_sociales p img, footer #contacto #como_llegar p img {
     max-width: 40px;
@@ -734,28 +748,20 @@ footer #contacto #redes_sociales p img, footer #contacto #como_llegar p img {
 }
 @media (min-width: 1201px) and (max-width: 1920px) {
   footer #contacto #redes_sociales p, footer #contacto #como_llegar p {
-    font-size: 26px;
-    margin-bottom: 10px;
+    font-size: 2vh;
+    padding: 2%;
   }
-}
-@media (min-width: 1201px) and (max-width: 1920px) and (min-height: 1080px) {
-  footer #contacto #redes_sociales p, footer #contacto #como_llegar p {
-    font-size: 35px;
-    margin-bottom: 25px;
-  }
-}
-@media (min-width: 1201px) and (max-width: 1920px) {
   footer #contacto #redes_sociales p img, footer #contacto #como_llegar p img {
     max-width: 40px;
   }
 }
 @media (min-width: 1921px) and (max-width: 2560px) {
   footer #contacto #redes_sociales p, footer #contacto #como_llegar p {
-    font-size: 47px;
-    margin-bottom: 25px;
+    font-size: 2vh;
+    padding: 2%;
   }
   footer #contacto #redes_sociales p img, footer #contacto #como_llegar p img {
-    max-width: 10%;
+    max-width: 40px;
   }
 }
 @media (min-width: 360px) and (max-width: 480px) {
@@ -774,18 +780,17 @@ footer #contacto #redes_sociales p img, footer #contacto #como_llegar p img {
 }
 @media (min-width: 769px) and (max-width: 1200px) {
   footer #contacto #redes_sociales, footer #contacto #como_llegar {
-    width: 45%;
+    width: 40%;
   }
 }
 @media (min-width: 1201px) and (max-width: 1920px) {
   footer #contacto #redes_sociales, footer #contacto #como_llegar {
-    width: 28%;
-    margin-left: 20px;
+    width: 40%;
   }
 }
 @media (min-width: 1921px) and (max-width: 2560px) {
   footer #contacto #redes_sociales, footer #contacto #como_llegar {
-    width: 25%;
+    width: 40%;
   }
 }
 @media (min-width: 360px) and (max-width: 480px) {
@@ -807,18 +812,81 @@ footer #contacto #redes_sociales p img, footer #contacto #como_llegar p img {
   footer #contacto {
     justify-content: space-evenly;
     width: 100%;
+    min-height: 20%;
+  }
+  footer #contacto iframe {
+    width: 300px;
+    height: 150px;
+  }
+  footer #contacto #redes_sociales, footer #contacto #como_llegar {
+    width: 40%;
+  }
+  footer #contacto h3 {
+    height: 21%;
+    margin-top: 10%;
+    font-size: 2vh;
+    text-align: center;
+  }
+  footer #contacto p {
+    font-size: 2vh;
+    padding: 2%;
+  }
+  footer #contacto p img {
+    max-width: 40px;
   }
 }
 @media (min-width: 1201px) and (max-width: 1920px) {
   footer #contacto {
-    justify-content: space-around;
+    justify-content: space-evenly;
     width: 100%;
+    min-height: 20%;
+  }
+  footer #contacto iframe {
+    width: 300px;
+    height: 100%;
+  }
+  footer #contacto #redes_sociales, footer #contacto #como_llegar {
+    width: 40%;
+  }
+  footer #contacto h3 {
+    height: 21%;
+    margin-top: 10%;
+    font-size: 2vh;
+    text-align: center;
+  }
+  footer #contacto p {
+    font-size: 2vh;
+    padding: 2%;
+  }
+  footer #contacto p img {
+    max-width: 40px;
   }
 }
 @media (min-width: 1921px) and (max-width: 2560px) {
   footer #contacto {
-    justify-content: space-around;
+    justify-content: space-evenly;
     width: 100%;
+    min-height: 20%;
+  }
+  footer #contacto iframe {
+    width: 300px;
+    height: 100%;
+  }
+  footer #contacto #redes_sociales, footer #contacto #como_llegar {
+    width: 40%;
+  }
+  footer #contacto h3 {
+    height: 21%;
+    margin-top: 10%;
+    font-size: 2vh;
+    text-align: center;
+  }
+  footer #contacto p {
+    font-size: 2vh;
+    padding: 2%;
+  }
+  footer #contacto p img {
+    max-width: 40px;
   }
 }
 footer iframe {
@@ -844,51 +912,20 @@ footer iframe {
 }
 @media (min-width: 769px) and (max-width: 1200px) {
   footer iframe {
-    width: 350px;
+    width: 300px;
     height: 100%;
   }
 }
 @media (min-width: 1201px) and (max-width: 1920px) {
   footer iframe {
-    width: 350px;
+    width: 300px;
     height: 100%;
   }
 }
 @media (min-width: 1921px) and (max-width: 2560px) {
   footer iframe {
-    width: 650px;
+    width: 300px;
     height: 100%;
-  }
-}
-@media (min-width: 360px) and (max-width: 480px) {
-  footer {
-    flex-direction: column;
-    margin: 0;
-  }
-}
-@media (min-width: 481px) and (max-width: 768px) {
-  footer {
-    flex-direction: column;
-    align-items: center;
-    margin: 0;
-  }
-}
-@media (min-width: 769px) and (max-width: 1200px) {
-  footer {
-    justify-content: space-between;
-    height: 20%;
-  }
-}
-@media (min-width: 1201px) and (max-width: 1920px) {
-  footer {
-    justify-content: space-between;
-    height: 25%;
-  }
-}
-@media (min-width: 1921px) and (max-width: 2560px) {
-  footer {
-    justify-content: space-between;
-    height: 25%;
   }
 }
 

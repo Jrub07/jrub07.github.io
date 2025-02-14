@@ -10,7 +10,6 @@
 
   @include movil() {
     @include flexible(flex, column, nowrap, flex-start, center);
-    
   }
 
   @include tableta() {
@@ -21,11 +20,10 @@
   }
 
   @include pantalla_pequeña() {
-    @include flexible(flex, row, nowrap, center, center);
-    height: 30%;
-    flex-direction: row;
-    justify-content: center; 
-    align-items: center; 
+    @include flexible(flex, row, nowrap, space-around, flex-start);
+    padding-top: 1%;
+    text-align: center;
+    min-height: 25%;
   }
 
   @include pantalla_estandar() {
@@ -66,9 +64,8 @@
   }
 
   @include pantalla_pequeña() {
-    width: 60%;
-    height: 90%;
-    justify-content: center; 
+    width: 50%;
+    height: 80%;
   }
 
   @include pantalla_estandar() {
@@ -101,9 +98,8 @@
     }
 
     @include pantalla_pequeña() {
-      height: 10%;
-      width: 60%;
-      font-size: 25px;
+      height: 15%;
+      width: 80%;
     }
 
     @include pantalla_estandar() {
