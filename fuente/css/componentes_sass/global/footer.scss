@@ -71,10 +71,10 @@ footer {
 
         // Resoluciones de pantalla grande
         @include pantalla_grande {
-          height: 21%;
-          margin-top: 5%;
-          font-size: 2vh;
-          text-align: center;
+          height: 21%; // Copiado de pantalla_estandar
+          margin-top: 5%; // Copiado de pantalla_estandar
+          font-size: 3vh; // Copiado de pantalla_estandar
+          text-align: center; // Copiado de pantalla_estandar
         }
       }
 
@@ -114,31 +114,21 @@ footer {
         // Resoluciones de pantalla pequeña
         @include pantalla_pequeña {
           font-size: 2vh;
-          padding: 2%;
-
-          img {
-            max-width: 40px;
-          }
+          padding: 2%;          
         }
 
         // Resoluciones de pantalla estándar (1280x800)
         @include pantalla_estandar {
           font-size: 2vh;
           padding: 2%;
-
-          img {
-            max-width: 40px;
-          }
+          
         }
 
         // Resoluciones de pantalla grande
         @include pantalla_grande {
-          font-size: 2vh;
-          padding: 2%;
-
-          img {
-            max-width: 40px;
-          }
+          font-size: 3vh; // Copiado de pantalla_estandar
+          padding: 2%; // Copiado de pantalla_estandar
+          
         }
       }
 
@@ -253,32 +243,32 @@ footer {
 
     // Resoluciones de pantalla grande
     @include pantalla_grande {
-      justify-content: space-evenly;
-      width: 100%;
-      min-height: 20%;
+      justify-content: space-evenly; // Copiado de pantalla_estandar
+      width: 100%; // Copiado de pantalla_estandar
+      min-height: 20%; // Copiado de pantalla_estandar
 
       iframe {
-        width: 300px;
-        height: 100%;
+        width: 300px; // Copiado de pantalla_estandar
+        height: 100%; // Copiado de pantalla_estandar
       }
 
       #redes_sociales, #como_llegar {
-        width: 40%;
+        width: 40%; // Copiado de pantalla_estandar
       }
 
       h3 {
-        height: 21%;
-        margin-top: 10%;
-        font-size: 2vh;
-        text-align: center;
+        height: 21%; // Copiado de pantalla_estandar
+        margin-top: 10%; // Copiado de pantalla_estandar
+        font-size: 2vh; // Copiado de pantalla_estandar
+        text-align: center; // Copiado de pantalla_estandar
       }
 
       p {
-        font-size: 2vh;
-        padding: 2%;
+        font-size: 2vh; // Copiado de pantalla_estandar
+        padding: 2%; // Copiado de pantalla_estandar
 
         img {
-          max-width: 40px;
+          max-width: 40px; // Copiado de pantalla_estandar
         }
       }
     }
@@ -319,8 +309,8 @@ footer {
 
     // Resoluciones de pantalla grande
     @include pantalla_grande {
-      width: 300px;
-      height: 100%;
+      width: 300px; // Copiado de pantalla_estandar
+      height: 100%; // Copiado de pantalla_estandar
     }
   }
 }

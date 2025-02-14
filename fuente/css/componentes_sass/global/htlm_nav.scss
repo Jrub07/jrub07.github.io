@@ -57,7 +57,9 @@ header button {
     }
 
     @include pantalla_grande() {
-        font-size: 2.5vh; 
+        font-size: 2vh; // Copiado de pantalla_estandar
+        width: 10%; // Copiado de pantalla_estandar
+        height: 5vh; // Copiado de pantalla_estandar
     }
 }
 
@@ -89,7 +91,7 @@ header img {
     }
 
     @include pantalla_grande() {
-        max-width: 90%;
-        max-height: 90%;
+        max-width: 10%; // Copiado de pantalla_estandar
+        max-height: 10%; // Copiado de pantalla_estandar
     }
 }

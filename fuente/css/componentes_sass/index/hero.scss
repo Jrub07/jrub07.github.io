@@ -8,13 +8,13 @@
   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../imagenes/hero_img_3792x2524.jpeg");
   background-size: cover;
   background-position: center;
-  padding-top: 5%;
+  padding-top: 1%;
   min-height: 45%;
   color: white;
   overflow: hidden;
 
   @include tableta() {    
-    height: 55%;
+    min-height: 40%;
   }
 
   @include pantalla_pequeña() {
@@ -32,6 +32,7 @@
   @include pantalla_grande() {
     @include flexible(flex, column, nowrap, flex-start, flex-end);
     height: 80%;
+    padding-top: 1%;
     padding-right: 8%;
   }
 }
@@ -50,6 +51,10 @@
     width: 90%;
   }
 
+  @include pantalla_pequeña() {
+    width: 70%;    
+  }
+
   @include tableta() {
     width: 90%;
     margin: 0;
@@ -63,6 +68,21 @@
 
     @include tableta() {
       padding: 0;
+    }
+
+    @include pantalla_pequeña() {
+      height: 21%;
+      margin-top: 5%;
+      font-size: 2vh;
+      text-align: center;
+    }
+
+    @include pantalla_estandar() {
+      font-size: 3.5vh;
+    }
+
+    @include pantalla_grande() {
+      font-size: 3vh;
     }
   }
 
@@ -104,15 +124,17 @@
     }
 
     @include pantalla_pequeña() {
-      height: 150px; // Altura para pantallas pequeñas
+      width: 40%; // Ajuste de ancho para que los article entren en el contenedor
+      height: 43%;
+      padding: 0; // Se quita el padding para mayor consistencia
     }
 
     @include pantalla_estandar() {
-      height: 130px; // Altura para pantallas estándar
+      height: 43%; 
     }
 
     @include pantalla_grande() {
-      height: 120px; // Altura para pantallas grandes
+      height: 48%; 
     }
   }
 
@@ -127,12 +149,47 @@
 
     @include tableta() {
       margin-top: 1%;
-      margin-bottom: 1%;        
+      margin-bottom: 1%;
+      font-size: 2vh;        
+    }
+
+    @include pantalla_pequeña() {
+      margin-top: 1%;
+      margin-bottom: 1%;
+      font-size: 2vh;
+    }
+
+    @include pantalla_estandar() {
+      margin-top: 1%;
+      margin-bottom: 1%;
+      font-size: 4vh;        
+    }
+
+    @include pantalla_grande() {
+      margin-top: 1%;
+      margin-bottom: 1%;
+      font-size: 3vh;        
     }
   }
 
   p {
     @include aplicar_fuente('p', 'LTMuseum-Light');
-    margin-top: 5px;
+    margin-top: 1%;
+
+    @include tableta() {
+      font-size: 2vh;
+    }
+
+    @include pantalla_pequeña() {
+      font-size: 2vh;
+    }
+
+    @include pantalla_estandar() {
+      font-size: 3vh;
+    }
+
+    @include pantalla_grande() {
+      font-size: 3vh;
+    }
   }
 }

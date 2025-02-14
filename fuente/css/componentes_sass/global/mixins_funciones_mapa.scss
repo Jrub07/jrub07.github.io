@@ -113,7 +113,7 @@ no es tan útil ya que puede alterar el diseño*/
 }
 
 @mixin pantalla_grande(){
-    @media (min-width: 1921px) and (max-width: 2560px) {
+    @media (min-width: 1921px) {
         @content;    
     }
 }

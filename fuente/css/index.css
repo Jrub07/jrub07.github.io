@@ -97,9 +97,11 @@ header button {
     height: 5vh;
   }
 }
-@media (min-width: 1921px) and (max-width: 2560px) {
+@media (min-width: 1921px) {
   header button {
-    font-size: 2.5vh;
+    font-size: 2vh;
+    width: 10%;
+    height: 5vh;
   }
 }
 
@@ -132,10 +134,10 @@ header img {
     max-height: 10%;
   }
 }
-@media (min-width: 1921px) and (max-width: 2560px) {
+@media (min-width: 1921px) {
   header img {
-    max-width: 90%;
-    max-height: 90%;
+    max-width: 10%;
+    max-height: 10%;
   }
 }
 
@@ -149,14 +151,14 @@ header img {
   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../imagenes/hero_img_3792x2524.jpeg");
   background-size: cover;
   background-position: center;
-  padding-top: 5%;
+  padding-top: 1%;
   min-height: 45%;
   color: white;
   overflow: hidden;
 }
 @media (min-width: 481px) and (max-width: 768px) {
   #presentacion {
-    height: 55%;
+    min-height: 40%;
   }
 }
 @media (min-width: 769px) and (max-width: 1200px) {
@@ -179,13 +181,14 @@ header img {
     padding-right: 8%;
   }
 }
-@media (min-width: 1921px) and (max-width: 2560px) {
+@media (min-width: 1921px) {
   #presentacion {
     display: flex;
     flex-flow: column nowrap;
     justify-content: flex-start;
     align-items: flex-end;
     height: 80%;
+    padding-top: 1%;
     padding-right: 8%;
   }
 }
@@ -205,6 +208,11 @@ header img {
     width: 90%;
   }
 }
+@media (min-width: 769px) and (max-width: 1200px) {
+  #nombre_cliente {
+    width: 70%;
+  }
+}
 @media (min-width: 481px) and (max-width: 768px) {
   #nombre_cliente {
     width: 90%;
@@ -220,6 +228,24 @@ header img {
 @media (min-width: 481px) and (max-width: 768px) {
   #nombre_cliente h3 {
     padding: 0;
+  }
+}
+@media (min-width: 769px) and (max-width: 1200px) {
+  #nombre_cliente h3 {
+    height: 21%;
+    margin-top: 5%;
+    font-size: 2vh;
+    text-align: center;
+  }
+}
+@media (min-width: 1201px) and (max-width: 1920px) {
+  #nombre_cliente h3 {
+    font-size: 3.5vh;
+  }
+}
+@media (min-width: 1921px) {
+  #nombre_cliente h3 {
+    font-size: 3vh;
   }
 }
 #nombre_cliente .valores {
@@ -262,17 +288,19 @@ header img {
 }
 @media (min-width: 769px) and (max-width: 1200px) {
   #nombre_cliente .valores article {
-    height: 150px;
+    width: 40%;
+    height: 43%;
+    padding: 0;
   }
 }
 @media (min-width: 1201px) and (max-width: 1920px) {
   #nombre_cliente .valores article {
-    height: 130px;
+    height: 43%;
   }
 }
-@media (min-width: 1921px) and (max-width: 2560px) {
+@media (min-width: 1921px) {
   #nombre_cliente .valores article {
-    height: 120px;
+    height: 48%;
   }
 }
 #nombre_cliente h4 {
@@ -289,11 +317,53 @@ header img {
   #nombre_cliente h4 {
     margin-top: 1%;
     margin-bottom: 1%;
+    font-size: 2vh;
+  }
+}
+@media (min-width: 769px) and (max-width: 1200px) {
+  #nombre_cliente h4 {
+    margin-top: 1%;
+    margin-bottom: 1%;
+    font-size: 2vh;
+  }
+}
+@media (min-width: 1201px) and (max-width: 1920px) {
+  #nombre_cliente h4 {
+    margin-top: 1%;
+    margin-bottom: 1%;
+    font-size: 4vh;
+  }
+}
+@media (min-width: 1921px) {
+  #nombre_cliente h4 {
+    margin-top: 1%;
+    margin-bottom: 1%;
+    font-size: 3vh;
   }
 }
 #nombre_cliente p {
   font-family: "LTMuseum-Light";
-  margin-top: 5px;
+  margin-top: 1%;
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  #nombre_cliente p {
+    font-size: 2vh;
+  }
+}
+@media (min-width: 769px) and (max-width: 1200px) {
+  #nombre_cliente p {
+    font-size: 2vh;
+  }
+}
+@media (min-width: 1201px) and (max-width: 1920px) {
+  #nombre_cliente p {
+    font-size: 3vh;
+  }
+}
+@media (min-width: 1921px) {
+  #nombre_cliente p {
+    font-size: 3vh;
+  }
 }
 
 /*Archivo para mostar las modalidades de terapia del cliente*/
@@ -348,7 +418,7 @@ header img {
     max-height: 90%;
   }
 }
-@media (min-width: 1921px) and (max-width: 2560px) {
+@media (min-width: 1921px) {
   #modalidades {
     display: flex;
     flex-flow: row nowrap;
@@ -398,7 +468,7 @@ header img {
     min-height: 25%;
   }
 }
-@media (min-width: 1921px) and (max-width: 2560px) {
+@media (min-width: 1921px) {
   #presencial, #online {
     width: 50%;
     height: 80%;
@@ -444,7 +514,7 @@ header img {
     font-size: 25px;
   }
 }
-@media (min-width: 1921px) and (max-width: 2560px) {
+@media (min-width: 1921px) {
   #presencial p, #online p {
     height: 15%;
     width: 80%;
@@ -485,7 +555,7 @@ header img {
     max-height: 90%;
   }
 }
-@media (min-width: 1921px) and (max-width: 2560px) {
+@media (min-width: 1921px) {
   #presencial img, #online img {
     max-width: 90%;
     max-height: 90%;
@@ -546,14 +616,14 @@ en función de las necesidades del dispostivo*/
 }
 @media (min-width: 1201px) and (max-width: 1920px) {
   #especialidades h3 {
-    font-size: 1.6em;
+    font-size: 1.6vh;
     width: 90%;
     margin-top: 2%;
   }
 }
-@media (min-width: 1921px) and (max-width: 2560px) {
+@media (min-width: 1921px) {
   #especialidades h3 {
-    font-size: 1.6em;
+    font-size: 2.6vh;
     width: 90%;
     margin-top: 2%;
   }
@@ -580,7 +650,7 @@ en función de las necesidades del dispostivo*/
     justify-content: center;
   }
 }
-@media (min-width: 1921px) and (max-width: 2560px) {
+@media (min-width: 1921px) {
   #especialidades article {
     height: 80%;
     width: 80%;
@@ -650,13 +720,12 @@ en función de las necesidades del dispostivo*/
     align-items: center;
   }
 }
-@media (min-width: 1921px) and (max-width: 2560px) {
+@media (min-width: 1921px) {
   #especialidades article p {
-    width: 20%;
-    margin: 2.5%;
-    align-self: center;
-    height: 10%;
-    font-size: 1.8vh;
+    width: 15%;
+    margin: 3.5%;
+    height: 7vh;
+    font-size: 3vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -728,11 +797,11 @@ footer #contacto #redes_sociales h3, footer #contacto #como_llegar h3 {
     text-align: center;
   }
 }
-@media (min-width: 1921px) and (max-width: 2560px) {
+@media (min-width: 1921px) {
   footer #contacto #redes_sociales h3, footer #contacto #como_llegar h3 {
     height: 21%;
     margin-top: 5%;
-    font-size: 2vh;
+    font-size: 3vh;
     text-align: center;
   }
 }
@@ -770,26 +839,17 @@ footer #contacto #redes_sociales p img, footer #contacto #como_llegar p img {
     font-size: 2vh;
     padding: 2%;
   }
-  footer #contacto #redes_sociales p img, footer #contacto #como_llegar p img {
-    max-width: 40px;
-  }
 }
 @media (min-width: 1201px) and (max-width: 1920px) {
   footer #contacto #redes_sociales p, footer #contacto #como_llegar p {
     font-size: 2vh;
     padding: 2%;
   }
-  footer #contacto #redes_sociales p img, footer #contacto #como_llegar p img {
-    max-width: 40px;
-  }
 }
-@media (min-width: 1921px) and (max-width: 2560px) {
+@media (min-width: 1921px) {
   footer #contacto #redes_sociales p, footer #contacto #como_llegar p {
-    font-size: 2vh;
+    font-size: 3vh;
     padding: 2%;
-  }
-  footer #contacto #redes_sociales p img, footer #contacto #como_llegar p img {
-    max-width: 40px;
   }
 }
 @media (min-width: 360px) and (max-width: 480px) {
@@ -816,7 +876,7 @@ footer #contacto #redes_sociales p img, footer #contacto #como_llegar p img {
     width: 40%;
   }
 }
-@media (min-width: 1921px) and (max-width: 2560px) {
+@media (min-width: 1921px) {
   footer #contacto #redes_sociales, footer #contacto #como_llegar {
     width: 40%;
   }
@@ -890,7 +950,7 @@ footer #contacto #redes_sociales p img, footer #contacto #como_llegar p img {
     max-width: 40px;
   }
 }
-@media (min-width: 1921px) and (max-width: 2560px) {
+@media (min-width: 1921px) {
   footer #contacto {
     justify-content: space-evenly;
     width: 100%;
@@ -950,7 +1010,7 @@ footer iframe {
     height: 100%;
   }
 }
-@media (min-width: 1921px) and (max-width: 2560px) {
+@media (min-width: 1921px) {
   footer iframe {
     width: 300px;
     height: 100%;

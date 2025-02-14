@@ -49,14 +49,14 @@ en función de las necesidades del dispostivo*/
 
         
         @include pantalla_estandar() {
-            font-size: 1.6em; 
+            font-size: 1.6vh; 
             width: 90%; 
             margin-top: 2%; 
         }
 
         // Resoluciones de pantalla grande
         @include pantalla_grande() {
-            font-size: 1.6em; // Copiado de pantalla_pequeña
+            font-size: 2.6vh; // Copiado de pantalla_pequeña
             width: 90%; // Copiado de pantalla_pequeña
             margin-top: 2%; // Copiado de pantalla_pequeña
         }
@@ -156,14 +156,13 @@ en función de las necesidades del dispostivo*/
 
             // Resoluciones de pantalla grande
             @include pantalla_grande() {
-                width: 20%;
-                margin: 2.5%; // Copiado de pantalla_pequeña
-                align-self: center; // Copiado de pantalla_pequeña
-                height: 10%; // Copiado de pantalla_pequeña
-                font-size: 1.8vh; // Copiado de pantalla_pequeña
-                display: flex;
-                justify-content: center;
-                align-items: center;
+                width: 15%; // Copiado de pantalla_estandar
+                margin: 3.5%; // Copiado de pantalla_estandar
+                height: 7vh; // Copiado de pantalla_estandar
+                font-size: 3vh; // Copiado de pantalla_estandar
+                display: flex; // Copiado de pantalla_estandar
+                justify-content: center; // Copiado de pantalla_estandar
+                align-items: center; // Copiado de pantalla_estandar
             }
         }
     }
