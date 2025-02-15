@@ -24,8 +24,6 @@
   font-family: "LTMuseum-light";
   src: url("/fuente/fuente_letra/LTMuseum-Light.woff") format("woff");
 }
-/*Este mixin recoge la altura del dispositivo con una interpolacion para ser aplicado en un futuro
-mixin de punto de ruputra*/
 /*Mixin que ahorra todas la lineas de codigo de flexbox, en general es mas util cuando se aplica a 
 lugares en los que se deben escribir de 4 a 5 lineas, para aquellos elementos que solo necesiten 2 lineas
 no es tan útil ya que puede alterar el diseño*/
@@ -149,7 +147,7 @@ header img {
   flex-flow: column nowrap;
   justify-content: flex-start;
   align-items: center;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../imagenes/hero_img_3792x2524.jpeg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), image-set(url("../imagenes/hero_img_1125x749.avif") type("image/avif"), url("../imagenes/hero_img_1125x749.webp") type("image/webp"), url("../imagenes/hero_img_1125x749.jpeg") type("image/jpeg"));
   background-size: cover;
   background-position: center;
   padding-top: 1%;
@@ -170,6 +168,7 @@ header img {
     align-items: flex-end;
     height: 50%;
     padding-right: 8%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), image-set(url("../imagenes/hero_img_600x399.avif") type("image/avif"), url("../imagenes/hero_img_600x399.webp") type("image/webp"), url("../imagenes/hero_img_600x399.jpeg") type("image/jpeg"));
   }
 }
 @media (min-width: 1201px) and (max-width: 1920px) {
@@ -180,6 +179,7 @@ header img {
     align-items: flex-end;
     height: 80%;
     padding-right: 8%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), image-set(url("../imagenes/hero_img_1950x998.avif") type("image/avif"), url("../imagenes/hero_img_1950x998.webp") type("image/webp"), url("../imagenes/hero_img_1950x998.jpeg") type("image/jpeg"));
   }
 }
 @media (min-width: 1921px) {
@@ -191,6 +191,7 @@ header img {
     height: 80%;
     padding-top: 1%;
     padding-right: 8%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), image-set(url("../imagenes/hero_img_1950x1080.avif") type("image/avif"), url("../imagenes/hero_img_1950x1080.webp") type("image/webp"), url("../imagenes/hero_img_1950x1080.jpeg") type("image/jpeg"));
   }
 }
 
@@ -509,11 +510,6 @@ header img {
     height: 15%;
     width: 80%;
     font-size: 20px;
-  }
-}
-@media (min-width: 1201px) and (max-width: 1920px) and (min-height: 864px) {
-  #presencial p, #online p {
-    font-size: 25px;
   }
 }
 @media (min-width: 1921px) {

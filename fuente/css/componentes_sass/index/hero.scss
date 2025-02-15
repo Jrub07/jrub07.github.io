@@ -5,7 +5,7 @@
 /* Contenedor de presentación con la imagen */
 #presentacion {
   @include flexible(flex, column, nowrap, flex-start, center);
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../imagenes/hero_img_3792x2524.jpeg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), image-set(#{map.get($imagenes, "movil_tableta")});
   background-size: cover;
   background-position: center;
   padding-top: 1%;
@@ -13,7 +13,7 @@
   color: white;
   overflow: hidden;
 
-  @include tableta() {    
+  @include tableta() { 
     min-height: 40%;
   }
 
@@ -21,12 +21,16 @@
     @include flexible(flex, column, nowrap, flex-start, flex-end);
     height: 50%;
     padding-right: 8%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), image-set(#{map.get($imagenes, "pantalla_pequeña")});
+
   }
 
   @include pantalla_estandar() {
     @include flexible(flex, column, nowrap, flex-start, flex-end);
     height: 80%;
     padding-right: 8%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), image-set(#{map.get($imagenes, "pantalla_estandar")});
+
   }
 
   @include pantalla_grande() {
@@ -34,6 +38,8 @@
     height: 80%;
     padding-top: 1%;
     padding-right: 8%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), image-set(#{map.get($imagenes, "pantalla_grande")});
+   
   }
 }
 

@@ -115,9 +115,7 @@
       height: 15%;
       width: 80%;
       font-size: 20px;
-      @include altura("864") {
-        font-size: 25px;
-      }
+      
     }
 
     @include pantalla_grande() {

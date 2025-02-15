@@ -2,6 +2,31 @@
 
 @use 'sass:map';
 
+$imagenes: (
+  "movil_tableta": (
+    url("../imagenes/hero_img_1125x749.avif") type("image/avif"),
+    url("../imagenes/hero_img_1125x749.webp") type("image/webp"),
+    url("../imagenes/hero_img_1125x749.jpeg") type("image/jpeg")
+  ),
+  "pantalla_pequeña": (
+    url("../imagenes/hero_img_600x399.avif") type("image/avif"),
+    url("../imagenes/hero_img_600x399.webp") type("image/webp"),
+    url("../imagenes/hero_img_600x399.jpeg") type("image/jpeg")
+  ),
+  "pantalla_grande": (
+    url("../imagenes/hero_img_1950x1080.avif") type("image/avif"),
+    url("../imagenes/hero_img_1950x1080.webp") type("image/webp"),
+    url("../imagenes/hero_img_1950x1080.jpeg") type("image/jpeg")
+  ),
+  "pantalla_estandar": (
+    url("../imagenes/hero_img_1950x998.avif") type("image/avif"),
+    url("../imagenes/hero_img_1950x998.webp") type("image/webp"),
+    url("../imagenes/hero_img_1950x998.jpeg") type("image/jpeg")
+  )
+);
+
+
+
 //Al haber descargado las fuentes de letra de Dafont el servicio no te deja usarlas modo html, por lo que se deben importar de manera local
 @font-face {
     font-family: 'MilkAndHoney';
@@ -33,9 +58,6 @@
     src: url('/fuente/fuente_letra/LTMuseum-Light.woff') format('woff');
 }
 
-
-
-
 //Creacion de un mapa para los colores principal y secundarios
 $colores: (
     "principal"  : #372715,
@@ -52,26 +74,7 @@ $fuentes: (
     "LTMuseum-Light" : "LTMuseum-Light")
 ;
 
-//mapa con las diferentes alturas de los dispositivos a evaluar para usar en mixin posterior
-$alturas: (
-  "1440" : 1440,
-  "1080" : 1080,
-  "864"  : 864,
-  "800"  : 800,
-  "1366" : 1366,
-  "1024" : 1024,
-  "896"  : 896,
-  "760"  : 760
-);
 
-
-/*Este mixin recoge la altura del dispositivo con una interpolacion para ser aplicado en un futuro
-mixin de punto de ruputra*/
-@mixin altura($altura) {
-    @media (min-height: #{map.get($alturas, $altura)}px) {
-        @content;
-    }
-}
 
 /*Mixin que ahorra todas la lineas de codigo de flexbox, en general es mas util cuando se aplica a 
 lugares en los que se deben escribir de 4 a 5 lineas, para aquellos elementos que solo necesiten 2 lineas
@@ -86,7 +89,6 @@ no es tan útil ya que puede alterar el diseño*/
 
 /*Mixins para diferentes puntos de ruptura, que se aplican desde el ancho de corrección hasta el máximo siguiente
 +1 pixel para cambiar el estandar de un dispositivo a otro*/
-
 
 @mixin movil(){
     @media (min-width: 360px) and (max-width: 480px)  {
