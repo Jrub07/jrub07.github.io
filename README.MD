@@ -17,4 +17,5 @@ Para que no haya errores con las fuentes de imagen y el mapa se ha usado la tecn
 - Ahora hero img puede recoger varias resoluciones gracias a un mapa.
 - Se ha eliminado el archivo de pruebas para que no haya confusiones para corregir, ya que en la entrega anterior guitignore no lo ignoró.
 - Se ha cambiado el nombre de los archivos en general de SCSS para que empiecen con _.
+- Se ha creado un mapa con los enlaces a las imagenes para que quede más limpio.
 - Es posible que se haya quedado alguna cosa repetida en SCSS y que no funcione a pesar de ser revisado, le pediría un poco de flexibilidad si lo ve.
