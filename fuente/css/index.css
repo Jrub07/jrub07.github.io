@@ -68,7 +68,7 @@ header button {
   margin: 0 10px;
   width: 40%;
   font-size: 2vh;
-  height: 50px;
+  height: 4vh;
 }
 @media (min-width: 360px) and (max-width: 480px) {
   header button {
@@ -78,8 +78,8 @@ header button {
 @media (min-width: 481px) and (max-width: 768px) {
   header button {
     font-size: 1.4vh;
-    height: 30%;
-    width: 13%;
+    height: 4.5vh;
+    width: 15%;
   }
 }
 @media (min-width: 769px) and (max-width: 1200px) {
@@ -191,7 +191,7 @@ header img {
     height: 80%;
     padding-top: 1%;
     padding-right: 8%;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), image-set(url("../imagenes/hero_img_1950x1080.avif") type("image/avif"), url("../imagenes/hero_img_1950x1080.webp") type("image/webp"), url("../imagenes/hero_img_1950x1080.jpeg") type("image/jpeg"));
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), image-set(url("../imagenes/hero_img_1950x1298.avif") type("image/avif"), url("../imagenes/hero_img_1950x1298.webp") type("image/webp"), url("../imagenes/hero_img_1950x1298.jpeg") type("image/jpeg"));
   }
 }
 
@@ -537,26 +537,26 @@ header img {
 }
 @media (min-width: 481px) and (max-width: 768px) {
   #presencial img, #online img {
-    max-width: 90%;
-    max-height: 90%;
+    max-width: 60%;
+    max-height: 60%;
   }
 }
 @media (min-width: 769px) and (max-width: 1200px) {
   #presencial img, #online img {
-    max-width: 90%;
-    max-height: 90%;
+    max-width: 60%;
+    max-height: 60%;
   }
 }
 @media (min-width: 1201px) and (max-width: 1920px) {
   #presencial img, #online img {
-    max-width: 90%;
-    max-height: 90%;
+    max-width: 60%;
+    max-height: 60%;
   }
 }
 @media (min-width: 1921px) {
   #presencial img, #online img {
-    max-width: 90%;
-    max-height: 90%;
+    max-width: 60%;
+    max-height: 60%;
   }
 }
 
@@ -607,14 +607,14 @@ en función de las necesidades del dispostivo*/
 }
 @media (min-width: 769px) and (max-width: 1200px) {
   #especialidades h3 {
-    font-size: 1.6em;
+    font-size: 2vh;
     width: 90%;
     margin-top: 2%;
   }
 }
 @media (min-width: 1201px) and (max-width: 1920px) {
   #especialidades h3 {
-    font-size: 1.6vh;
+    font-size: 2.5vh;
     width: 90%;
     margin-top: 2%;
   }
@@ -753,6 +753,8 @@ footer {
 }
 @media (min-width: 481px) and (max-width: 768px) {
   footer {
+    flex-direction: column;
+    align-items: center;
     min-height: 25%;
   }
 }
@@ -763,8 +765,6 @@ footer #contacto {
 }
 @media (min-width: 360px) and (max-width: 480px) {
   footer #contacto {
-    display: flex;
-    flex-direction: row;
     padding-left: 1%;
     padding-right: 1%;
     width: 100%;
@@ -772,12 +772,19 @@ footer #contacto {
     margin-top: 1%;
   }
 }
+@media (min-width: 481px) and (max-width: 768px) {
+  footer #contacto {
+    width: 100%;
+    order: 2;
+    margin-top: 3%;
+  }
+}
 footer #contacto #redes_sociales, footer #contacto #como_llegar {
   /* Aplicación del mixin de flexible, tiene 4 argumentos y se aplica nowrap por defecto */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 50%;
+  width: 40%;
 }
 @media (min-width: 360px) and (max-width: 480px) {
   footer #contacto #redes_sociales, footer #contacto #como_llegar {
@@ -801,8 +808,8 @@ footer #contacto #redes_sociales h3, footer #contacto #como_llegar h3 {
 }
 @media (min-width: 481px) and (max-width: 768px) {
   footer #contacto #redes_sociales h3, footer #contacto #como_llegar h3 {
-    height: 18%;
-    font-size: 16px;
+    height: 30%;
+    font-size: 70%;
   }
 }
 @media (min-width: 769px) and (max-width: 1200px) {
@@ -817,7 +824,7 @@ footer #contacto #redes_sociales h3, footer #contacto #como_llegar h3 {
   footer #contacto #redes_sociales h3, footer #contacto #como_llegar h3 {
     height: 21%;
     margin-top: 5%;
-    font-size: 2vh;
+    font-size: 2.5vh;
     text-align: center;
   }
 }
@@ -838,7 +845,6 @@ footer #contacto #redes_sociales p, footer #contacto #como_llegar p {
 }
 footer #contacto #redes_sociales p img, footer #contacto #como_llegar p img {
   margin-right: 10px;
-  height: auto;
   vertical-align: middle;
 }
 @media (min-width: 360px) and (max-width: 480px) {
@@ -851,6 +857,7 @@ footer #contacto #redes_sociales p img, footer #contacto #como_llegar p img {
 }
 @media (min-width: 481px) and (max-width: 768px) {
   footer #contacto #redes_sociales p, footer #contacto #como_llegar p {
+    margin-bottom: 10px;
     font-size: 2vh;
     padding: 2%;
   }
@@ -979,11 +986,15 @@ footer iframe {
 }
 @media (min-width: 481px) and (max-width: 768px) {
   footer iframe {
+    margin-top: 1%;
+    margin-bottom: 1%;
+    height: 90%;
+    width: 100%;
+    order: 1;
     align-items: center;
     margin-top: 2%;
     height: 200px;
     width: 400px;
-    order: 1;
   }
 }
 @media (min-width: 769px) and (max-width: 1200px) {
@@ -1000,7 +1011,7 @@ footer iframe {
 }
 @media (min-width: 1921px) {
   footer iframe {
-    width: 300px;
+    width: 650px;
     height: 100%;
   }
 }

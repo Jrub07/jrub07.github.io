@@ -142,23 +142,23 @@
     }
 
     @include tableta() {
-      max-width: 90%;
-      max-height: 90%;
+      max-width: 60%;
+      max-height: 60%;
     }
 
     @include pantalla_pequeña() {
-      max-width: 90%;
-      max-height: 90%;
+      max-width: 60%;
+      max-height: 60%;
     }
 
     @include pantalla_estandar() {
-      max-width: 90%; // Aplicar diseño de pantalla_pequeña
-      max-height: 90%; // Aplicar diseño de pantalla_pequeña
+      max-width: 60%; // Aplicar diseño de pantalla_pequeña
+      max-height: 60%; // Aplicar diseño de pantalla_pequeña
     }
 
     @include pantalla_grande() {
-      max-width: 90%; // Aplicar diseño de pantalla_pequeña
-      max-height: 90%; // Aplicar diseño de pantalla_pequeña
+      max-width: 60%; // Aplicar diseño de pantalla_pequeña
+      max-height: 60%; // Aplicar diseño de pantalla_pequeña
     }
   }
 }

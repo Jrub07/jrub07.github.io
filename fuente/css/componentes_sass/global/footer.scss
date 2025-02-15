@@ -21,6 +21,8 @@ footer {
   }
 
   @include tableta {
+    flex-direction: column; 
+    align-items: center;
     min-height: 25%;
   }
 
@@ -28,9 +30,7 @@ footer {
     display: flex;
     justify-content: space-around;
     overflow: hidden;
-    @include movil {
-      display: flex; // Cambia a flex para mostrar como fila
-      flex-direction: row; // Asegura que los elementos estén en una fila
+    @include movil {      
       padding-left: 1%;
       padding-right: 1%;
       width: 100%;
@@ -38,12 +38,18 @@ footer {
       margin-top: 1%;
     }
 
+    @include tableta {   
+      width: 100%; 
+      order: 2; 
+      margin-top: 3%; 
+    }
+
     #redes_sociales, #como_llegar {
       /* Aplicación del mixin de flexible, tiene 4 argumentos y se aplica nowrap por defecto */
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      width: 50%;
+      width: 40%;
       @include movil {
         margin-right: 3%;
       }
@@ -65,8 +71,8 @@ footer {
 
         // Resoluciones de tableta
         @include tableta {
-          height: 18%;
-          font-size: 16px;
+          height: 30%; 
+          font-size: 70%; 
         }
 
         // Resoluciones de pantalla pequeña
@@ -77,20 +83,20 @@ footer {
           text-align: center;
         }
 
-        // Resoluciones de pantalla estándar (1280x800)
+        // Resoluciones de pantalla estándar 
         @include pantalla_estandar {
           height: 21%;
           margin-top: 5%;
-          font-size: 2vh;
+          font-size: 2.5vh;
           text-align: center;
         }
 
         // Resoluciones de pantalla grande
         @include pantalla_grande {
-          height: 21%; // Copiado de pantalla_estandar
-          margin-top: 5%; // Copiado de pantalla_estandar
-          font-size: 3vh; // Copiado de pantalla_estandar
-          text-align: center; // Copiado de pantalla_estandar
+          height: 21%; 
+          margin-top: 5%; 
+          font-size: 3vh; 
+          text-align: center; 
         }
       }
 
@@ -103,8 +109,8 @@ footer {
         @include aplicar_fuente('p', 'LTMuseum-Light');
 
         img {
-          margin-right: 10px;
-          height: auto;
+          margin-right: 10px;          
+          //alternativa a flex en p
           vertical-align: middle;
         }
 
@@ -118,11 +124,12 @@ footer {
 
         // Resoluciones de tableta
         @include tableta {
-          font-size: 2vh;
-          padding: 2%;
+          margin-bottom: 10px; // Copiado de movil
           img {
-            max-width: 15%;
+            max-width: 15%; // Copiado de movil
           }
+          font-size: 2vh;
+          padding: 2%;         
         }
 
         // Resoluciones de pantalla pequeña
@@ -139,8 +146,8 @@ footer {
 
         // Resoluciones de pantalla grande
         @include pantalla_grande {
-          font-size: 3vh; // Copiado de pantalla_estandar
-          padding: 2%;   // Copiado de pantalla_estandar
+          font-size: 3vh; 
+          padding: 2%;   
         }
       }
     }
@@ -186,7 +193,7 @@ footer {
       }
     }
 
-    // Resoluciones de pantalla estándar (1280x800)
+    // Resoluciones de pantalla estándar 
     @include pantalla_estandar {
       justify-content: space-evenly;
       width: 100%;
@@ -265,11 +272,15 @@ footer {
 
     // Resoluciones de tableta
     @include tableta {
+      margin-top: 1%; // Copiado de movil
+      margin-bottom: 1%; // Copiado de movil
+      height: 90%; // Copiado de movil
+      width: 100%; // Copiado de movil
+      order: 1; // Copiado de movil
       align-items: center;
       margin-top: 2%;
       height: 200px;
       width: 400px;
-      order: 1;
     }
 
     // Resoluciones de pantalla pequeña
@@ -286,7 +297,7 @@ footer {
 
     // Resoluciones de pantalla grande
     @include pantalla_grande {
-      width: 300px; // Copiado de pantalla_estandar
+      width: 650px; // Copiado de pantalla_estandar
       height: 100%; // Copiado de pantalla_estandar
     }
   }

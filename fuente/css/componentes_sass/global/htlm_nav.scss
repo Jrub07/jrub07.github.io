@@ -33,7 +33,7 @@ header button {
     margin: 0 10px;
     width: 40%;    
     font-size: 2vh;
-    height: 50px; 
+    height: 4vh; 
 
     @include movil() {
         font-size: 1.5vh; 
@@ -41,8 +41,8 @@ header button {
 
     @include tableta() {
         font-size: 1.4vh;
-        height: 30%;
-        width: 13%;
+        height: 4.5vh;
+        width: 15%;
     }
 
     @include pantalla_pequeña() {
