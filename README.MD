@@ -1,6 +1,6 @@
 ## Importante
 
-Para que no haya errores con las fuentes de imagen y el mapa se ha usado la tecnologica de Github.io, para poder ver la página completa accede a este enlace:  https://jrub07.github.io
+Para que no haya errores con las fuentes de imagen y el mapa se ha usado la tecnologica de Github.io. Para poder ver la página completa accede a este enlace:  https://jrub07.github.io
 
 ### Cambios hecho en v2
 
