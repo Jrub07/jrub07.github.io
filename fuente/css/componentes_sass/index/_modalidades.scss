@@ -2,32 +2,41 @@
 @use '../global/mixins_funciones_mapa.scss' as *;
 @use "sass:map";
 
+
+
 /*Estilos generales, en este caso destacan aquellos que son en columna dividido a 2, menos para los telefonos inteligentes*/
 #modalidades {
   overflow: hidden;
   background-color: map.get($colores, "secundario_dos");
   min-height: 45%;
+  display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;  
 
-  @include movil() {
-    @include flexible(flex, column, nowrap, flex-start, center);
-  }
-
-  @include tableta() {
-    @include flexible(flex, row, nowrap, space-around, flex-start);
+  @include tableta() {    
+    flex-direction: row;    
+    justify-content: space-around;
+    align-items: flex-start;
     padding-top: 1%;
     text-align: center;
     min-height: 25%;
   }
 
   @include pantalla_pequeña() {
-    @include flexible(flex, row, nowrap, space-around, flex-start);
+    flex-direction: row;    
+    justify-content: space-around;
+    align-items: flex-start;
     padding-top: 1%;
     text-align: center;
     min-height: 25%;
   }
 
   @include pantalla_estandar() {
-    @include flexible(flex, row, nowrap, space-around, flex-start);
+    flex-direction: row;    
+    justify-content: space-around;
+    align-items: flex-start;
     padding-top: 1%;
     text-align: center;
     min-height: 15%;
@@ -38,7 +47,9 @@
   }
 
   @include pantalla_grande() {
-    @include flexible(flex, row, nowrap, space-around, flex-start);
+    flex-direction: row;    
+    justify-content: space-around;
+    align-items: flex-start;
     padding-top: 1%;
     text-align: center;
     min-height: 25%;
@@ -87,11 +98,8 @@
   }
 
   p {
-    background-color: white;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background-color: white; 
+    text-align: center;   
     @include aplicar_fuente('p', 'Classica-Bold');
 
     @include movil() {
@@ -114,51 +122,29 @@
     @include pantalla_estandar() {
       height: 15%;
       width: 80%;
-      font-size: 20px;
+      font-size: 3vh;
       
     }
 
     @include pantalla_grande() {
-      height: 15%; // Aplicar diseño de pantalla_pequeña
-      width: 80%; // Aplicar diseño de pantalla_pequeña
-      font-size: 35px;
+      height: 15%; 
+      width: 80%; 
+      font-size: 4vh;
       @include aplicar_fuente('p', 'Classica-Bold');
-      display: flex;
-      align-items: center;
-      justify-content: center; 
+       
     }
   }
 
-  //Ajuste de imagen para que se vea bien en todos los dispositivos y sea adecue a su contenedor
-  img {
-    object-fit: cover;
-    display: block;
+  
+  img {        
     margin: 0 auto;
+    max-width: 60%; 
+    max-height: 60%;
 
     @include movil() {
-      width: 100%;
-      height: 100%;
-      object-fit: fill;
+      max-width: 100%;
+      max-height: 100%;      
     }
-
-    @include tableta() {
-      max-width: 60%;
-      max-height: 60%;
-    }
-
-    @include pantalla_pequeña() {
-      max-width: 60%;
-      max-height: 60%;
-    }
-
-    @include pantalla_estandar() {
-      max-width: 60%; // Aplicar diseño de pantalla_pequeña
-      max-height: 60%; // Aplicar diseño de pantalla_pequeña
-    }
-
-    @include pantalla_grande() {
-      max-width: 60%; // Aplicar diseño de pantalla_pequeña
-      max-height: 60%; // Aplicar diseño de pantalla_pequeña
-    }
-  }
+    
+}
 }

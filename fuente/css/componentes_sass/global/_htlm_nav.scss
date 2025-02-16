@@ -1,16 +1,21 @@
-@use 'mixins_funciones_mapa' as *;
+@use '_mixins_funciones_mapa' as *;
 @use 'sass:map';
 
-/* Creación del html y el body en conjunto para que se comparta en todos los archivos, se quitan los márgenes
-para que se incluya todo el contenido */
-html, body {
+/* Clase base para html y body para poder heredar en tarea 12 */
+%html_body {
     box-sizing: border-box;
     height: 100%;
     width: 100%;
     margin: 0;
     padding: 0;
     // Overflow-x para que no haya errores con el móvil
-    overflow-x: hidden;    
+    overflow-x: hidden;
+}
+
+/* Creación del html y el body en conjunto para que se comparta en todos los archivos, se quitan los márgenes
+para que se incluya todo el contenido */
+html, body {
+    @extend %html_body;
 }
 
 // Creación del header
@@ -19,8 +24,11 @@ header {
     min-height: 10%;
     overflow: hidden;
     background-color: map.get($colores, "principal"); 
-    @include flexible(flex, row, nowrap, space-around, center);
-    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
 }
 
 header button {   
@@ -29,14 +37,14 @@ header button {
     color: black;
     font-family: averia-serif;
     text-transform: uppercase;
-    font-weight: bold;
-    margin: 0 10px;
+    font-weight: bold;    
     width: 40%;    
     font-size: 2vh;
     height: 4vh; 
 
     @include movil() {
         font-size: 1.5vh; 
+        margin: 0 10px;
     }
 
     @include tableta() {
@@ -54,13 +62,13 @@ header button {
     @include pantalla_estandar() {
         font-size: 2vh; 
         width: 10%;
-        height: 5vh; // Altura fija para pantallas estándar
+        height: 5vh; 
     }
 
     @include pantalla_grande() {
-        font-size: 2vh; // Copiado de pantalla_estandar
-        width: 10%; // Copiado de pantalla_estandar
-        height: 5vh; // Copiado de pantalla_estandar
+        font-size: 2vh; 
+        width: 10%; 
+        height: 5vh; 
     }
 }
 
@@ -92,7 +100,7 @@ header img {
     }
 
     @include pantalla_grande() {
-        max-width: 10%; // Copiado de pantalla_estandar
-        max-height: 10%; // Copiado de pantalla_estandar
+        max-width: 10%; 
+        max-height: 10%; 
     }
 }

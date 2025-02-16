@@ -76,16 +76,7 @@ $fuentes: (
 
 
 
-/*Mixin que ahorra todas la lineas de codigo de flexbox, en general es mas util cuando se aplica a 
-lugares en los que se deben escribir de 4 a 5 lineas, para aquellos elementos que solo necesiten 2 lineas
-no es tan útil ya que puede alterar el diseño*/
 
-@mixin flexible( $dis , $direction , $corte , $just , $align ){ 
-    display         : $dis;
-    flex-flow       : $direction $corte;
-    justify-content : $just;
-    align-items     : $align;
-}
 
 /*Mixins para diferentes puntos de ruptura, que se aplican desde el ancho de corrección hasta el máximo siguiente
 +1 pixel para cambiar el estandar de un dispositivo a otro*/
@@ -120,26 +111,7 @@ no es tan útil ya que puede alterar el diseño*/
     }
 }
 
-/*Un mixin que engloba todos, aunque no es del todo últi porque con los propios selectores 
-se puede aplicar contenido general
-*/
-@mixin responsivo_todos(){
-    @include movil{
-        @content;
-    }
-    @include tableta{
-        @content;
-    }
-    @include pantalla_pequeña{
-        @content;
-    }
-    @include pantalla_estandar{
-        @content;
-    }
-    @include pantalla_grande{
-        @content;
-    }
-}
+
 
 /*Funcion que comprueba si un elemento/selector tiene una fuente desesada, si no la tiene se la cambia
 y si la tiene no hace mas cambios, aquí se coloca un operador logico ==*/

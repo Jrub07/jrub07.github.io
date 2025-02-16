@@ -1,10 +1,14 @@
 /* Archivo para mostrar los valores de la empresa */
-@use '../global/mixins_funciones_mapa.scss' as *;
+@use '../global/_mixins_funciones_mapa.scss' as *;
 @use 'sass:map';
 
 /* Contenedor de presentación con la imagen */
 #presentacion {
-  @include flexible(flex, column, nowrap, flex-start, center);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), image-set(#{map.get($imagenes, "movil_tableta")});
   background-size: cover;
   background-position: center;
@@ -17,8 +21,8 @@
     min-height: 40%;
   }
 
-  @include pantalla_pequeña() {
-    @include flexible(flex, column, nowrap, flex-start, flex-end);
+  @include pantalla_pequeña() {    
+    align-items: flex-end;
     height: 50%;
     padding-right: 8%;
     background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), image-set(#{map.get($imagenes, "pantalla_pequeña")});
@@ -26,7 +30,7 @@
   }
 
   @include pantalla_estandar() {
-    @include flexible(flex, column, nowrap, flex-start, flex-end);
+    align-items: flex-end;
     height: 80%;
     padding-right: 8%;
     background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), image-set(#{map.get($imagenes, "pantalla_estandar")});
@@ -34,7 +38,7 @@
   }
 
   @include pantalla_grande() {
-    @include flexible(flex, column, nowrap, flex-start, flex-end);
+    align-items: flex-end;
     height: 80%;
     padding-top: 1%;
     padding-right: 8%;
@@ -80,7 +84,7 @@
       height: 21%;
       margin-top: 5%;
       font-size: 2vh;
-      text-align: center;
+      
     }
 
     @include pantalla_estandar() {
@@ -130,9 +134,9 @@
     }
 
     @include pantalla_pequeña() {
-      width: 40%; // Ajuste de ancho para que los article entren en el contenedor
+      width: 40%; 
       height: 43%;
-      padding: 0; // Se quita el padding para mayor consistencia
+      padding: 0; 
     }
 
     @include pantalla_estandar() {

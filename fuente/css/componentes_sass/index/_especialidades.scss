@@ -1,13 +1,17 @@
 /*Archivo que sirve para mostrar la cartera de trastornos y población que se trata, lo que destaca es el uso
 de flex-wrap con margen para controlar el espacio para cada resolucion*/
-@use '../global/mixins_funciones_mapa.scss' as *;
+@use '../global/_mixins_funciones_mapa.scss' as *;
 @use 'sass:map';
 
 /*Estilos compartido en su mayoria, solo es necesario editar futuramente los margenes para seprar más o menos
 en función de las necesidades del dispostivo*/
 #especialidades {
     box-sizing: border-box;
-    @include flexible(flex, column, nowrap, center, center);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
     min-height: 45%;
     background-color: map.get($colores, "secundario_uno");
     overflow: hidden;
@@ -78,9 +82,7 @@ en función de las necesidades del dispostivo*/
         @include pantalla_estandar() {
             height: 80%;
             width: 90%;
-            flex-direction: row; 
-            flex-wrap: wrap; 
-            align-items: center; 
+            flex-direction: row;            
             justify-content: center; 
         }
 
@@ -88,25 +90,19 @@ en función de las necesidades del dispostivo*/
         @include pantalla_grande() {
             height: 80%;
             width: 80%;
-            flex-direction: row; 
-            flex-wrap: wrap;
-            align-items: center;
+            flex-direction: row;                        
             justify-content: center; 
         }
 
         // Resoluciones de tableta
         @include tableta() {
-            flex-direction: row;
-            flex-wrap: wrap;
-            align-items: center;
+            flex-direction: row;            
             justify-content: center;
         }
 
         // Resoluciones de pantalla pequeña
         @include pantalla_pequeña() {
-            flex-direction: row;
-            flex-wrap: wrap;
-            align-items: center;
+            flex-direction: row;            
             justify-content: center;
         }
 
@@ -160,13 +156,13 @@ en función de las necesidades del dispostivo*/
 
             // Resoluciones de pantalla grande
             @include pantalla_grande() {
-                width: 15%; // Copiado de pantalla_estandar
-                margin: 3.5%; // Copiado de pantalla_estandar
-                height: 7vh; // Copiado de pantalla_estandar
-                font-size: 3vh; // Copiado de pantalla_estandar
-                display: flex; // Copiado de pantalla_estandar
-                justify-content: center; // Copiado de pantalla_estandar
-                align-items: center; // Copiado de pantalla_estandar
+                width: 15%;
+                margin: 3.5%; 
+                height: 7vh; 
+                font-size: 3vh; 
+                display: flex; 
+                justify-content: center;
+                align-items: center; 
             }
         }
     }

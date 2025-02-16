@@ -36,8 +36,7 @@ se puede aplicar contenido general
 y si la tiene no hace mas cambios, aquí se coloca un operador logico ==*/
 /*la funcion como tal no se puede aplicar sola, se necesita de un mixin de apoyo, por lo que se añade el paso final
 para aplicar el contenido css en font-family*/
-/* Creación del html y el body en conjunto para que se comparta en todos los archivos, se quitan los márgenes
-para que se incluya todo el contenido */
+/* Clase base para html y body para poder heredar en tarea 12 */
 html, body {
   box-sizing: border-box;
   height: 100%;
@@ -47,13 +46,16 @@ html, body {
   overflow-x: hidden;
 }
 
+/* Creación del html y el body en conjunto para que se comparta en todos los archivos, se quitan los márgenes
+para que se incluya todo el contenido */
 header {
   width: 100%;
   min-height: 10%;
   overflow: hidden;
   background-color: #372715;
   display: flex;
-  flex-flow: row nowrap;
+  flex-direction: row;
+  flex-wrap: nowrap;
   justify-content: space-around;
   align-items: center;
 }
@@ -65,7 +67,6 @@ header button {
   font-family: averia-serif;
   text-transform: uppercase;
   font-weight: bold;
-  margin: 0 10px;
   width: 40%;
   font-size: 2vh;
   height: 4vh;
@@ -73,6 +74,7 @@ header button {
 @media (min-width: 360px) and (max-width: 480px) {
   header button {
     font-size: 1.5vh;
+    margin: 0 10px;
   }
 }
 @media (min-width: 481px) and (max-width: 768px) {
@@ -144,7 +146,8 @@ header img {
 /* Contenedor de presentación con la imagen */
 #presentacion {
   display: flex;
-  flex-flow: column nowrap;
+  flex-direction: column;
+  flex-wrap: nowrap;
   justify-content: flex-start;
   align-items: center;
   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), image-set(url("../imagenes/hero_img_1125x749.avif") type("image/avif"), url("../imagenes/hero_img_1125x749.webp") type("image/webp"), url("../imagenes/hero_img_1125x749.jpeg") type("image/jpeg"));
@@ -162,9 +165,6 @@ header img {
 }
 @media (min-width: 769px) and (max-width: 1200px) {
   #presentacion {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: flex-start;
     align-items: flex-end;
     height: 50%;
     padding-right: 8%;
@@ -173,9 +173,6 @@ header img {
 }
 @media (min-width: 1201px) and (max-width: 1920px) {
   #presentacion {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: flex-start;
     align-items: flex-end;
     height: 80%;
     padding-right: 8%;
@@ -184,9 +181,6 @@ header img {
 }
 @media (min-width: 1921px) {
   #presentacion {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: flex-start;
     align-items: flex-end;
     height: 80%;
     padding-top: 1%;
@@ -237,7 +231,6 @@ header img {
     height: 21%;
     margin-top: 5%;
     font-size: 2vh;
-    text-align: center;
   }
 }
 @media (min-width: 1201px) and (max-width: 1920px) {
@@ -374,19 +367,15 @@ header img {
   overflow: hidden;
   background-color: #9D774C;
   min-height: 45%;
-}
-@media (min-width: 360px) and (max-width: 480px) {
-  #modalidades {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: flex-start;
-    align-items: center;
-  }
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
 }
 @media (min-width: 481px) and (max-width: 768px) {
   #modalidades {
-    display: flex;
-    flex-flow: row nowrap;
+    flex-direction: row;
     justify-content: space-around;
     align-items: flex-start;
     padding-top: 1%;
@@ -396,8 +385,7 @@ header img {
 }
 @media (min-width: 769px) and (max-width: 1200px) {
   #modalidades {
-    display: flex;
-    flex-flow: row nowrap;
+    flex-direction: row;
     justify-content: space-around;
     align-items: flex-start;
     padding-top: 1%;
@@ -407,8 +395,7 @@ header img {
 }
 @media (min-width: 1201px) and (max-width: 1920px) {
   #modalidades {
-    display: flex;
-    flex-flow: row nowrap;
+    flex-direction: row;
     justify-content: space-around;
     align-items: flex-start;
     padding-top: 1%;
@@ -422,8 +409,7 @@ header img {
 }
 @media (min-width: 1921px) {
   #modalidades {
-    display: flex;
-    flex-flow: row nowrap;
+    flex-direction: row;
     justify-content: space-around;
     align-items: flex-start;
     padding-top: 1%;
@@ -480,9 +466,6 @@ header img {
 #presencial p, #online p {
   background-color: white;
   text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   font-family: "Classica-Bold";
 }
 @media (min-width: 360px) and (max-width: 480px) {
@@ -509,54 +492,26 @@ header img {
   #presencial p, #online p {
     height: 15%;
     width: 80%;
-    font-size: 20px;
+    font-size: 3vh;
   }
 }
 @media (min-width: 1921px) {
   #presencial p, #online p {
     height: 15%;
     width: 80%;
-    font-size: 35px;
+    font-size: 4vh;
     font-family: "Classica-Bold";
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
 }
 #presencial img, #online img {
-  object-fit: cover;
-  display: block;
   margin: 0 auto;
+  max-width: 60%;
+  max-height: 60%;
 }
 @media (min-width: 360px) and (max-width: 480px) {
   #presencial img, #online img {
-    width: 100%;
-    height: 100%;
-    object-fit: fill;
-  }
-}
-@media (min-width: 481px) and (max-width: 768px) {
-  #presencial img, #online img {
-    max-width: 60%;
-    max-height: 60%;
-  }
-}
-@media (min-width: 769px) and (max-width: 1200px) {
-  #presencial img, #online img {
-    max-width: 60%;
-    max-height: 60%;
-  }
-}
-@media (min-width: 1201px) and (max-width: 1920px) {
-  #presencial img, #online img {
-    max-width: 60%;
-    max-height: 60%;
-  }
-}
-@media (min-width: 1921px) {
-  #presencial img, #online img {
-    max-width: 60%;
-    max-height: 60%;
+    max-width: 100%;
+    max-height: 100%;
   }
 }
 
@@ -567,7 +522,8 @@ en función de las necesidades del dispostivo*/
 #especialidades {
   box-sizing: border-box;
   display: flex;
-  flex-flow: column nowrap;
+  flex-direction: column;
+  flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
   min-height: 45%;
@@ -643,8 +599,6 @@ en función de las necesidades del dispostivo*/
     height: 80%;
     width: 90%;
     flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
     justify-content: center;
   }
 }
@@ -653,24 +607,18 @@ en función de las necesidades del dispostivo*/
     height: 80%;
     width: 80%;
     flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
     justify-content: center;
   }
 }
 @media (min-width: 481px) and (max-width: 768px) {
   #especialidades article {
     flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
     justify-content: center;
   }
 }
 @media (min-width: 769px) and (max-width: 1200px) {
   #especialidades article {
     flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
     justify-content: center;
   }
 }
