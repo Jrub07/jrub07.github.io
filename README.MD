@@ -19,6 +19,6 @@ Para que no haya errores con las fuentes de imagen y el mapa se ha usado la tecn
 - Se ha cambiado el nombre de los archivos en general de SCSS para que empiecen con _.
 - Se ha creado un mapa con los enlaces a las imagenes para que quede más limpio.
 -Se ha añadido una herencia para html,body, para poder usarla en la tarea 12
-- Es posible que se haya quedado alguna cosa repetida en SCSS y que no funcione a pesar de ser revisado, le pediría un poco de flexibilidad si lo ve y si hay algun cambio importante, que me deje implemetarlo en la tarea 12.
+- Es posible que se haya quedado alguna cosa repetida en SCSS y que no funcione a pesar de ser revisado, le pediría un poco de flexibilidad si lo ve y si hay algun cambio importante, que me deje implementarlo en la tarea 12.
 
 
