@@ -12,8 +12,8 @@ Para que no haya errores con las fuentes de imagen y el mapa se ha usado la tecn
 - Se ha añadido min-height y con ello el mixin de altura ha sido eliminado.
 - Mixin de flexibilidad eliminado porque altera aquellos sitios donde no está el conjunto de propiedades completo.
 - Se ha bajado el tamaño de los botones en general.
--Se han eliminado todos los posicionamientos con margenes.
--Se ha creado una nueva etiqueta dentro de presentación para poder eliminar el posicionamiento de margen.
+- Se han eliminado todos los posicionamientos con margenes.
+- Se ha creado una nueva etiqueta dentro de presentación para poder eliminar el posicionamiento de margen.
 - Ahora hero img puede recoger varias resoluciones gracias a un mapa.
 - Se ha eliminado el archivo de pruebas para que no haya confusiones para corregir, ya que en la entrega anterior gitignore no lo ignoró.
 - Se ha cambiado el nombre de los archivos en general de SCSS para que empiecen con _.
