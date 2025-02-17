@@ -1,0 +1,57 @@
+@use '../global/_mixins_funciones_mapa' as mixins;
+@use 'sass:map';
+
+#terapeutas {
+  min-height: 60%;
+  background-color: map.get(mixins.$colores, "secundario_uno");
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#terapeutas h3{
+    text-align: center;
+    height: 2vh;
+    background-color: white;
+    width: 90%;
+    margin: 1% auto;
+
+}
+
+#psico1, #psico2 {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 3%;
+
+  img{
+    max-width: 100%;
+  }
+
+  article{
+    background-color: blue;
+
+        h3{
+            text-align: center;
+            height: 2vh;
+            background-color: white;
+            width: 90%;
+            margin: 1% auto;
+        }
+
+        p{
+            background-color: grey;
+            text-align: justify;
+            margin: 3%;
+            }
+
+        .redes{
+            background-color: green;
+            display: flex;
+            justify-content: space-between;
+        }
+  }
+}
