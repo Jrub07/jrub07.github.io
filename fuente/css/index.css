@@ -24,14 +24,8 @@
   font-family: "LTMuseum-light";
   src: url("/fuente/fuente_letra/LTMuseum-Light.woff") format("woff");
 }
-/*Mixin que ahorra todas la lineas de codigo de flexbox, en general es mas util cuando se aplica a 
-lugares en los que se deben escribir de 4 a 5 lineas, para aquellos elementos que solo necesiten 2 lineas
-no es tan útil ya que puede alterar el diseño*/
 /*Mixins para diferentes puntos de ruptura, que se aplican desde el ancho de corrección hasta el máximo siguiente
 +1 pixel para cambiar el estandar de un dispositivo a otro*/
-/*Un mixin que engloba todos, aunque no es del todo últi porque con los propios selectores 
-se puede aplicar contenido general
-*/
 /*Funcion que comprueba si un elemento/selector tiene una fuente desesada, si no la tiene se la cambia
 y si la tiene no hace mas cambios, aquí se coloca un operador logico ==*/
 /*la funcion como tal no se puede aplicar sola, se necesita de un mixin de apoyo, por lo que se añade el paso final

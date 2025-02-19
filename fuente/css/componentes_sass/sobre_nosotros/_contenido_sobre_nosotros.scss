@@ -1,25 +1,25 @@
-@use '../global/_mixins_funciones_mapa' as mixins;
+@use '../global/mixins_funciones_mapa' as *;
 @use 'sass:map';
 
 #terapeutas {
   min-height: 60%;
-  background-color: map.get(mixins.$colores, "secundario_uno");
+  background-color: map.get($colores, "secundario_uno");
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
 }
 
-#terapeutas h3{
-    text-align: center;
-    height: 2vh;
-    background-color: white;
-    width: 90%;
-    margin: 1% auto;
-
+#terapeutas h3 {
+  @include aplicar_fuente('h3', 'Classica-Book');
+  text-align: center;
+  font-size: 2vh;
+  background-color: white;
+  width: 90%;
 }
 
-#psico1, #psico2 {
+#psico1,
+#psico2 {
   width: 90%;
   display: flex;
   align-items: center;
@@ -27,31 +27,45 @@
   align-items: center;
   margin-bottom: 3%;
 
-  img{
+  img {
     max-width: 100%;
+    height: auto;
   }
 
-  article{
-    background-color: blue;
+  article {
+    background-color: map.get($colores, "principal");
 
-        h3{
-            text-align: center;
-            height: 2vh;
-            background-color: white;
-            width: 90%;
-            margin: 1% auto;
-        }
+    h3 {
+      @include aplicar_fuente('h3', 'Classica-Book');
+      text-align: center;
+      height: 2.5vh;
+      background-color: white;
+      width: 90%;
+      margin: 1% auto;
+    }
 
-        p{
-            background-color: grey;
-            text-align: justify;
-            margin: 3%;
-            }
+    p {
+      @include aplicar_fuente('p', 'LTMuseum-Light');
+      background-color: white;
+      text-align: justify;
+      margin: 3%;
+      font-size: 2.6vh;
+      padding: 3%;
+    }
 
-        .redes{
-            background-color: green;
-            display: flex;
-            justify-content: space-between;
-        }
+
+  }
+
+  .redes {
+    background-color: map.get($colores, "secundario_dos");
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+
+    img {
+      max-width: 10%;
+      margin: 1%;
+      height: auto;
+    }
   }
 }
