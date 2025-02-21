@@ -26,14 +26,28 @@
   flex-direction: column;
   align-items: center;
   margin-bottom: 3%;
+  @include tableta {   
+    flex-direction: row;
+    margin-bottom: 3%;
+  }
 
   img {
     max-width: 100%;
     height: auto;
+
+    @include tableta {
+      max-width: 50%;
+      
+    }
   }
 
   article {
     background-color: map.get($colores, "principal");
+    @include tableta {      
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    }
 
     h3 {
       @include aplicar_fuente('h3', 'Classica-Book');
@@ -42,6 +56,10 @@
       background-color: white;
       width: 90%;
       margin: 1% auto;
+      @include tableta {      
+        width: 70%;
+        margin: 3% auto;
+      }
     }
 
     p {
@@ -51,6 +69,14 @@
       margin: 3%;
       font-size: 2.6vh;
       padding: 3%;
+      @include tableta {      
+        font-family: "LTMuseum-Light";
+        background-color: white;
+        text-align: justify;
+        margin: 3%;
+        font-size: 2.3vh;
+        padding: 3%;
+      }
     }
 
 
@@ -61,6 +87,11 @@
     display: flex;
     justify-content: space-around;
     width: 100%;
+    @include
+    tableta {     
+      
+    flex-direction: row;
+    }
 
     img {
       max-width: 10%;

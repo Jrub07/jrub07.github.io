@@ -2,27 +2,27 @@
 /*Archivo sass para crear funcionalidad mediante mixins, fuentes de letra importada, mapas y una funcion*/
 @font-face {
   font-family: "MilkAndHoney";
-  src: url("/fuente/fuente_letra/MilkAndHoney.woff") format("woff");
+  src: url("../fuente_letra/MilkAndHoney.woff") format("woff");
 }
 @font-face {
   font-family: "Classica-Bold";
-  src: url("/fuente/fuente_letra/Classica-Bold.woff") format("woff");
+  src: url("../fuente_letra/Classica-Bold.woff") format("woff");
 }
 @font-face {
   font-family: "Classica-Book";
-  src: url("/fuente/fuente_letra/Classica-Book.woff") format("woff");
+  src: url("../fuente_letra/Classica-Book.woff") format("woff");
 }
 @font-face {
   font-family: "Fashion";
-  src: url("/fuente/fuente_letra/Fashion.woff") format("woff");
+  src: url("../fuente_letra/Fashion.woff") format("woff");
 }
 @font-face {
   font-family: "LTMuseum-Bold";
-  src: url("/fuente/fuente_letra/LTMuseum-Bold.woff") format("woff");
+  src: url("../fuente_letra/LTMuseum-Bold.woff") format("woff");
 }
 @font-face {
   font-family: "LTMuseum-light";
-  src: url("/fuente/fuente_letra/LTMuseum-Light.woff") format("woff");
+  src: url("../fuente_letra/LTMuseum-Light.woff") format("woff");
 }
 /*Mixins para diferentes puntos de ruptura, que se aplican desde el ancho de corrección hasta el máximo siguiente
 +1 pixel para cambiar el estandar de un dispositivo a otro*/

@@ -162,14 +162,35 @@ header img {
   align-items: center;
   margin-bottom: 3%;
 }
+@media (min-width: 481px) and (max-width: 768px) {
+  #psico1,
+  #psico2 {
+    flex-direction: row;
+    margin-bottom: 3%;
+  }
+}
 #psico1 img,
 #psico2 img {
   max-width: 100%;
   height: auto;
 }
+@media (min-width: 481px) and (max-width: 768px) {
+  #psico1 img,
+  #psico2 img {
+    max-width: 50%;
+  }
+}
 #psico1 article,
 #psico2 article {
   background-color: #372715;
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  #psico1 article,
+  #psico2 article {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 }
 #psico1 article h3,
 #psico2 article h3 {
@@ -180,6 +201,13 @@ header img {
   width: 90%;
   margin: 1% auto;
 }
+@media (min-width: 481px) and (max-width: 768px) {
+  #psico1 article h3,
+  #psico2 article h3 {
+    width: 70%;
+    margin: 3% auto;
+  }
+}
 #psico1 article p,
 #psico2 article p {
   font-family: "LTMuseum-Light";
@@ -189,12 +217,29 @@ header img {
   font-size: 2.6vh;
   padding: 3%;
 }
+@media (min-width: 481px) and (max-width: 768px) {
+  #psico1 article p,
+  #psico2 article p {
+    font-family: "LTMuseum-Light";
+    background-color: white;
+    text-align: justify;
+    margin: 3%;
+    font-size: 2.3vh;
+    padding: 3%;
+  }
+}
 #psico1 .redes,
 #psico2 .redes {
   background-color: #9D774C;
   display: flex;
   justify-content: space-around;
   width: 100%;
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  #psico1 .redes,
+  #psico2 .redes {
+    flex-direction: row;
+  }
 }
 #psico1 .redes img,
 #psico2 .redes img {

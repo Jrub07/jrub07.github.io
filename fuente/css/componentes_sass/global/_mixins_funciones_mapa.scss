@@ -30,32 +30,32 @@ $imagenes: (
 //Al haber descargado las fuentes de letra de Dafont el servicio no te deja usarlas modo html, por lo que se deben importar de manera local
 @font-face {
     font-family: 'MilkAndHoney';
-    src: url('/fuente/fuente_letra/MilkAndHoney.woff') format('woff');
+    src: url('../fuente_letra/MilkAndHoney.woff') format('woff');
 }
 
 @font-face {
     font-family: 'Classica-Bold';
-    src: url('/fuente/fuente_letra/Classica-Bold.woff') format('woff');
+    src: url('../fuente_letra/Classica-Bold.woff') format('woff');
 }
 
 @font-face {
     font-family: 'Classica-Book';
-    src: url('/fuente/fuente_letra/Classica-Book.woff') format('woff');
+    src: url('../fuente_letra/Classica-Book.woff') format('woff');
 }
 
 @font-face {
     font-family: 'Fashion';
-    src: url('/fuente/fuente_letra/Fashion.woff') format('woff');
+    src: url('../fuente_letra/Fashion.woff') format('woff');
 }
 
 @font-face {
     font-family: 'LTMuseum-Bold';
-    src: url('/fuente/fuente_letra/LTMuseum-Bold.woff') format('woff');
+    src: url('../fuente_letra/LTMuseum-Bold.woff') format('woff');
 }
 
 @font-face {
     font-family: 'LTMuseum-light';
-    src: url('/fuente/fuente_letra/LTMuseum-Light.woff') format('woff');
+    src: url('../fuente_letra/LTMuseum-Light.woff') format('woff');
 }
 
 //Creacion de un mapa para los colores principal y secundarios
