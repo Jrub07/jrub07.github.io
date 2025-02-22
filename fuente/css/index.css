@@ -55,12 +55,13 @@ header {
 }
 
 header button {
-  border-radius: 10%;
+  border-radius: 20%;
   background-color: white;
   color: black;
   font-family: averia-serif;
   text-transform: uppercase;
   font-weight: bold;
+  background-color: #e9d5c5;
   width: 40%;
   font-size: 2vh;
   height: 4vh;
@@ -214,6 +215,7 @@ header img {
   color: white;
   width: 100%;
   padding: 10px 0;
+  border-radius: 10%;
 }
 @media (min-width: 481px) and (max-width: 768px) {
   #nombre_cliente h3 {
@@ -255,6 +257,7 @@ header img {
   padding: 20px;
   margin: 10px;
   height: 200px;
+  border-radius: 12%;
 }
 @media (min-width: 360px) and (max-width: 480px) {
   #nombre_cliente .valores article {
@@ -460,6 +463,8 @@ header img {
 #presencial p, #online p {
   background-color: white;
   text-align: center;
+  border-radius: 10%;
+  background-color: #e9d5c5;
   font-family: "Classica-Bold";
 }
 @media (min-width: 360px) and (max-width: 480px) {
@@ -540,6 +545,8 @@ en función de las necesidades del dispostivo*/
   background-color: white;
   align-self: center;
   text-align: center;
+  background-color: #e9d5c5;
+  border-radius: 5%;
   font-family: "Classica-Bold";
 }
 @media (min-width: 360px) and (max-width: 480px) {
@@ -619,11 +626,12 @@ en función de las necesidades del dispostivo*/
 #especialidades article p {
   text-align: center;
   text-transform: uppercase;
-  background-color: white;
   height: 10%;
   width: 45%;
   margin: 2%;
   padding: 0;
+  border-radius: 10%;
+  background-color: #e9d5c5;
   font-family: "LTMuseum-Light";
 }
 @media (min-width: 360px) and (max-width: 480px) {
@@ -722,7 +730,6 @@ footer #contacto {
   }
 }
 footer #contacto #redes_sociales, footer #contacto #como_llegar {
-  /* Aplicación del mixin de flexible, tiene 4 argumentos y se aplica nowrap por defecto */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -741,6 +748,8 @@ footer #contacto #redes_sociales h3, footer #contacto #como_llegar h3 {
   font-family: averia-serif;
   text-align: center;
   box-sizing: border-box;
+  border-radius: 10%;
+  background-color: #e9d5c5;
 }
 @media (min-width: 360px) and (max-width: 480px) {
   footer #contacto #redes_sociales h3, footer #contacto #como_llegar h3 {

@@ -44,8 +44,7 @@ footer {
       margin-top: 3%; 
     }
 
-    #redes_sociales, #como_llegar {
-      /* Aplicación del mixin de flexible, tiene 4 argumentos y se aplica nowrap por defecto */
+    #redes_sociales, #como_llegar {      
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -62,6 +61,8 @@ footer {
         font-family: averia-serif;
         text-align: center;
         box-sizing: border-box;
+        border-radius: 10%;
+        background-color: #e9d5c5;
 
         // Resoluciones de móvil
         @include movil {
@@ -181,6 +182,7 @@ footer {
         margin-top: 10%;
         font-size: 2vh;
         text-align: center;
+        
       }
 
       p {

@@ -29,6 +29,8 @@ en función de las necesidades del dispostivo*/
         background-color: white;
         align-self: center;
         text-align: center;
+        background-color: #e9d5c5;
+        border-radius: 5%;
         @include aplicar_fuente('h3', 'Classica-Bold');
 
         // Resoluciones de móvil
@@ -108,12 +110,13 @@ en función de las necesidades del dispostivo*/
 
         p {
             text-align: center;
-            text-transform: uppercase;
-            background-color: white;
+            text-transform: uppercase;            
             height: 10%;
             width: 45%;
             margin: 2%;
-            padding: 0;            
+            padding: 0; 
+            border-radius: 10%; 
+            background-color: #e9d5c5;          
             @include aplicar_fuente('p', 'LTMuseum-Light');
 
             // Resoluciones de móvil
