@@ -51,7 +51,7 @@ header button {
     @include tableta() {
         font-size: 1.4vh;
         height: 4.5vh;
-        width: 15%;
+        width: 18%;
     }
 
     @include pantalla_pequeña() {
@@ -87,21 +87,21 @@ header img {
     }
 
     @include tableta() {        
-        max-width: 10%;
+        max-width: 15%;
     }
 
     @include pantalla_pequeña() {
-        max-width: 10%;
+        max-width: 15%;
         max-height: 10%;
     }
 
     @include pantalla_estandar() {
-        max-width: 10%;
+        max-width: 15%;
         max-height: 10%;
     }
 
     @include pantalla_grande() {
-        max-width: 10%; 
+        max-width: 15%; 
         max-height: 10%; 
     }
 }
