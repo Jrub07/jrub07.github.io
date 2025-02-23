@@ -1,0 +1,90 @@
+@use "../global/mixins_funciones_mapa" as *;
+@use "sass:map";
+
+#ofertas {
+  min-height: 30%;
+  background-color: brown;
+  display: flex;
+  justify-content: space-around;
+
+  article {
+    text-align: center;
+    width: 30%;
+  }
+}
+
+#pack {
+  min-height: 30%;
+  background-color: rgb(78, 18, 18);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#seguro_escolar {
+  min-height: 40%;
+  background-color: rgb(187, 111, 111);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  article {
+    text-align: center;
+    display: flex;
+    width: 100%;
+    margin-bottom: 3%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .caja_texto {
+    text-align: justify;
+    width: 90%;
+    background-color: white;
+
+    p {
+      margin: 1%;
+      padding: 2%;
+    }
+
+    img {
+      width: 40%;
+    }
+  }
+}
+
+#becas {
+  min-height: 30%;
+  background-color: rgb(97, 59, 59);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  article {
+    text-align: center;
+    display: flex;
+    width: 100%;
+    margin-bottom: 3%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .caja_texto {
+    text-align: justify;
+    width: 90%;
+    background-color: white;
+
+    p {
+      margin: 1%;
+      padding: 2%;
+      height: 100%; 
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    img {
+      width: 40%;
+    }
+  }
+}

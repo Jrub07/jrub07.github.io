@@ -1,0 +1,502 @@
+@charset "UTF-8";
+/*Archivo sass para crear funcionalidad mediante mixins, fuentes de letra importada, mapas y una funcion*/
+@font-face {
+  font-family: "MilkAndHoney";
+  src: url("../fuente_letra/MilkAndHoney.woff") format("woff");
+}
+@font-face {
+  font-family: "Classica-Bold";
+  src: url("../fuente_letra/Classica-Bold.woff") format("woff");
+}
+@font-face {
+  font-family: "Classica-Book";
+  src: url("../fuente_letra/Classica-Book.woff") format("woff");
+}
+@font-face {
+  font-family: "Fashion";
+  src: url("../fuente_letra/Fashion.woff") format("woff");
+}
+@font-face {
+  font-family: "LTMuseum-Bold";
+  src: url("../fuente_letra/LTMuseum-Bold.woff") format("woff");
+}
+@font-face {
+  font-family: "LTMuseum-light";
+  src: url("../fuente_letra/LTMuseum-Light.woff") format("woff");
+}
+/*Mixins para diferentes puntos de ruptura, que se aplican desde el ancho de corrección hasta el máximo siguiente
++1 pixel para cambiar el estandar de un dispositivo a otro*/
+/*Funcion que comprueba si un elemento/selector tiene una fuente desesada, si no la tiene se la cambia
+y si la tiene no hace mas cambios, aquí se coloca un operador logico ==*/
+/*la funcion como tal no se puede aplicar sola, se necesita de un mixin de apoyo, por lo que se añade el paso final
+para aplicar el contenido css en font-family*/
+/* Clase base para html y body para poder heredar en tarea 12 */
+html, body {
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Creación del html y el body en conjunto para que se comparta en todos los archivos, se quitan los márgenes
+para que se incluya todo el contenido */
+header {
+  width: 100%;
+  min-height: 10%;
+  overflow: hidden;
+  background-color: #372715;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+header button {
+  border-radius: 20%;
+  background-color: white;
+  color: black;
+  font-family: averia-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  background-color: #e9d5c5;
+  width: 40%;
+  font-size: 2vh;
+  height: 4vh;
+}
+@media (min-width: 360px) and (max-width: 480px) {
+  header button {
+    font-size: 1.5vh;
+    margin: 0 10px;
+  }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  header button {
+    font-size: 1.4vh;
+    height: 4.5vh;
+    width: 18%;
+  }
+}
+@media (min-width: 769px) and (max-width: 1200px) {
+  header button {
+    font-size: 1.5vh;
+    height: 3.8vh;
+    width: 18%;
+  }
+}
+@media (min-width: 1201px) and (max-width: 1920px) {
+  header button {
+    font-size: 2vh;
+    width: 10%;
+    height: 5vh;
+  }
+}
+@media (min-width: 1921px) {
+  header button {
+    font-size: 2vh;
+    width: 10%;
+    height: 5vh;
+  }
+}
+
+#pedir_cita {
+  font-family: "MilkAndHoney";
+}
+
+header img {
+  object-fit: cover;
+}
+@media (min-width: 360px) and (max-width: 480px) {
+  header img {
+    max-width: 20%;
+  }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  header img {
+    max-width: 15%;
+  }
+}
+@media (min-width: 769px) and (max-width: 1200px) {
+  header img {
+    max-width: 15%;
+    max-height: 10%;
+  }
+}
+@media (min-width: 1201px) and (max-width: 1920px) {
+  header img {
+    max-width: 15%;
+    max-height: 10%;
+  }
+}
+@media (min-width: 1921px) {
+  header img {
+    max-width: 15%;
+    max-height: 10%;
+  }
+}
+
+#ofertas {
+  min-height: 30%;
+  background-color: brown;
+  display: flex;
+  justify-content: space-around;
+}
+#ofertas article {
+  text-align: center;
+  width: 30%;
+}
+
+#pack {
+  min-height: 30%;
+  background-color: rgb(78, 18, 18);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#seguro_escolar {
+  min-height: 40%;
+  background-color: rgb(187, 111, 111);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#seguro_escolar article {
+  text-align: center;
+  display: flex;
+  width: 100%;
+  margin-bottom: 3%;
+  flex-direction: column;
+  align-items: center;
+}
+#seguro_escolar .caja_texto {
+  text-align: justify;
+  width: 90%;
+  background-color: white;
+}
+#seguro_escolar .caja_texto p {
+  margin: 1%;
+  padding: 2%;
+}
+#seguro_escolar .caja_texto img {
+  width: 40%;
+}
+
+#becas {
+  min-height: 30%;
+  background-color: rgb(97, 59, 59);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#becas article {
+  text-align: center;
+  display: flex;
+  width: 100%;
+  margin-bottom: 3%;
+  flex-direction: column;
+  align-items: center;
+}
+#becas .caja_texto {
+  text-align: justify;
+  width: 90%;
+  background-color: white;
+}
+#becas .caja_texto p {
+  margin: 1%;
+  padding: 2%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#becas .caja_texto img {
+  width: 40%;
+}
+
+/*Clase general para aplicar los contenidos al pie de página, está en el directorio global
+ya que es posible que para la página entera se haga algún cambio
+
+En esta clase se usan los elementos como anidación, en otras clase se hará al revés, para ver que se puede 
+hacer de un lado a otro*/
+footer {
+  display: flex;
+  min-height: 25%;
+  box-sizing: border-box;
+  background-color: #372715;
+  overflow: hidden;
+}
+@media (min-width: 360px) and (max-width: 480px) {
+  footer {
+    flex-direction: column;
+  }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  footer {
+    flex-direction: column;
+    align-items: center;
+    min-height: 25%;
+  }
+}
+footer #contacto {
+  display: flex;
+  justify-content: space-around;
+  overflow: hidden;
+}
+@media (min-width: 360px) and (max-width: 480px) {
+  footer #contacto {
+    padding-left: 1%;
+    padding-right: 1%;
+    width: 100%;
+    order: 2;
+    margin-top: 1%;
+  }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  footer #contacto {
+    width: 100%;
+    order: 2;
+    margin-top: 3%;
+  }
+}
+footer #contacto #redes_sociales, footer #contacto #como_llegar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 40%;
+}
+@media (min-width: 360px) and (max-width: 480px) {
+  footer #contacto #redes_sociales, footer #contacto #como_llegar {
+    margin-right: 3%;
+  }
+}
+footer #contacto #redes_sociales h3, footer #contacto #como_llegar h3 {
+  background-color: white;
+  width: 100%;
+  margin-top: 0;
+  padding-top: 0;
+  font-family: averia-serif;
+  text-align: center;
+  box-sizing: border-box;
+  border-radius: 10%;
+  background-color: #e9d5c5;
+}
+@media (min-width: 360px) and (max-width: 480px) {
+  footer #contacto #redes_sociales h3, footer #contacto #como_llegar h3 {
+    height: 30%;
+    font-size: 70%;
+  }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  footer #contacto #redes_sociales h3, footer #contacto #como_llegar h3 {
+    height: 30%;
+    font-size: 70%;
+  }
+}
+@media (min-width: 769px) and (max-width: 1200px) {
+  footer #contacto #redes_sociales h3, footer #contacto #como_llegar h3 {
+    height: 14%;
+    margin-top: 10%;
+    font-size: 2vh;
+    text-align: center;
+  }
+}
+@media (min-width: 1201px) and (max-width: 1920px) {
+  footer #contacto #redes_sociales h3, footer #contacto #como_llegar h3 {
+    height: 21%;
+    margin-top: 5%;
+    font-size: 2.5vh;
+    text-align: center;
+  }
+}
+@media (min-width: 1921px) {
+  footer #contacto #redes_sociales h3, footer #contacto #como_llegar h3 {
+    height: 21%;
+    margin-top: 5%;
+    font-size: 3vh;
+    text-align: center;
+  }
+}
+footer #contacto #redes_sociales p, footer #contacto #como_llegar p {
+  align-items: center;
+  color: white;
+  margin: 0;
+  white-space: nowrap;
+  font-family: "LTMuseum-Light";
+}
+footer #contacto #redes_sociales p img, footer #contacto #como_llegar p img {
+  margin-right: 10px;
+  vertical-align: middle;
+}
+@media (min-width: 360px) and (max-width: 480px) {
+  footer #contacto #redes_sociales p, footer #contacto #como_llegar p {
+    margin-bottom: 10px;
+  }
+  footer #contacto #redes_sociales p img, footer #contacto #como_llegar p img {
+    max-width: 15%;
+  }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  footer #contacto #redes_sociales p, footer #contacto #como_llegar p {
+    margin-bottom: 10px;
+    font-size: 2vh;
+    padding: 2%;
+  }
+  footer #contacto #redes_sociales p img, footer #contacto #como_llegar p img {
+    max-width: 15%;
+  }
+}
+@media (min-width: 769px) and (max-width: 1200px) {
+  footer #contacto #redes_sociales p, footer #contacto #como_llegar p {
+    font-size: 2vh;
+    padding: 2%;
+  }
+}
+@media (min-width: 1201px) and (max-width: 1920px) {
+  footer #contacto #redes_sociales p, footer #contacto #como_llegar p {
+    font-size: 2vh;
+    padding: 2%;
+  }
+}
+@media (min-width: 1921px) {
+  footer #contacto #redes_sociales p, footer #contacto #como_llegar p {
+    font-size: 3vh;
+    padding: 2%;
+  }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  footer #contacto {
+    margin-top: 1%;
+    justify-content: space-between;
+    order: 2;
+    width: 90%;
+  }
+}
+@media (min-width: 769px) and (max-width: 1200px) {
+  footer #contacto {
+    justify-content: space-evenly;
+    width: 100%;
+    min-height: 20%;
+  }
+  footer #contacto iframe {
+    width: 300px;
+    height: 150px;
+  }
+  footer #contacto #redes_sociales, footer #contacto #como_llegar {
+    width: 40%;
+  }
+  footer #contacto h3 {
+    height: 21%;
+    margin-top: 10%;
+    font-size: 2vh;
+    text-align: center;
+  }
+  footer #contacto p {
+    font-size: 2vh;
+    padding: 2%;
+  }
+  footer #contacto p img {
+    max-width: 40px;
+  }
+}
+@media (min-width: 1201px) and (max-width: 1920px) {
+  footer #contacto {
+    justify-content: space-evenly;
+    width: 100%;
+    min-height: 20%;
+  }
+  footer #contacto iframe {
+    width: 300px;
+    height: 100%;
+  }
+  footer #contacto #redes_sociales, footer #contacto #como_llegar {
+    width: 40%;
+  }
+  footer #contacto h3 {
+    height: 21%;
+    margin-top: 10%;
+    font-size: 2vh;
+    text-align: center;
+  }
+  footer #contacto p {
+    font-size: 2vh;
+    padding: 2%;
+  }
+  footer #contacto p img {
+    max-width: 40px;
+  }
+}
+@media (min-width: 1921px) {
+  footer #contacto {
+    justify-content: space-evenly;
+    width: 100%;
+    min-height: 20%;
+  }
+  footer #contacto iframe {
+    width: 300px;
+    height: 100%;
+  }
+  footer #contacto #redes_sociales, footer #contacto #como_llegar {
+    width: 40%;
+  }
+  footer #contacto h3 {
+    height: 21%;
+    margin-top: 10%;
+    font-size: 2vh;
+    text-align: center;
+  }
+  footer #contacto p {
+    font-size: 2vh;
+    padding: 2%;
+  }
+  footer #contacto p img {
+    max-width: 40px;
+  }
+}
+footer iframe {
+  display: flex;
+}
+@media (min-width: 360px) and (max-width: 480px) {
+  footer iframe {
+    margin-top: 1%;
+    margin-bottom: 1%;
+    height: 90%;
+    width: 100%;
+    order: 1;
+  }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  footer iframe {
+    margin-top: 1%;
+    margin-bottom: 1%;
+    height: 90%;
+    width: 100%;
+    order: 1;
+    align-items: center;
+    margin-top: 2%;
+    height: 200px;
+    width: 400px;
+  }
+}
+@media (min-width: 769px) and (max-width: 1200px) {
+  footer iframe {
+    width: 300px;
+    height: 100%;
+  }
+}
+@media (min-width: 1201px) and (max-width: 1920px) {
+  footer iframe {
+    width: 300px;
+    height: 100%;
+  }
+}
+@media (min-width: 1921px) {
+  footer iframe {
+    width: 650px;
+    height: 100%;
+  }
+}
+
+/*# sourceMappingURL=ofertas.css.map */
