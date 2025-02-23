@@ -18,17 +18,33 @@
   width: 90%;
 }
 
-#psico1,
-#psico2 {
+#psico1 {
   width: 90%;
   display: flex;
   align-items: center;
   flex-direction: column;
-  align-items: center;
   margin-bottom: 3%;
-  @include tableta {   
+
+  // Se aplican los mismos estilos para tableta, pantalla_pequeña, pantalla_estandar y pantalla_grande
+  @include tableta {
     flex-direction: row;
     margin-bottom: 3%;
+    align-items: normal;
+  }
+  @include pantalla_pequeña {
+    flex-direction: row;
+    margin-bottom: 3%;
+    align-items: normal;
+  }
+  @include pantalla_estandar {
+    flex-direction: row;
+    margin-bottom: 3%;
+    align-items: normal;
+  }
+  @include pantalla_grande {
+    flex-direction: row;
+    margin-bottom: 3%;
+    align-items: normal;
   }
 
   img {
@@ -37,16 +53,40 @@
 
     @include tableta {
       max-width: 50%;
-      
+    }
+    @include pantalla_pequeña {
+      max-width: 50%;
+    }
+    @include pantalla_estandar {
+      max-width: 50%;
+    }
+    @include pantalla_grande {
+      max-width: 50%;
     }
   }
 
   article {
     background-color: map.get($colores, "principal");
-    @include tableta {      
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+
+    @include tableta {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    @include pantalla_pequeña {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    @include pantalla_estandar {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    @include pantalla_grande {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     h3 {
@@ -56,7 +96,20 @@
       background-color: white;
       width: 90%;
       margin: 1% auto;
-      @include tableta {      
+
+      @include tableta {
+        width: 70%;
+        margin: 3% auto;
+      }
+      @include pantalla_pequeña {
+        width: 70%;
+        margin: 3% auto;
+      }
+      @include pantalla_estandar {
+        width: 70%;
+        margin: 3% auto;
+      }
+      @include pantalla_grande {
         width: 70%;
         margin: 3% auto;
       }
@@ -64,22 +117,31 @@
 
     p {
       @include aplicar_fuente('p', 'LTMuseum-Light');
-      background-color: white;
       text-align: justify;
       margin: 3%;
       font-size: 2.6vh;
-      padding: 3%;
-      @include tableta {      
+
+      @include tableta {
         font-family: "LTMuseum-Light";
-        background-color: white;
         text-align: justify;
-        margin: 3%;
-        font-size: 2.3vh;
-        padding: 3%;
+        font-size: 2.8vh;
+      }
+      @include pantalla_pequeña {
+        font-family: "LTMuseum-Light";
+        text-align: justify;
+        font-size: 2.8vh;
+      }
+      @include pantalla_estandar {
+        font-family: "LTMuseum-Light";
+        text-align: justify;
+        font-size: 2.8vh;
+      }
+      @include pantalla_grande {
+        font-family: "LTMuseum-Light";
+        text-align: justify;
+        font-size: 2.8vh;
       }
     }
-
-
   }
 
   .redes {
@@ -87,10 +149,18 @@
     display: flex;
     justify-content: space-around;
     width: 100%;
-    @include
-    tableta {     
-      
-    flex-direction: row;
+
+    @include tableta {
+      flex-direction: row;
+    }
+    @include pantalla_pequeña {
+      flex-direction: row;
+    }
+    @include pantalla_estandar {
+      flex-direction: row;
+    }
+    @include pantalla_grande {
+      flex-direction: row;
     }
 
     img {
@@ -98,5 +168,177 @@
       margin: 1%;
       height: auto;
     }
+  }
+
+  .texto {
+    height: 40%;
+    display: flex;
+    background: white;
+    align-items: center;
+    justify-content: center;
+    margin: 3%;
+  }
+}
+
+#psico2 {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 3%;
+
+  @include tableta {
+    flex-direction: row;
+    margin-bottom: 3%;
+    align-items: normal;
+  }
+  @include pantalla_pequeña {
+    flex-direction: row;
+    margin-bottom: 3%;
+    align-items: normal;
+  }
+  @include pantalla_estandar {
+    flex-direction: row;
+    margin-bottom: 3%;
+    align-items: normal;
+  }
+  @include pantalla_grande {
+    flex-direction: row;
+    margin-bottom: 3%;
+    align-items: normal;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+
+    @include tableta {
+      max-width: 50%;
+    }
+    @include pantalla_pequeña {
+      max-width: 50%;
+    }
+    @include pantalla_estandar {
+      max-width: 50%;
+    }
+    @include pantalla_grande {
+      max-width: 50%;
+    }
+  }
+
+  article {
+    background-color: map.get($colores, "principal");
+
+    @include tableta {
+      display: flex;
+      flex-direction: row;
+    }
+    @include pantalla_pequeña {
+      display: flex;
+      flex-direction: row;
+    }
+    @include pantalla_estandar {
+      display: flex;
+      flex-direction: row;
+    }
+    @include pantalla_grande {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .cont_psico2 {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    h3 {
+      @include aplicar_fuente('h3', 'Classica-Book');
+      text-align: center;
+      height: 2.5vh;
+      background-color: white;
+      width: 90%;
+      margin: 1% auto;
+
+      @include tableta {
+        width: 70%;
+        margin: 3% auto;
+      }
+      @include pantalla_pequeña {
+        width: 70%;
+        margin: 3% auto;
+      }
+      @include pantalla_estandar {
+        width: 70%;
+        margin: 3% auto;
+      }
+      @include pantalla_grande {
+        width: 70%;
+        margin: 3% auto;
+      }
+    }
+
+    p {
+      @include aplicar_fuente('p', 'LTMuseum-Light');
+      text-align: justify;
+      margin: 3%;
+      font-size: 2.6vh;
+
+      @include tableta {
+        font-family: "LTMuseum-Light";
+        text-align: justify;
+        font-size: 2.8vh;
+      }
+      @include pantalla_pequeña {
+        font-family: "LTMuseum-Light";
+        text-align: justify;
+        font-size: 2.8vh;
+      }
+      @include pantalla_estandar {
+        font-family: "LTMuseum-Light";
+        text-align: justify;
+        font-size: 2.8vh;
+      }
+      @include pantalla_grande {
+        font-family: "LTMuseum-Light";
+        text-align: justify;
+        font-size: 2.8vh;
+      }
+    }
+  }
+
+  .redes {
+    background-color: map.get($colores, "secundario_dos");
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+
+    @include tableta {
+      flex-direction: row;
+    }
+    @include pantalla_pequeña {
+      flex-direction: row;
+    }
+    @include pantalla_estandar {
+      flex-direction: row;
+    }
+    @include pantalla_grande {
+      flex-direction: row;
+    }
+
+    img {
+      max-width: 10%;
+      margin: 1%;
+      height: auto;
+    }
+  }
+
+  .texto {
+    height: 60%;
+    display: flex;
+    background: white;
+    align-items: center;
+    justify-content: center;
+    margin: 3%;
   }
 }
