@@ -76,13 +76,13 @@ header button {
   header button {
     font-size: 1.4vh;
     height: 4.5vh;
-    width: 15%;
+    width: 18%;
   }
 }
 @media (min-width: 769px) and (max-width: 1200px) {
   header button {
     font-size: 1.5vh;
-    height: 3.8vh;
+    height: 4vh;
     width: 18%;
   }
 }
@@ -115,24 +115,24 @@ header img {
 }
 @media (min-width: 481px) and (max-width: 768px) {
   header img {
-    max-width: 10%;
+    max-width: 15%;
   }
 }
 @media (min-width: 769px) and (max-width: 1200px) {
   header img {
-    max-width: 10%;
+    max-width: 15%;
     max-height: 10%;
   }
 }
 @media (min-width: 1201px) and (max-width: 1920px) {
   header img {
-    max-width: 10%;
+    max-width: 15%;
     max-height: 10%;
   }
 }
 @media (min-width: 1921px) {
   header img {
-    max-width: 10%;
+    max-width: 15%;
     max-height: 10%;
   }
 }
@@ -145,7 +145,7 @@ header img {
   flex-wrap: nowrap;
   justify-content: flex-start;
   align-items: center;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), image-set(url("../imagenes/hero_img_1125x749.avif") type("image/avif"), url("../imagenes/hero_img_1125x749.webp") type("image/webp"), url("../imagenes/hero_img_1125x749.jpeg") type("image/jpeg"));
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), image-set(url("../imagenes/hero_img_481x320.avif") type("image/avif"), url("../imagenes/hero_img_481x320.webp") type("image/webp"), url("../imagenes/hero_img_481x320.jpeg") type("image/jpeg"));
   background-size: cover;
   background-position: center;
   padding-top: 1%;
@@ -156,6 +156,7 @@ header img {
 @media (min-width: 481px) and (max-width: 768px) {
   #presentacion {
     min-height: 40%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), image-set(url("../imagenes/hero_img_768x511.avif") type("image/avif"), url("../imagenes/hero_img_768x511.webp") type("image/webp"), url("../imagenes/hero_img_768x511.jpeg") type("image/jpeg"));
   }
 }
 @media (min-width: 769px) and (max-width: 1200px) {
@@ -163,7 +164,7 @@ header img {
     align-items: flex-end;
     height: 50%;
     padding-right: 8%;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), image-set(url("../imagenes/hero_img_600x399.avif") type("image/avif"), url("../imagenes/hero_img_600x399.webp") type("image/webp"), url("../imagenes/hero_img_600x399.jpeg") type("image/jpeg"));
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), image-set(url("../imagenes/hero_img_1200x798.avif") type("image/avif"), url("../imagenes/hero_img_1200x798.webp") type("image/webp"), url("../imagenes/hero_img_1200x798.jpeg") type("image/jpeg"));
   }
 }
 @media (min-width: 1201px) and (max-width: 1920px) {
@@ -171,7 +172,7 @@ header img {
     align-items: flex-end;
     height: 80%;
     padding-right: 8%;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), image-set(url("../imagenes/hero_img_1950x998.avif") type("image/avif"), url("../imagenes/hero_img_1950x998.webp") type("image/webp"), url("../imagenes/hero_img_1950x998.jpeg") type("image/jpeg"));
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), image-set(url("../imagenes/hero_img_2700x1796.avif") type("image/avif"), url("../imagenes/hero_img_2700x1796.webp") type("image/webp"), url("../imagenes/hero_img_2700x1796.jpeg") type("image/jpeg"));
   }
 }
 @media (min-width: 1921px) {
@@ -180,7 +181,7 @@ header img {
     height: 80%;
     padding-top: 1%;
     padding-right: 8%;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), image-set(url("../imagenes/hero_img_1950x1298.avif") type("image/avif"), url("../imagenes/hero_img_1950x1298.webp") type("image/webp"), url("../imagenes/hero_img_1950x1298.jpeg") type("image/jpeg"));
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), image-set(url("../imagenes/hero_img_1920x1277.avif") type("image/avif"), url("../imagenes/hero_img_1920x1277.webp") type("image/webp"), url("../imagenes/hero_img_1920x1277.jpeg") type("image/jpeg"));
   }
 }
 
@@ -514,10 +515,8 @@ header img {
   }
 }
 
-/*Archivo que sirve para mostrar la cartera de trastornos y población que se trata, lo que destaca es el uso
-de flex-wrap con margen para controlar el espacio para cada resolucion*/
-/*Estilos compartido en su mayoria, solo es necesario editar futuramente los margenes para seprar más o menos
-en función de las necesidades del dispostivo*/
+/* Archivo que sirve para mostrar la cartera de trastornos y población que se trata */
+/* Estilos compartidos, se pueden modificar los márgenes según la necesidad del dispositivo */
 #especialidades {
   box-sizing: border-box;
   display: flex;
@@ -535,17 +534,11 @@ en función de las necesidades del dispostivo*/
     justify-content: flex-start;
   }
 }
-@media (min-width: 481px) and (max-width: 768px) {
-  #especialidades {
-    justify-content: flex-start;
-  }
-}
 #especialidades h3 {
   padding-top: 0;
-  background-color: white;
+  background-color: #e9d5c5;
   align-self: center;
   text-align: center;
-  background-color: #e9d5c5;
   border-radius: 5%;
   font-family: "Classica-Bold";
 }
@@ -558,28 +551,28 @@ en función de las necesidades del dispostivo*/
 @media (min-width: 481px) and (max-width: 768px) {
   #especialidades h3 {
     font-size: 1.1em;
-    width: 90%;
+    width: 95%;
     margin-top: 2%;
   }
 }
 @media (min-width: 769px) and (max-width: 1200px) {
   #especialidades h3 {
     font-size: 2vh;
-    width: 90%;
+    width: 95%;
     margin-top: 2%;
   }
 }
 @media (min-width: 1201px) and (max-width: 1920px) {
   #especialidades h3 {
     font-size: 2.5vh;
-    width: 90%;
+    width: 95%;
     margin-top: 2%;
   }
 }
 @media (min-width: 1921px) {
   #especialidades h3 {
     font-size: 2.6vh;
-    width: 90%;
+    width: 95%;
     margin-top: 2%;
   }
 }
@@ -623,65 +616,66 @@ en función de las necesidades del dispostivo*/
     justify-content: center;
   }
 }
-#especialidades article p {
+#especialidades article ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2%;
+}
+#especialidades article li {
   text-align: center;
   text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 10%;
-  width: 45%;
-  margin: 2%;
+  width: 90%;
+  margin: 3%;
   padding: 0;
   border-radius: 10%;
   background-color: #e9d5c5;
   font-family: "LTMuseum-Light";
 }
-@media (min-width: 360px) and (max-width: 480px) {
-  #especialidades article p {
-    width: 90%;
-    font-size: 2.5vh;
-  }
-}
 @media (min-width: 481px) and (max-width: 768px) {
-  #especialidades article p {
-    font-size: 1.1em;
-    margin: 2.5%;
+  #especialidades article li {
+    margin: 2%;
     width: 45%;
   }
 }
+@media (min-width: 360px) and (max-width: 480px) {
+  #especialidades article li {
+    width: 90%;
+  }
+}
 @media (min-width: 769px) and (max-width: 1200px) {
-  #especialidades article p {
+  #especialidades article li {
     width: 18%;
-    margin: 3.5%;
+    margin: 2.7%;
     height: 7vh;
-    font-size: 1.9vh;
-    text-align: center;
-    line-height: normal;
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
   }
 }
 @media (min-width: 1201px) and (max-width: 1920px) {
-  #especialidades article p {
+  #especialidades article li {
     width: 15%;
     margin: 3.5%;
     height: 7vh;
-    font-size: 3vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
 }
 @media (min-width: 1921px) {
-  #especialidades article p {
+  #especialidades article li {
     width: 15%;
     margin: 3.5%;
     height: 7vh;
-    font-size: 3vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
+}
+#especialidades article li p {
+  text-align: center;
+  font-size: inherit;
 }
 
 /*Clase general para aplicar los contenidos al pie de página, está en el directorio global

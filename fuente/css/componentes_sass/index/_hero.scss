@@ -9,7 +9,7 @@
   flex-wrap: nowrap;
   justify-content: flex-start;
   align-items: center;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), image-set(#{map.get($imagenes, "movil_tableta")});
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), image-set(#{map.get($imagenes, "movil")});
   background-size: cover;
   background-position: center;
   padding-top: 1%;
@@ -19,6 +19,8 @@
 
   @include tableta() { 
     min-height: 40%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), image-set(#{map.get($imagenes, "tableta")});
+
   }
 
   @include pantalla_pequeña() {    

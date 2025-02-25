@@ -3,25 +3,30 @@
 @use 'sass:map';
 
 $imagenes: (
-  "movil_tableta": (
-    url("../imagenes/hero_img_1125x749.avif") type("image/avif"),
-    url("../imagenes/hero_img_1125x749.webp") type("image/webp"),
-    url("../imagenes/hero_img_1125x749.jpeg") type("image/jpeg")
+  "movil": (
+    url("../imagenes/hero_img_481x320.avif") type("image/avif"),
+    url("../imagenes/hero_img_481x320.webp") type("image/webp"),
+    url("../imagenes/hero_img_481x320.jpeg") type("image/jpeg")
+  ),
+  "tableta": (
+    url("../imagenes/hero_img_768x511.avif") type("image/avif"),
+    url("../imagenes/hero_img_768x511.webp") type("image/webp"),
+    url("../imagenes/hero_img_768x511.jpeg") type("image/jpeg")
   ),
   "pantalla_pequeña": (
-    url("../imagenes/hero_img_600x399.avif") type("image/avif"),
-    url("../imagenes/hero_img_600x399.webp") type("image/webp"),
-    url("../imagenes/hero_img_600x399.jpeg") type("image/jpeg")
+    url("../imagenes/hero_img_1200x798.avif") type("image/avif"),
+    url("../imagenes/hero_img_1200x798.webp") type("image/webp"),
+    url("../imagenes/hero_img_1200x798.jpeg") type("image/jpeg")
   ),
   "pantalla_grande": (
-    url("../imagenes/hero_img_1950x1298.avif") type("image/avif"),
-    url("../imagenes/hero_img_1950x1298.webp") type("image/webp"),
-    url("../imagenes/hero_img_1950x1298.jpeg") type("image/jpeg")
+    url("../imagenes/hero_img_1920x1277.avif") type("image/avif"),
+    url("../imagenes/hero_img_1920x1277.webp") type("image/webp"),
+    url("../imagenes/hero_img_1920x1277.jpeg") type("image/jpeg")
   ),
   "pantalla_estandar": (
-    url("../imagenes/hero_img_1950x998.avif") type("image/avif"),
-    url("../imagenes/hero_img_1950x998.webp") type("image/webp"),
-    url("../imagenes/hero_img_1950x998.jpeg") type("image/jpeg")
+    url("../imagenes/hero_img_2700x1796.avif") type("image/avif"),
+    url("../imagenes/hero_img_2700x1796.webp") type("image/webp"),
+    url("../imagenes/hero_img_2700x1796.jpeg") type("image/jpeg")
   )
 );
 
