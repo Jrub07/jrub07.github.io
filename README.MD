@@ -23,7 +23,7 @@ Para que no haya errores con las fuentes de imagen y el mapa se ha usado la tecn
 
 V3
 -Añadido bordes redondeados
--Firefox no termina de recoger los diseños bien, no entiendo por qué
--Arreglo en imgs
+-Arreglado para Firefox
+-Arregladas todas las img en funcion del contenedor picture
 
 
